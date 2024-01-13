@@ -2,18 +2,18 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useTranslation } from "~/app/i18n";
 
 import { api } from "~/trpc/react";
-import { useTranslation } from "../i18n/client";
 
 interface CreatePost {
   lang: string;
 }
 
-export function CreatePost({ lang }: CreatePost) {
+export async function CreatePost({ lang }: CreatePost) {
   const router = useRouter();
   const [name, setName] = useState("");
-  const { t } = useTranslation(lang, "home", {});
+  const { t } = await useTranslation(lang, "home", {});
 
   const createPost = api.post.create.useMutation({
     onSuccess: () => {

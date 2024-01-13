@@ -3,10 +3,8 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../ui/sheet";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 
 import { Menu } from "lucide-react";
-import CITY_BG from "public/assets/city-skyline-background.jpeg";
 
 interface MobileMenu {
   lang: string;
