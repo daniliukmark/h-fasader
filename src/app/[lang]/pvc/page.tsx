@@ -7,11 +7,10 @@ import deafault_img from "public/assets/products/window-1.png";
 interface Page {
   params: {
     lang: string;
-    productId: string;
   };
 }
 
-export default function Page({ params: { lang, productId } }: Page) {
+export default function Page({ params: { lang } }: Page) {
   return (
     <>
       <article>
