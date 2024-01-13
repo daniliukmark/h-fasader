@@ -22,10 +22,10 @@ export default function MobileMenu({ lang }: MobileMenu) {
       <Sheet onOpenChange={setIsOpen} open={isOpen}>
         <SheetContent className="border-0  p-0">
           <SheetHeader className="pl-4 pt-10">
-            <SheetTitle className="text-left">Menu</SheetTitle>
+            <SheetTitle className="text- text-left">Menu</SheetTitle>
           </SheetHeader>
           <nav className="relative h-full flex-col">
-            <ul className="flex flex-col gap-2 pl-4 pt-2  sm:pt-4 ">
+            <ul className="flex flex-col gap-2 pl-4 pt-2 sm:pt-4 ">
               <li>
                 <Link
                   onClick={() => setIsOpen(false)}

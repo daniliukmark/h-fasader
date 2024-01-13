@@ -37,7 +37,7 @@ export default async function RootLayout({
 }: RootLayout) {
   return (
     <html lang={lang} dir={dir(lang ?? "en")}>
-      <body className={`${inter.className} text-neutral-900`}>
+      <body className={`${inter.className} scroll-smooth text-neutral-900`}>
         <TRPCReactProvider cookies={cookies().toString()}>
           {children}
         </TRPCReactProvider>
