@@ -1,6 +1,12 @@
 import "~/styles/globals.css";
 
-import { Inter } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
+
+const inter = IBM_Plex_Sans({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+
 import { cookies } from "next/headers";
 
 import { dir } from "i18next";
@@ -8,14 +14,9 @@ import { TRPCReactProvider } from "~/trpc/react";
 import React from "react";
 import { languages } from "./i18n/settings";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
 export const metadata = {
-  title: "Neonita - Neon store",
-  description: "Neonita - Neon store",
+  title: "H-fasader",
+  description: "H-fasader nice windows",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -36,7 +37,7 @@ export default async function RootLayout({
 }: RootLayout) {
   return (
     <html lang={lang} dir={dir(lang ?? "en")}>
-      <body className={`font-sans ${inter.variable}`}>
+      <body className={`${inter.className} text-neutral-900`}>
         <TRPCReactProvider cookies={cookies().toString()}>
           {children}
         </TRPCReactProvider>

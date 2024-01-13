@@ -17,6 +17,7 @@ const initI18next = async (lang: string, ns: string) => {
   return i18nInstance;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function useTranslation(lang: string, ns: string, options = {}) {
   const i18nextInstance = await initI18next(lang, ns);
   return {

@@ -4,5 +4,9 @@ interface Page {
   };
 }
 export default function Page({ params: { lang } }: Page) {
-  return <h1>home {lang}</h1>;
+  return (
+    <>
+      <h1>aluminium {lang}</h1>
+    </>
+  );
 }
