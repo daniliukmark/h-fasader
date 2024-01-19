@@ -11,7 +11,7 @@ interface Navbar {
 }
 function Navbar({ lang }: Navbar) {
   return (
-    <nav className="fixed top-0 z-50  h-20 w-full bg-white ">
+    <nav className="fixed top-0 z-20 h-20 w-full bg-white ">
       <div className="relative m-auto flex h-full w-full items-center justify-between px-4 sm:px-8 xl:max-w-7xl xl:px-0 ">
         <Link className="z-10" href={`/${lang}`}>
           <Image

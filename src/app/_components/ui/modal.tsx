@@ -1,0 +1,55 @@
+"use client";
+import { useEffect, type Dispatch, type SetStateAction } from "react";
+import { cn } from "~/utils/utils";
+
+interface Modal {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  children: React.ReactNode;
+}
+
+export default function Modal({ isOpen, setIsOpen, children }: Modal) {
+  useEffect(() => {
+    // Define the event handler function
+    const preventScroll = (e: WheelEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    };
+
+    if (isOpen) {
+      window.addEventListener("wheel", preventScroll, { passive: false });
+    } else {
+      window.removeEventListener("wheel", preventScroll, { passive: false });
+    }
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener("wheel", preventScroll, { passive: false });
+    };
+  }, [isOpen]);
+
+  return (
+    <div
+      className={cn(
+        "pointer-events-none fixed inset-0 z-50 flex items-center justify-center",
+        isOpen
+          ? "pointer-events-auto opacity-100"
+          : "pointer-events-none opacity-0",
+      )}
+    >
+      <div
+        className={cn(
+          "fixed inset-0 z-50 bg-black duration-200",
+          isOpen
+            ? "pointer-events-auto bg-opacity-50"
+            : "pointer-events-none opacity-0",
+        )}
+        onClick={() => {
+          setIsOpen(false);
+        }}
+      />
+      {children}
+    </div>
+  );
+}
