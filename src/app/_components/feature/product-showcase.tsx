@@ -1,29 +1,24 @@
 "use client";
 import Image from "next/image";
 import { type StaticImport } from "next/dist/shared/lib/get-img-props";
-import { atom, useAtom } from "jotai";
-import { useEffect, useState } from "react";
-import { Button } from "./button";
-import { Expand } from "lucide-react";
-import Modal from "./modal";
+import { type Dispatch, type SetStateAction, useEffect, useState } from "react";
+import { Button } from "../ui/button";
+import EmblaCarousel from "../ui/emba-carousel/EmblaCarousel";
 
-const focusAtom = atom<StaticImport | null>(null);
-const peekImageAtom = atom<StaticImport | null>(null);
-const galleryAtom = atom<StaticImport[]>([]);
+import { Expand } from "lucide-react";
+import Modal from "../ui/modal";
 
 interface ProductShowcaseItem {
   src: StaticImport;
+  setPeekImage: Dispatch<SetStateAction<StaticImport | null>>;
+  setFocusImage: Dispatch<SetStateAction<StaticImport | null>>;
 }
 
-function ProductShowcaseItem({ src }: ProductShowcaseItem) {
-  const [, setFocusImage] = useAtom(focusAtom);
-  const [, setPeekImage] = useAtom(peekImageAtom);
-  const [, setGallery] = useAtom(galleryAtom);
-
-  useEffect(() => {
-    setGallery((prev) => [...prev, src]);
-  }, []);
-
+function ProductShowcaseItem({
+  src,
+  setPeekImage,
+  setFocusImage,
+}: ProductShowcaseItem) {
   return (
     <li
       onClick={() => {
@@ -44,8 +39,8 @@ function ProductShowcaseItem({ src }: ProductShowcaseItem) {
           src={src}
           alt="window image"
           sizes="vw-100"
-          fill
           className="mix-blend-normal hover:mix-blend-darken"
+          fill
         />
       </Button>
     </li>
@@ -53,18 +48,18 @@ function ProductShowcaseItem({ src }: ProductShowcaseItem) {
 }
 
 interface ProductShowcase {
-  children?: React.ReactNode;
+  images: StaticImport[];
   defaultImage: StaticImport;
 }
 
-function ProductShowcase({ children, defaultImage }: ProductShowcase) {
+function ProductShowcase({ images, defaultImage }: ProductShowcase) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [focusImage, setFocusImage] = useAtom(focusAtom);
-  const [peekImage] = useAtom(peekImageAtom);
 
-  useEffect(() => {
-    setFocusImage(() => defaultImage);
-  }, []);
+  const [focusImage, setFocusImage] = useState<StaticImport | null>(
+    defaultImage,
+  );
+
+  const [peekImage, setPeekImage] = useState<StaticImport | null>(null);
 
   return (
     <figure className="flex-basis relative h-full w-full ">
@@ -76,7 +71,16 @@ function ProductShowcase({ children, defaultImage }: ProductShowcase) {
         className="max-h-96 object-contain px-8"
       />
       <ul className="absolute left-0 flex h-full flex-col justify-center gap-2">
-        {children}
+        {images.map((image, index) => {
+          return (
+            <ProductShowcaseItem
+              src={image}
+              setFocusImage={setFocusImage}
+              setPeekImage={setPeekImage}
+              key={index}
+            />
+          );
+        })}
       </ul>
       <Button
         variant={"ghost"}
@@ -89,7 +93,7 @@ function ProductShowcase({ children, defaultImage }: ProductShowcase) {
         <Expand className="text-neutral-900" />
       </Button>
       <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}>
-        <div className="h-8 w-8 bg-black"></div>
+        <EmblaCarousel images={images} />
       </Modal>
     </figure>
   );

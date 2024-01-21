@@ -18,7 +18,6 @@ function Navbar({ lang }: Navbar) {
             src={H_FASADER_LOGO as string}
             alt="H-fasader Logo"
             className="w-32 lg:w-36"
-            key="h-fssader"
           />
         </Link>
         <ul className="absolute inset-0 z-0 hidden h-20 flex-row items-center justify-center gap-8 text-sm  lg:inline-flex">

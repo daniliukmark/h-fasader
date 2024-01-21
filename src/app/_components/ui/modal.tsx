@@ -20,12 +20,12 @@ export default function Modal({ isOpen, setIsOpen, children }: Modal) {
     if (isOpen) {
       window.addEventListener("wheel", preventScroll, { passive: false });
     } else {
-      window.removeEventListener("wheel", preventScroll, { passive: false });
+      window.removeEventListener("wheel", preventScroll);
     }
 
     // Cleanup function
     return () => {
-      window.removeEventListener("wheel", preventScroll, { passive: false });
+      window.removeEventListener("wheel", preventScroll);
     };
   }, [isOpen]);
 
@@ -40,9 +40,9 @@ export default function Modal({ isOpen, setIsOpen, children }: Modal) {
     >
       <div
         className={cn(
-          "fixed inset-0 z-50 bg-black duration-200",
+          "fixed inset-0 bg-black duration-200",
           isOpen
-            ? "pointer-events-auto bg-opacity-50"
+            ? "pointer-events-auto bg-opacity-70"
             : "pointer-events-none opacity-0",
         )}
         onClick={() => {
