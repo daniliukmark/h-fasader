@@ -10,23 +10,11 @@ interface Modal {
 
 export default function Modal({ isOpen, setIsOpen, children }: Modal) {
   useEffect(() => {
-    // Define the event handler function
-    const preventScroll = (e: WheelEvent) => {
-      e.preventDefault();
-      e.stopPropagation();
-      return;
-    };
-
     if (isOpen) {
-      window.addEventListener("wheel", preventScroll, { passive: false });
+      document.body.classList.add("overflow-y-hidden");
     } else {
-      window.removeEventListener("wheel", preventScroll);
+      document.body.classList.remove("overflow-y-hidden");
     }
-
-    // Cleanup function
-    return () => {
-      window.removeEventListener("wheel", preventScroll);
-    };
   }, [isOpen]);
 
   return (
