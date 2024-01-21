@@ -25,7 +25,7 @@ export const Thumb: React.FC<PropType> = (props) => {
         type="button"
       >
         <Image
-          className="block h-32 w-full object-contain"
+          className="min-h-32 block max-h-32 w-full object-contain"
           src={src}
           alt={`slide ${index}`}
         />
