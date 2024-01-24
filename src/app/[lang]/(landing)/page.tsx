@@ -64,7 +64,7 @@ export default function Page({ params: { lang } }: Page) {
                       alt="window image"
                       sizes="vw-100"
                       fill
-                      className=" bg-black object-cover duration-200 hover:opacity-60"
+                      className="object-cover duration-200 hover:opacity-60"
                     />
                     <article className="absolute bottom-0 h-fit w-full bg-white p-4">
                       <h1 className="text-left text-2xl font-semibold">PVC</h1>
