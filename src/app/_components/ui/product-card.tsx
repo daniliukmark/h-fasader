@@ -11,7 +11,7 @@ interface ProductCard {
 }
 export default function ProductCard({ lang, src, alt, href }: ProductCard) {
   return (
-    <div className="relative flex h-96  w-72 flex-shrink-0 flex-col p-4 shadow-md">
+    <div className="relative flex h-96 w-72  flex-shrink-0 flex-col rounded-lg border-2 border-neutral-100 p-4 shadow-sm">
       <Link href={`${href}`}>
         <ArrowRight className="absolute bottom-0 right-0 m-4" />
       </Link>

@@ -5,19 +5,25 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import { Menu } from "lucide-react";
+import { cn } from "~/utils/utils";
 
 interface MobileMenu {
   lang: string;
+  isNavbarTransparent: boolean;
 }
 
-export default function MobileMenu({ lang }: MobileMenu) {
+export default function MobileMenu({ lang, isNavbarTransparent }: MobileMenu) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathname = usePathname();
+  
   return (
     <>
       <Menu
         onClick={() => setIsOpen(true)}
-        className="inline-block h-8 w-8 cursor-pointer text-neutral-900  duration-100 hover:text-neutral-500 lg:hidden"
+        className={cn(
+          "inline-block h-8 w-8 cursor-pointer text-neutral-900  duration-100 hover:text-neutral-500 lg:hidden",
+          isNavbarTransparent && "text-neutral-100",
+        )}
       />
       <Sheet onOpenChange={setIsOpen} open={isOpen}>
         <SheetContent className="border-0  p-0">

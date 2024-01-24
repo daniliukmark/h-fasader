@@ -15,9 +15,11 @@ import { type StaticImport } from "next/dist/shared/lib/get-img-props";
 import NORWAY_FLAG from "/public/assets/norway-flag.png";
 import BRITAIN_FLAG from "/public/assets/britain-flag.png";
 import LITHIANIA_FLAG from "public/assets/lithuania-flag.png";
+import { cn } from "~/utils/utils";
 
 interface LanguageSelector {
   lang: string;
+  isNavbarTransparent: boolean;
 }
 
 const flags: Record<string, StaticImport> = {
@@ -26,7 +28,10 @@ const flags: Record<string, StaticImport> = {
   lt: LITHIANIA_FLAG,
 };
 
-export default function LanguageSelector({ lang }: LanguageSelector) {
+export default function LanguageSelector({
+  lang,
+  isNavbarTransparent,
+}: LanguageSelector) {
   let pathname = usePathname();
   pathname = pathname.substring(1).split("/").slice(1).join("/");
   const flagImage = flags[lang] ?? BRITAIN_FLAG;
@@ -34,7 +39,14 @@ export default function LanguageSelector({ lang }: LanguageSelector) {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger className="my-2 flex flex-row items-center gap-4 ">
-          <span className="text-sm">{lang.toUpperCase()}</span>
+          <span
+            className={cn(
+              "text-sm duration-100",
+              isNavbarTransparent && "text-neutral-100",
+            )}
+          >
+            {lang.toUpperCase()}
+          </span>
           <Image
             src={flagImage}
             alt="H-fasader Logo"
@@ -43,7 +55,7 @@ export default function LanguageSelector({ lang }: LanguageSelector) {
             className="h-5 w-5 cursor-pointer opacity-100 duration-100 hover:opacity-75"
           />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="mt-2 rounded-none border-neutral-100 ">
+        <DropdownMenuContent className="mt-2 rounded-md border-neutral-100 ">
           <DropdownMenuLabel className="px-6 text-neutral-900">
             Languages
           </DropdownMenuLabel>
