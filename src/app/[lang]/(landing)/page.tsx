@@ -88,9 +88,9 @@ export default function Page({ params: { lang } }: Page) {
                       alt="window image"
                       sizes="vw-100"
                       fill
-                      className=" object-cover"
+                      className="object-cover hover:opacity-60"
                     />
-                    <article className="absolute bottom-0 h-fit  w-full bg-white p-4">
+                    <article className="absolute bottom-0 h-fit w-full bg-white p-4">
                       <h1 className="text-left text-2xl font-semibold">
                         Aluminium
                       </h1>
