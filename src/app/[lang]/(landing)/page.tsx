@@ -4,12 +4,12 @@ import Navbar from "~/app/_components/layout/navbar";
 import Separator from "~/app/_components/ui/separator";
 import { cn } from "~/utils/utils";
 import { Pacifico } from "next/font/google";
+import { Button } from "~/app/_components/ui/button";
 
 import MAP_IMAGE from "public/assets/map2.png";
 import ALUMINIUM_CATEGORY from "public/assets/windows/window-test.jpg";
 import PVC_CATEGORY from "public/assets/windows/window-test4.jpg";
-
-import { Button } from "~/app/_components/ui/button";
+import FACTORY_IMG from "public/assets/h-fasader-factory.png";
 
 const pacifico = Pacifico({
   weight: ["400"],
@@ -43,14 +43,19 @@ export default function Page({ params: { lang } }: Page) {
             </div>
             <div className="absolute inset-0 -z-10">
               <figure className="h-full w-full">
-                <video
+                {/* <video
                   className=" relative h-full w-full object-cover"
                   loop
                   autoPlay
                   muted
                   src="https://cdn.sanity.io/files/zkqihy5d/production/37008853aa8ae3962ce58b5ecd28e0ac031bb6ca.mp4"
-                ></video>
-                <div className="absolute inset-0 bg-neutral-500 opacity-20" />
+                ></video> */}
+
+                <div className="absolute inset-0 bg-neutral-500 opacity-100">
+                  <Image src={FACTORY_IMG} alt="a"></Image>
+                </div>
+
+                <div className="absolute inset-0 bg-neutral-900 opacity-20" />
               </figure>
             </div>
           </section>
