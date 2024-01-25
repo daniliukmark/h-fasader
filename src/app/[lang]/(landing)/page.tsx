@@ -52,7 +52,11 @@ export default function Page({ params: { lang } }: Page) {
                 ></video> */}
 
                 <div className="absolute inset-0 bg-neutral-500 opacity-100">
-                  <Image src={FACTORY_IMG} alt="a"></Image>
+                  <Image
+                    src={FACTORY_IMG}
+                    className="h-full w-full object-cover"
+                    alt="a"
+                  ></Image>
                 </div>
 
                 <div className="absolute inset-0 bg-neutral-900 opacity-20" />
