@@ -1,14 +1,22 @@
+"use client";
 import ProductCard from "~/app/_components/ui/product-card";
 import BreadCrumbs from "../../../_components/ui/breadcrumbs";
-import ProductCarousel from "~/app/_components/ui/product-carousel";
-
-import deafault_img from "public/assets/products/window-1.png";
+import default_img from "public/assets/products/window-1.png";
+import Separator from "~/app/_components/ui/separator";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "~/app/_components/ui/select";
 
 interface Page {
   params: {
     lang: string;
   };
 }
+const a = Array.from({ length: 8 }, (v, i) => i);
 
 export default function Page({ params: { lang } }: Page) {
   return (
@@ -33,121 +41,24 @@ export default function Page({ params: { lang } }: Page) {
             fringilla suscipit vitae id neque.
           </p>
         </section>
-        <section>
-          <h2 className="text-2xl font-semibold">Top Swing</h2>
-          <ProductCarousel>
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-          </ProductCarousel>
-        </section>
-        <section>
-          <h2 className="text-2xl font-semibold">Drei/vipp </h2>
-          <ProductCarousel>
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-          </ProductCarousel>
-        </section>
-        <section>
-          <h2 className="text-2xl font-semibold">Side Hinged</h2>
-          <ProductCarousel>
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-          </ProductCarousel>
-        </section>
-        <section>
-          <h2 className="text-2xl font-semibold">Doors</h2>
-          <ProductCarousel>
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-          </ProductCarousel>
-        </section>
-        <section>
-          <h2 className="text-2xl font-semibold">Sliding Doors</h2>
-          <div className="lex-row flex w-full  gap-4 overflow-scroll p-4">
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-          </div>
-        </section>
-        <section>
-          <h2 className="text-2xl font-semibold">Windex Sprosser</h2>
-          <div className="lex-row flex w-full  gap-4 overflow-scroll p-4">
-            <ProductCard
-              lang={lang}
-              src={deafault_img}
-              alt="window"
-              href="/pvc/windows"
-            />
-          </div>
-        </section>
       </article>
+      <Separator />
+      <section>
+        <div className="grid grid-cols-1 gap-4 px-2 py-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {a.map((value, i) => {
+            return (
+              <ProductCard
+                key={i}
+                lang={lang}
+                src={default_img}
+                className="h-96 w-full"
+                alt="product"
+                href={`/${lang}/pvc/widndows`}
+              />
+            );
+          })}
+        </div>
+      </section>
     </>
   );
 }

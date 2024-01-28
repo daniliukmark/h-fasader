@@ -64,7 +64,7 @@ function CategoryCard({ href, alt, src, children }: CategoryCard) {
             alt={alt}
             sizes="vw-100"
             fill
-            className="object-cover duration-200 hover:opacity-60"
+            className=" object-cover duration-200 hover:opacity-60"
           />
         </Link>
         <article className="absolute bottom-0 h-fit w-full bg-white p-4">
@@ -106,21 +106,21 @@ export default function Page({ params: { lang } }: Page) {
             </div>
             <div className="absolute inset-0 -z-10">
               <figure className="h-full w-full">
-                <div className="absolute inset-0 bg-neutral-500 opacity-100">
+                {/* <div className="absolute inset-0 bg-neutral-500 opacity-100">
                   <Image
                     src={FACTORY_IMG}
                     className="h-full w-full object-cover"
                     alt="a"
                   ></Image>
-                </div>
+                </div> */}
 
-                {/* <video
-                  className=" relative h-full w-full object-cover"
+                <video
+                  className=" relative h-full w-full bg-slate-100 object-cover"
                   loop
                   autoPlay
                   muted
                   src="https://cdn.sanity.io/files/zkqihy5d/production/37008853aa8ae3962ce58b5ecd28e0ac031bb6ca.mp4"
-                ></video> */}
+                ></video>
 
                 <div className="absolute inset-0 bg-neutral-500 opacity-20" />
               </figure>
@@ -134,7 +134,7 @@ export default function Page({ params: { lang } }: Page) {
                   alt="PVC window"
                   href={`${lang}/pvc`}
                 >
-                  <h1>PVC</h1>
+                  <h1 className="text-left text-2xl font-semibold">PVC</h1>
                   <p className="pb-2 text-left">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
                     distinctio expedita quasi impedit, libero laudantium
@@ -166,7 +166,7 @@ export default function Page({ params: { lang } }: Page) {
                   src={MAP_IMAGE}
                   alt="window image"
                   sizes="vw-100"
-                  className="object-contain"
+                  className="relative object-contain"
                 />
               </div>
               <Separator />
@@ -180,7 +180,7 @@ export default function Page({ params: { lang } }: Page) {
                         <Image
                           src={logo}
                           alt="image"
-                          className="h-20 w-20 object-contain"
+                          className="relative h-20 w-20 object-contain"
                         />
                       </li>
                     );

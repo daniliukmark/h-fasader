@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { type StaticImport } from "next/dist/shared/lib/get-img-props";
-import { type Dispatch, type SetStateAction, useEffect, useState } from "react";
+import { type Dispatch, type SetStateAction, useState } from "react";
 import { Button } from "../ui/button";
 import EmblaCarousel from "../ui/emba-carousel/EmblaCarousel";
 
@@ -70,18 +70,20 @@ function ProductShowcase({ images, defaultImage }: ProductShowcase) {
         fill
         className="max-h-96 object-contain px-8"
       />
-      <ul className="absolute left-0 flex h-full flex-col justify-center gap-2">
-        {images.map((image, index) => {
-          return (
-            <ProductShowcaseItem
-              src={image}
-              setFocusImage={setFocusImage}
-              setPeekImage={setPeekImage}
-              key={index}
-            />
-          );
-        })}
-      </ul>
+      <div className="absolute left-0 flex h-full items-center">
+        <ul className="flex max-h-72 flex-col justify-center gap-2  overflow-y-scroll">
+          {images.map((image, index) => {
+            return (
+              <ProductShowcaseItem
+                src={image}
+                setFocusImage={setFocusImage}
+                setPeekImage={setPeekImage}
+                key={index}
+              />
+            );
+          })}
+        </ul>
+      </div>
       <Button
         variant={"ghost"}
         size={"icon"}

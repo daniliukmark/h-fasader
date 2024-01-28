@@ -68,7 +68,7 @@ export default function LanguageSelector({
                 alt="the flag of the Great Britain"
                 height={20}
                 width={20}
-                className="h-5 w-5"
+                className="relative h-5 w-5"
               />
             </DropdownMenuItem>
           </Link>
@@ -80,7 +80,7 @@ export default function LanguageSelector({
                 alt="the flag of the Norway"
                 height={20}
                 width={20}
-                className="h-5 w-5"
+                className="relative h-5 w-5"
               />
             </DropdownMenuItem>
           </Link>
@@ -92,7 +92,7 @@ export default function LanguageSelector({
                 alt="the flag of the Lithuania"
                 height={20}
                 width={20}
-                className="h-5 w-5"
+                className="relative h-5 w-5"
               />
             </DropdownMenuItem>
           </Link>

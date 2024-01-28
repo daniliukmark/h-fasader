@@ -20,7 +20,20 @@ interface Page {
 }
 
 export default function Page({ params: { lang, productId } }: Page) {
-  const images = [default_img1, default_img2, default_img3, default_img4];
+  const images = [
+    default_img1,
+    default_img2,
+    default_img3,
+    default_img4,
+    default_img4,
+    default_img4,
+    default_img1,
+    default_img2,
+    default_img3,
+    default_img4,
+    default_img4,
+    default_img4,
+  ];
   return (
     <>
       <main className="flex w-full flex-col scroll-smooth sm:flex-row">

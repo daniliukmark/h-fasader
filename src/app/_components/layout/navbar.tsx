@@ -52,7 +52,7 @@ function Navbar({ lang, isMainPage = false }: Navbar) {
             src={H_FASADER_LOGO as string}
             alt="H-fasader Logo"
             className={cn(
-              "w-32 lg:w-36",
+              "relative w-32 lg:w-36",
               isNavbarTransparent && "brightness-0 invert",
             )}
           />
