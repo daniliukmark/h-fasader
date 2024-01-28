@@ -126,7 +126,7 @@ export default function Page({ params: { lang } }: Page) {
               </figure>
             </div>
           </section>
-          <div className="mx-auto -mt-32 w-full px-4 pt-8 sm:px-8 lg:max-w-5xl lg:px-0 xl:max-w-7xl">
+          <div className="2 mx-auto -mt-20 w-full px-4 pt-8 sm:px-8 lg:max-w-5xl lg:px-0 xl:max-w-7xl">
             <section className="pb-8">
               <div className="flex flex-wrap justify-center gap-8 md:flex-nowrap">
                 <CategoryCard
