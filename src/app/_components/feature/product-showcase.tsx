@@ -9,9 +9,9 @@ import { Expand, GalleryHorizontalEnd } from "lucide-react";
 import Modal from "../ui/modal";
 
 interface ProductShowcaseItem {
-	src: StaticImport | string;
-	setPeekImage: Dispatch<SetStateAction<string | null>>;
-	setFocusImage: Dispatch<SetStateAction<string | null>>;
+	src: string;
+	setPeekImage: Dispatch<string | null>;
+	setFocusImage: Dispatch<string | null>;
 }
 
 function ProductShowcaseItem({
@@ -20,16 +20,18 @@ function ProductShowcaseItem({
 	setFocusImage,
 }: ProductShowcaseItem) {
 	return (
-		// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 		<li
 			onClick={() => {
-				setFocusImage(() => src);
+				setFocusImage(src);
+			}}
+			onKeyDown={() => {
+				setFocusImage(src);
 			}}
 			onMouseEnter={() => {
-				setPeekImage(() => src);
+				setPeekImage(src);
 			}}
 			onMouseLeave={() => {
-				setPeekImage(() => null);
+				setPeekImage(null);
 			}}
 		>
 			<Button
