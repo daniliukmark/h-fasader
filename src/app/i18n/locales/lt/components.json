@@ -1,0 +1,12 @@
+{
+	"directories": {
+		"home": "Pagrindinis",
+		"pvc": "PVC",
+		"aluminium": "Aliuminis",
+		"contacts": "Kontaktai",
+		"about-us": "Apie H-Fasader"
+	},
+	"footer": {
+		"copyright": "© 2023 H-Fasader™. Visos teisės saugomos."
+	}
+}

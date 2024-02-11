@@ -1,0 +1,12 @@
+{
+	"directories": {
+		"home": "Hovedside",
+		"pvc": "PVC",
+		"aluminium": "Aluminium",
+		"contacts": "Kontakter",
+		"about-us": "Om H-Fasader"
+	},
+	"footer": {
+		"copyright": "© 2023 H-Fasader™. Alle rettigheter reservert."
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"directories": {
+		"home": "Home",
+		"pvc": "PVC",
+		"aluminium": "Aluminium",
+		"contacts": "Contacts",
+		"about-us": "About H-Fasader"
+	},
+	"footer": {
+		"copyright": "© 2023 H-Fasader™. All Rights Reserved."
+	}
+}

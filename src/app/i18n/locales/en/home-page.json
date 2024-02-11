@@ -1,0 +1,18 @@
+{
+	"header": {
+		"part1": "Norway's Gateway",
+		"part2": "to",
+		"part3": "Comfort",
+		"part4": "With H-Fasader."
+	},
+	"catalogue": {
+		"pvc": {
+			"title": "PVC",
+			"description": "Premium selection of PVC windows and doors, crafted for resilience and eco-conscious living. Engineered for longevity, these no-maintenance solutions withstand the demanding Nordic weather while reducing environmental impact. The sturdy build ensures enduring quality, preventing the usual fading and deterioration often wrongly attributed to PVC."
+		},
+		"aluminium": {
+			"title": "Aluminium",
+			"description": "H-fasader's aluminum windows offer durability and sustainability in a sleek design. These windows promise energy efficiency and a low environmental impact, providing a smart, long-term investment for your home or building. With H-fasader, you embrace both innovative design and the assurance of quality, enhancing your space while supporting ecological responsibility."
+		}
+	}
+}

@@ -1,12 +1,12 @@
-interface Page {
-  params: {
-    lang: string;
-  };
+interface PageProps {
+	params: {
+		lang: string;
+	};
 }
-export default function Page({ params: { lang } }: Page) {
-  return (
-    <>
-      <h1>contacts {lang}</h1>
-    </>
-  );
+export default function Page({ params: { lang } }: PageProps) {
+	return (
+		<>
+			<h1>contacts {lang}</h1>
+		</>
+	);
 }
