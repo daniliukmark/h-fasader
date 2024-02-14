@@ -7,11 +7,12 @@ import Link from "next/link";
 import { Button } from "~/app/_components/ui/button";
 import { Pacifico } from "next/font/google";
 import { type StaticImport } from "next/dist/shared/lib/get-img-props";
+import { useTranslation } from "~/app/i18n";
+import { Suspense } from "react";
 
 import MAP_IMAGE from "public/assets/map2.png";
 import ALUMINIUM_CATEGORY from "public/windows/window-test.jpg";
 import PVC_CATEGORY from "public/windows/window-test4.jpg";
-import FACTORY_IMG from "public/assets/h-fasader-factory.png";
 import PARTNER_IMG1 from "public/assets/company-logos/logo1.png";
 import PARTNER_IMG2 from "public/assets/company-logos/logo2.png";
 import PARTNER_IMG3 from "public/assets/company-logos/logo3.png";
@@ -24,7 +25,6 @@ import PARTNER_IMG9 from "public/assets/company-logos/logo9.png";
 import PARTNER_IMG10 from "public/assets/company-logos/logo10.png";
 import PARTNER_IMG11 from "public/assets/company-logos/logo11.png";
 import PARTNER_IMG12 from "public/assets/company-logos/logo12.png";
-import { useTranslation } from "~/app/i18n";
 
 const partnerLogos = [
 	PARTNER_IMG1,
@@ -69,7 +69,7 @@ function CategoryCard({ href, alt, src, children }: CategoryCard) {
 					/>
 				</figure>
 			</Link>
-			<article className=" h-fit w-full p-4">
+			<article className="w-full p-4 h-fit">
 				{children}
 				<Link href={href}>
 					<Button variant={"link"} className="p-0">
@@ -91,11 +91,11 @@ export default async function Page({ params: { lang } }: PageProps) {
 	return (
 		<>
 			<Navbar lang={lang} isMainPage={true} />
-			<div className="flex min-h-screen w-full flex-col justify-between">
+			<div className="flex flex-col justify-between w-full min-h-screen">
 				<div className="w-full">
 					<section className="relative flex h-[40rem] flex-col justify-center sm:h-[52rem] ">
-						<div className="z-10 mx-auto flex w-full max-w-3xl items-center justify-between lg:max-w-7xl">
-							<h1 className="mx-8 text-4xl font-semibold leading-normal text-white  sm:text-5xl  sm:leading-relaxed ">
+						<div className="z-10 flex items-center justify-between w-full max-w-3xl mx-auto lg:max-w-7xl">
+							<h1 className="mx-8 text-4xl font-semibold leading-normal text-white sm:text-5xl sm:leading-relaxed ">
 								{t("header.part1")} <br />
 								{t("header.part2")}{" "}
 								<span
@@ -107,20 +107,13 @@ export default async function Page({ params: { lang } }: PageProps) {
 							</h1>
 						</div>
 						<div className="absolute inset-0 -z-10">
-							<figure className="h-full w-full">
-								{/* <div className="absolute inset-0 bg-neutral-500 opacity-100">
-                  <Image
-                    src={FACTORY_IMG}
-                    className="h-full w-full object-cover"
-                    alt="a"
-                  ></Image>
-                </div> */}
-
+							<figure className="w-full h-full">
 								<video
-									className=" relative h-full w-full bg-slate-100 object-cover"
+									className="relative object-cover w-full h-full bg-slate-100"
 									loop
 									autoPlay
 									muted
+									preload="1"
 									src="https://cdn.sanity.io/files/zkqihy5d/production/37008853aa8ae3962ce58b5ecd28e0ac031bb6ca.mp4"
 								/>
 
@@ -128,7 +121,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 							</figure>
 						</div>
 					</section>
-					<div className="2 mx-auto -mt-20 w-full px-4 pt-8 sm:px-8 lg:max-w-5xl lg:px-0 xl:max-w-7xl">
+					<div className="w-full px-4 pt-8 mx-auto -mt-20 2 sm:px-8 lg:max-w-5xl lg:px-0 xl:max-w-7xl">
 						<section className="pb-8">
 							<div className="flex flex-wrap justify-center gap-8 md:flex-nowrap">
 								<CategoryCard
@@ -136,7 +129,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 									alt="PVC window"
 									href={`${lang}/pvc`}
 								>
-									<h1 className="text-left text-2xl font-semibold">
+									<h1 className="text-2xl font-semibold text-left">
 										{t("catalogue.pvc.title")}
 									</h1>
 									<p className="pb-2 text-left">
@@ -148,7 +141,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 									alt="Aluminium window"
 									href={`${lang}/aluminium`}
 								>
-									<h1 className="text-left text-2xl font-semibold">
+									<h1 className="text-2xl font-semibold text-left">
 										{t("catalogue.aluminium.title")}
 									</h1>
 									<p className="pb-2 text-left">
@@ -169,7 +162,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 							</div>
 							<Separator />
 						</section>
-						<section className="overflow-hidden pb-8">
+						<section className="pb-8 overflow-hidden">
 							<div className="relative inline-flex w-full flex-nowrap">
 								<ul className="flex animate-infinite-scroll  items-center justify-center opacity-70 md:justify-start [&_img]:max-w-none [&_li]:mx-8">
 									{duplicatedPartnerLogos.map((logo) => {
@@ -178,7 +171,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 												<Image
 													src={logo}
 													alt="image"
-													className="relative h-20 w-20 object-contain"
+													className="relative object-contain w-20 h-20"
 												/>
 											</li>
 										);

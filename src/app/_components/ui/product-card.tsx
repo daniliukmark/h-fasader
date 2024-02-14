@@ -30,7 +30,7 @@ export default function ProductCard({
 			)}
 		>
 			<Link href={`${href}`}>
-				<div className="relative aspect-square overflow-hidden h-64">
+				<div className="relative w-full h-64 overflow-hidden aspect-square">
 					<Image
 						src={src}
 						alt={alt}
@@ -42,7 +42,7 @@ export default function ProductCard({
 			</Link>
 			<section>
 				<h1 className="text-sm font-semibold truncate">{title}</h1>
-				<p className="line-clamp-2 max-h-32 pt-1 pr-4 text-xs text-neutral-600">
+				<p className="pt-1 pr-4 text-xs line-clamp-2 max-h-32 text-neutral-600">
 					{desc}
 				</p>
 			</section>

@@ -20,7 +20,7 @@ export const metadata = {
 	icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-interface RootLayout {
+interface RootLayoutProps {
 	children: React.ReactNode;
 	params: {
 		lang: string;
@@ -34,7 +34,7 @@ export async function generateStaticParams() {
 export default async function RootLayout({
 	children,
 	params: { lang },
-}: RootLayout) {
+}: RootLayoutProps) {
 	return (
 		<html lang={lang} className="scroll-smooth" dir={dir(lang ?? "en")}>
 			<body className={`${inter.className} scroll-smooth text-neutral-900`}>

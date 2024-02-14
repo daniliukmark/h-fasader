@@ -1,6 +1,6 @@
 "use client";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../ui/sheet";
-import { type Dispatch, type SetStateAction } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -11,19 +11,16 @@ import { type TFunction } from "i18next";
 interface MobileMenuProps {
 	lang: string;
 	isNavbarTransparent: boolean;
-	isOpen: boolean;
-	setIsOpen: Dispatch<SetStateAction<boolean>>;
 	t: TFunction<string, undefined>;
 }
 
 export default function MobileMenu({
 	lang,
 	isNavbarTransparent,
-	isOpen,
-	setIsOpen,
 	t,
 }: MobileMenuProps) {
 	const pathname = usePathname();
+	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<>
 			<Menu

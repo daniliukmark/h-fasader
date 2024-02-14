@@ -1,12 +1,11 @@
 "use client";
 import Image from "next/image";
-import { type StaticImport } from "next/dist/shared/lib/get-img-props";
-import { type Dispatch, type SetStateAction, useState } from "react";
+import { type Dispatch, useState } from "react";
 import { Button } from "../ui/button";
 import EmblaCarousel from "../ui/emba-carousel/EmblaCarousel";
 
-import { Expand, GalleryHorizontalEnd } from "lucide-react";
 import Modal from "../ui/modal";
+import { Expand } from "lucide-react";
 
 interface ProductShowcaseItem {
 	src: string;
@@ -36,7 +35,7 @@ function ProductShowcaseItem({
 		>
 			<Button
 				variant={"outline"}
-				className="relative h-12 w-12 overflow-hidden border-0"
+				className="relative w-12 h-12 overflow-hidden border-0"
 			>
 				<Image
 					src={src}
@@ -63,16 +62,16 @@ function ProductShowcase({ images, defaultImage }: ProductShowcase) {
 	const [peekImage, setPeekImage] = useState<string | null>(null);
 
 	return (
-		<figure className="flex-basis relative h-full w-full ">
+		<figure className="relative w-full h-full flex-basis ">
 			<Image
 				src={peekImage ? peekImage : focusImage ? focusImage : ""}
 				alt="window image"
 				sizes="vw-100"
 				fill
-				className="max-h-96 object-contain px-8"
+				className="object-contain px-8 max-h-96"
 			/>
-			<div className="absolute left-0 flex h-full items-center">
-				<ul className="flex max-h-72 flex-col  items-center justify-center gap-2  overflow-y-scroll">
+			<div className="absolute left-0 flex items-center h-full">
+				<ul className="flex flex-col items-center justify-center gap-2 overflow-y-scroll max-h-72">
 					{images.slice(0, 4).map((image) => {
 						return (
 							<ProductShowcaseItem
@@ -89,7 +88,7 @@ function ProductShowcase({ images, defaultImage }: ProductShowcase) {
 							size={"icon"}
 							onClick={() => setIsModalOpen(true)}
 						>
-							<span className="text-center font-semibold">...</span>
+							<span className="font-semibold text-center">...</span>
 						</Button>
 					) : null}
 				</ul>

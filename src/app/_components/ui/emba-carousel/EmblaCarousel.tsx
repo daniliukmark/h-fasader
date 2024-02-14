@@ -40,7 +40,7 @@ const EmblaCarousel = ({ images, options }: EmblaCarousel) => {
 
 	return (
 		<section className="w-full px-4">
-			<div className="relative w-fit mx-auto" ref={emblaMainRef}>
+			<div className="relative w-full mx-auto sm: w-fit" ref={emblaMainRef}>
 				<div className="w-full mx-auto sm:max-w-sm lg:max-w-[36rem] flex touch-pan-y gap-4">
 					{images.map((image, index) => (
 						<div
@@ -92,7 +92,7 @@ const EmblaCarousel = ({ images, options }: EmblaCarousel) => {
 				</div>
 			</div>
 			<div
-				className="max-w-5xl mx-auto mt-4 touch-pan-y w-full"
+				className="w-full max-w-5xl mx-auto mt-4 touch-pan-y"
 				ref={emblaThumbsRef}
 			>
 				<div className="flex flex-row gap-2">

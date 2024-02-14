@@ -18,7 +18,6 @@ interface Navbar {
 function Navbar({ lang, isMainPage = false }: Navbar) {
 	const [isNavbarTransparent, setIsNavbarTransparent] = useState(isMainPage);
 	const [hasBackround, sethasBackround] = useState(isMainPage);
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { t } = useTranslation(lang, "components", {});
 
 	useEffect(() => {
@@ -48,7 +47,7 @@ function Navbar({ lang, isMainPage = false }: Navbar) {
 					!hasBackround && "opacity-0",
 				)}
 			/>
-			<div className="relative m-auto flex h-full w-full items-center justify-between px-4 sm:px-8 xl:max-w-7xl xl:px-0 ">
+			<div className="relative flex items-center justify-between w-full h-full px-4 m-auto sm:px-8 xl:max-w-7xl xl:px-0 ">
 				<Link className="z-10" href={`/${lang}`}>
 					<Image
 						src={H_FASADER_LOGO as string}
@@ -90,8 +89,6 @@ function Navbar({ lang, isMainPage = false }: Navbar) {
 						isNavbarTransparent={isNavbarTransparent}
 					/>
 					<MobileMenu
-						isOpen={isMenuOpen}
-						setIsOpen={setIsMenuOpen}
 						t={t}
 						lang={lang}
 						isNavbarTransparent={isNavbarTransparent}

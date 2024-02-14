@@ -1,4 +1,5 @@
 import { api } from "~/trpc/server";
+import Skeleton from "react-loading-skeleton";
 
 interface PageProps {
 	params: {
@@ -11,6 +12,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 		<>
 			<h1>aluminium {lang}</h1>
 			{data.greeting}
+			<Skeleton />
 		</>
 	);
 }
