@@ -146,7 +146,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 								<CategoryCard
 									src={ALUMINIUM_CATEGORY}
 									alt="Aluminium window"
-									href={`${lang}/pvc`}
+									href={`${lang}/aluminium`}
 								>
 									<h1 className="text-left text-2xl font-semibold">
 										{t("catalogue.aluminium.title")}
