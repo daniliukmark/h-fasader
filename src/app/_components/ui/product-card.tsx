@@ -41,7 +41,9 @@ export default function ProductCard({
 				</div>
 			</Link>
 			<section>
-				<h1 className="text-sm font-semibold truncate">{title}</h1>
+				<Link href={`${href}`}>
+					<h1 className="text-sm font-semibold truncate">{title}</h1>
+				</Link>
 				<p className="pt-1 pr-4 text-xs line-clamp-2 max-h-32 text-neutral-600">
 					{desc}
 				</p>
