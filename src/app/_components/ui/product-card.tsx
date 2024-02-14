@@ -4,7 +4,6 @@ import { type StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "../../../utils/utils";
-import { title } from "process";
 
 interface ProductCardProps {
 	src: StaticImport | string;
