@@ -3,8 +3,8 @@ import "~/styles/globals.css";
 import { IBM_Plex_Sans } from "next/font/google";
 
 const inter = IBM_Plex_Sans({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
+	weight: ["400", "500", "600", "700"],
+	subsets: ["latin"],
 });
 
 import { cookies } from "next/headers";
@@ -15,33 +15,33 @@ import React from "react";
 import { languages } from "./i18n/settings";
 
 export const metadata = {
-  title: "H-fasader",
-  description: "H-fasader nice windows",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+	title: "H-Fasader",
+	description: "H-Fasader nice windows",
+	icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 interface RootLayout {
-  children: React.ReactNode;
-  params: {
-    lang: string;
-  };
+	children: React.ReactNode;
+	params: {
+		lang: string;
+	};
 }
 
 export async function generateStaticParams() {
-  return languages.map((lang) => ({ lang }));
+	return languages.map((lang) => ({ lang }));
 }
 
 export default async function RootLayout({
-  children,
-  params: { lang },
+	children,
+	params: { lang },
 }: RootLayout) {
-  return (
-    <html lang={lang} className="scroll-smooth" dir={dir(lang ?? "en")}>
-      <body className={`${inter.className} scroll-smooth text-neutral-900`}>
-        <TRPCReactProvider cookies={cookies().toString()}>
-          {children}
-        </TRPCReactProvider>
-      </body>
-    </html>
-  );
+	return (
+		<html lang={lang} className="scroll-smooth" dir={dir(lang ?? "en")}>
+			<body className={`${inter.className} scroll-smooth text-neutral-900`}>
+				<TRPCReactProvider cookies={cookies().toString()}>
+					{children}
+				</TRPCReactProvider>
+			</body>
+		</html>
+	);
 }
