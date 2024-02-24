@@ -9,10 +9,12 @@ import { Pacifico } from "next/font/google";
 import { type StaticImport } from "next/dist/shared/lib/get-img-props";
 import { useTranslation } from "~/app/i18n";
 import { Suspense } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import MAP_IMAGE from "public/assets/map2.png";
-import ALUMINIUM_CATEGORY from "public/windows/window-test.jpg";
-import PVC_CATEGORY from "public/windows/window-test4.jpg";
+import ALUMINIUM_CATEGORY from "public/windows/aluminium-window.webp";
+import PVC_CATEGORY from "public/windows/pvc-window.webp";
 import PARTNER_IMG1 from "public/assets/company-logos/logo1.png";
 import PARTNER_IMG2 from "public/assets/company-logos/logo2.png";
 import PARTNER_IMG3 from "public/assets/company-logos/logo3.png";
@@ -59,14 +61,17 @@ function CategoryCard({ href, alt, src, children }: CategoryCard) {
 	return (
 		<div className="relative h-fit flex-auto basis-[36rem] rounded-lg border-2 bg-white   border-neutral-100 ">
 			<Link href={href}>
-				<figure className="relative h-80 sm:h-96 lg:h-[32rem] w-full overflow-hidden rounded-md">
-					<Image
-						src={src}
-						alt={alt}
-						sizes="vw-100"
-						fill
-						className="bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0] object-contain duration-200 hover:opacity-60"
-					/>
+				<figure className="relative h-80 duration-200 sm:h-96 lg:h-[32rem] w-full overflow-hidden rounded-md bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0] hover:opacity-60">
+					<Suspense fallback={<Skeleton className="w-full h-full" />}>
+						<Image
+							src={src}
+							alt={alt}
+							sizes="vw-100"
+							placeholder="blur"
+							fill
+							className="object-contain"
+						/>
+					</Suspense>
 				</figure>
 			</Link>
 			<article className="w-full p-4 h-fit">
@@ -106,18 +111,24 @@ export default async function Page({ params: { lang } }: PageProps) {
 								{t("header.part4")}
 							</h1>
 						</div>
-						<div className="absolute inset-0 -z-10">
+						<div className="absolute inset-0 -z-10  bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0]">
 							<figure className="w-full h-full">
-								<video
-									className="relative object-cover w-full h-full bg-slate-100"
-									loop
-									autoPlay
-									muted
-									preload="1"
-									src="https://cdn.sanity.io/files/zkqihy5d/production/37008853aa8ae3962ce58b5ecd28e0ac031bb6ca.mp4"
-								/>
-
-								<div className="absolute inset-0 bg-neutral-500 opacity-20" />
+								<Suspense fallback={<Skeleton className="w-full h-full" />}>
+									<video
+										className="relative object-cover w-full h-full bg-slate-100"
+										controls={false}
+										preload=""
+										loop
+										autoPlay
+										muted
+										placeholder="public/assets/mountains-placeholder.jpeg"
+									>
+										<source
+											type="video/mp4"
+											src="https://cdn.sanity.io/files/zkqihy5d/production/37008853aa8ae3962ce58b5ecd28e0ac031bb6ca.mp4"
+										/>
+									</video>
+								</Suspense>
 							</figure>
 						</div>
 					</section>
@@ -152,25 +163,28 @@ export default async function Page({ params: { lang } }: PageProps) {
 						</section>
 						<section className="pb-8 sm:block">
 							<Separator />
-							<div className="flex max-h-[32rem] justify-center">
-								<Image
-									src={MAP_IMAGE}
-									alt="window image"
-									sizes="vw-100"
-									className="relative object-contain"
-								/>
-							</div>
+							<Suspense fallback={<Skeleton className="w-full h-full" />}>
+								<div className="flex max-h-[32rem] justify-center">
+									<Image
+										src={MAP_IMAGE}
+										alt="window image"
+										sizes="vw-100"
+										className="object-contain h-auto w-auto"
+									/>
+								</div>
+							</Suspense>
 							<Separator />
 						</section>
 						<section className="pb-8 overflow-hidden">
 							<div className="relative inline-flex w-full flex-nowrap">
 								<ul className="flex animate-infinite-scroll  items-center justify-center opacity-70 md:justify-start [&_img]:max-w-none [&_li]:mx-8">
-									{duplicatedPartnerLogos.map((logo) => {
+									{duplicatedPartnerLogos.map((logo, index) => {
 										return (
-											<li>
+											<li key={`${logo.src}${index}`}>
 												<Image
 													src={logo}
 													alt="image"
+													placeholder="blur"
 													className="relative object-contain w-20 h-20"
 												/>
 											</li>

@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import ProductCard from "~/app/_components/ui/product-card";
 import BreadCrumbs from "../../../_components/ui/breadcrumbs";
 import Separator from "~/app/_components/ui/separator";
@@ -12,12 +14,14 @@ interface PageProps {
 
 export default async function Page({ params: { lang } }: PageProps) {
 	const { t } = await useTranslation(lang, "pvc-catalogue-page", {});
-	const windows = await api.window.getAll.query({
-		limit: 100,
-		lang: lang,
-		material: "pvc",
-	});
-
+	const windows = await api.window.getAll.query(
+		{
+			limit: 100,
+			lang: lang,
+			material: "pvc",
+		},
+		{},
+	);
 	return (
 		<>
 			<article>

@@ -35,7 +35,7 @@ export default function ProductCard({
 						alt={alt}
 						className="object-contain"
 						fill
-						sizes="10vw 100vw"
+						sizes="(max-width: 768px) 99vw, (max-width: 1200px) 50vw, 33vw"
 					/>
 				</div>
 			</Link>

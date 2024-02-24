@@ -3,9 +3,11 @@ import Image from "next/image";
 import { type Dispatch, useState } from "react";
 import { Button } from "../ui/button";
 import EmblaCarousel from "../ui/emba-carousel/EmblaCarousel";
-
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import Modal from "../ui/modal";
 import { Expand } from "lucide-react";
+import { Suspense } from "react";
 
 interface ProductShowcaseItem {
 	src: string;

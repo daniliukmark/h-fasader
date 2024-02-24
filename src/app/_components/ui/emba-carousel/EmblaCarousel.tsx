@@ -1,10 +1,14 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, Suspense } from "react";
 import { type EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { Thumb } from "./EmblaCarouselThumbsButton";
 import Image from "next/image";
 import { cn } from "~/utils/utils";
 import LONG_CHEVRON from "public/assets/longChevron.svg";
+
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
 interface EmblaCarousel {
 	images: string[];
 	options?: EmblaOptionsType;
@@ -39,7 +43,7 @@ const EmblaCarousel = ({ images, options }: EmblaCarousel) => {
 	}, [emblaMainApi, onSelect]);
 
 	return (
-		<section className="w-full px-4">
+		<section className="w-full px-4 overflow-hidden">
 			<div className="relative w-full mx-auto sm:w-fit" ref={emblaMainRef}>
 				<div className="w-full mx-auto sm:max-w-sm lg:max-w-[36rem] flex touch-pan-y gap-4">
 					{images.map((image, index) => (

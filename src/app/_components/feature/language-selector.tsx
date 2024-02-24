@@ -16,6 +16,7 @@ import { useRouter } from "next/navigation";
 import NORWAY_FLAG from "/public/assets/norway-flag.png";
 import BRITAIN_FLAG from "/public/assets/britain-flag.png";
 import LITHIANIA_FLAG from "public/assets/lithuania-flag.png";
+import { useMemo } from "react";
 
 interface LanguageSelectorProps {
 	lang: string;
