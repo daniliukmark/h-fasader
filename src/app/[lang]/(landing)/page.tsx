@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import Image from "next/image";
 import Footer from "~/app/_components/layout/footer";
 import Navbar from "~/app/_components/layout/navbar";
@@ -123,10 +124,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 										muted
 										placeholder="public/assets/mountains-placeholder.jpeg"
 									>
-										<source
-											type="video/mp4"
-											src="https://cdn.sanity.io/files/zkqihy5d/production/37008853aa8ae3962ce58b5ecd28e0ac031bb6ca.mp4"
-										/>
+										<source type="video/mp4" src="/assets/main-video-bg.webm" />
 									</video>
 								</Suspense>
 							</figure>

@@ -3,6 +3,8 @@ import { Fragment, useCallback, useMemo } from "react";
 import Separator from "../ui/separator";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { cn } from "~/utils/utils";
+import Link from "next/link";
+import { Button } from "~/app/_components/ui/button";
 
 interface Categories {
 	lang: string;
@@ -107,7 +109,7 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 					{<Categories lang={lang} currentCategory={currentCategory} />}
 				</ul>
 			</nav>
-			<section className="mb-6 flex w-full gap-4 px-4">
+			<section className="mb-6  w-full gap-4 px-4">
 				{currentCategory === "specifications" && (
 					<div
 						className="lg:basis-1/2"
@@ -119,6 +121,18 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 						className="lg:basis-1/2"
 						dangerouslySetInnerHTML={{ __html: accs }}
 					/>
+				)}
+				{currentCategory === "colors" && (
+					<>
+						<p>
+							See our websites for more information and available colors: <br />
+							<Link href="https://www.hfasader.no/byggevarer/fargevalg/fargevalg-pvc/">
+								<Button className="p-0" variant={"link"}>
+									https://www.hfasader.no/byggevarer/fargevalg/fargevalg-pvc/
+								</Button>
+							</Link>
+						</p>
+					</>
 				)}
 			</section>
 		</>
