@@ -1,6 +1,7 @@
 "use client";
 import { ClassValue } from "clsx";
 import { useEffect } from "react";
+import { cn } from "~/utils/utils";
 
 interface VideoProps {
 	hrefMp4: string;
@@ -10,7 +11,7 @@ interface VideoProps {
 export default function Video({ hrefMp4, hrefWebm, className }: VideoProps) {
 	useEffect(() => {
 		if (document) {
-			const video = document.getElementById("video-input") as HTMLVideoElement;
+			const video = document.getElementById("video-bg") as HTMLVideoElement;
 			if (video) video.play();
 		}
 	}, []);
@@ -19,7 +20,7 @@ export default function Video({ hrefMp4, hrefWebm, className }: VideoProps) {
 		<>
 			<video
 				id="video-bg"
-				className={className}
+				className={cn(className, "pointer-events-none")}
 				controls={false}
 				preload="auto"
 				playsInline
