@@ -10,7 +10,7 @@ interface VideoProps {
 export default function Video({ hrefMp4, hrefWebm, className }: VideoProps) {
 	useEffect(() => {
 		if (document) {
-			const video = document.getElementById("video-input");
+			const video = document.getElementById("video-input") as HTMLVideoElement;
 			if (video) video.play();
 		}
 	}, []);
