@@ -37,6 +37,11 @@ async function Footer({ lang }: Footer) {
 						</Link>
 					</li>
 					<li>
+						<Link href="https://www.hfasader.no/aktuelt/">
+							{t("directories.news")}
+						</Link>
+					</li>
+					<li>
 						<Link href={`/${lang}/contacts`}>{t("directories.contacts")}</Link>
 					</li>
 					<li>

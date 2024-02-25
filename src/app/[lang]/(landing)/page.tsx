@@ -167,7 +167,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 										src={MAP_IMAGE}
 										alt="window image"
 										sizes="vw-100"
-										className="object-contain h-auto w-auto"
+										className="object-contain"
 									/>
 								</div>
 							</Suspense>
