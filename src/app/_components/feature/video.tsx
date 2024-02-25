@@ -1,5 +1,4 @@
 "use client";
-import { ClassValue } from "clsx";
 import { useEffect } from "react";
 import { cn } from "~/utils/utils";
 
@@ -10,10 +9,17 @@ interface VideoProps {
 }
 export default function Video({ hrefMp4, hrefWebm, className }: VideoProps) {
 	useEffect(() => {
-		if (document) {
-			const video = document.getElementById("video-bg") as HTMLVideoElement;
-			if (video) video.play();
-		}
+		const playVideo = () => {
+			if (document) {
+				const video = document.getElementById("video-bg") as HTMLVideoElement;
+				if (video)
+					void video
+						.play()
+						.catch((error) => console.error("Error playing video:", error));
+			}
+		};
+
+		playVideo();
 	}, []);
 
 	return (

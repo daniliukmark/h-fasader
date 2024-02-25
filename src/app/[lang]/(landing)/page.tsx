@@ -2,7 +2,7 @@ export const dynamic = "force-static";
 import Image from "next/image";
 import Footer from "~/app/_components/layout/footer";
 import Navbar from "~/app/_components/layout/navbar";
-import Separator from "~/app/_components/ui/separator";
+// import Separator from "~/app/_components/ui/separator";
 import { cn } from "~/utils/utils";
 import Link from "next/link";
 import { Button } from "~/app/_components/ui/button";
@@ -13,7 +13,6 @@ import { Suspense } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-import MAP_IMAGE from "public/assets/map2.png";
 import ALUMINIUM_CATEGORY from "public/windows/aluminium-window.webp";
 import PVC_CATEGORY from "public/windows/pvc-window.webp";
 import PARTNER_IMG1 from "public/assets/company-logos/logo1.png";
@@ -30,21 +29,21 @@ import PARTNER_IMG11 from "public/assets/company-logos/logo11.png";
 import PARTNER_IMG12 from "public/assets/company-logos/logo12.png";
 import Video from "~/app/_components/feature/video";
 
-const partnerLogos = [
-	PARTNER_IMG1,
-	PARTNER_IMG2,
-	PARTNER_IMG3,
-	PARTNER_IMG4,
-	PARTNER_IMG5,
-	PARTNER_IMG6,
-	PARTNER_IMG7,
-	PARTNER_IMG8,
-	PARTNER_IMG9,
-	PARTNER_IMG10,
-	PARTNER_IMG11,
-	PARTNER_IMG12,
-];
-const duplicatedPartnerLogos = [...partnerLogos, ...partnerLogos];
+// const partnerLogos = [
+// 	PARTNER_IMG1,
+// 	PARTNER_IMG2,
+// 	PARTNER_IMG3,
+// 	PARTNER_IMG4,
+// 	PARTNER_IMG5,
+// 	PARTNER_IMG6,
+// 	PARTNER_IMG7,
+// 	PARTNER_IMG8,
+// 	PARTNER_IMG9,
+// 	PARTNER_IMG10,
+// 	PARTNER_IMG11,
+// 	PARTNER_IMG12,
+// ];
+// const duplicatedPartnerLogos = [...partnerLogos, ...partnerLogos];
 
 const pacifico = Pacifico({
 	weight: ["400"],

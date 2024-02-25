@@ -1,6 +1,6 @@
 "use client";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../ui/sheet";
-import { useState, type Dispatch, type SetStateAction } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 

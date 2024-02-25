@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useCallback, Suspense } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { type EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { Thumb } from "./EmblaCarouselThumbsButton";
 import Image from "next/image";
 import { cn } from "~/utils/utils";
 import LONG_CHEVRON from "public/assets/longChevron.svg";
-
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
 interface EmblaCarousel {
 	images: string[];
