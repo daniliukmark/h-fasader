@@ -58,7 +58,7 @@ interface CategoryCard {
 	children: React.ReactNode;
 }
 
-function CategoryCard({ href, alt, src, children }: CategoryCard) {
+function CategoryCardMobile({ href, alt, src, children }: CategoryCard) {
 	return (
 		<div className="relative h-fit flex-auto basis-[36rem] rounded-lg border-2 bg-white   border-neutral-100 ">
 			<Link href={href}>
@@ -87,6 +87,32 @@ function CategoryCard({ href, alt, src, children }: CategoryCard) {
 	);
 }
 
+function CategoryCard({ href, alt, src, children }: CategoryCard) {
+	return (
+		<div className="relative flex-auto flex flex-row rounded-lg text-gray-100 bg-gray-600 hover:bg-gray-500 duration-200 hover:bg-opacity-40  bg-opacity-50 backdrop-blur-md  border-neutral-100 ">
+			<Link href={href}>
+				<figure className="relative h-full w-72 overflow-hidden rounded-md  bg-opacity-10 bg-gray-50">
+					<Image
+						src={src}
+						alt={alt}
+						sizes="vw-100"
+						fill
+						className="object-contain"
+					/>
+				</figure>
+			</Link>
+			<article className="p-4 w-96 h-72">
+				{children}
+				<Link href={href} className="">
+					<Button variant={"link"} className="p-0 text-gray-100 ">
+						View more
+					</Button>
+				</Link>
+			</article>
+		</div>
+	);
+}
+
 interface PageProps {
 	params: {
 		lang: string;
@@ -100,7 +126,33 @@ export default async function Page({ params: { lang } }: PageProps) {
 			<div className="flex flex-col justify-between w-full min-h-screen">
 				<div className="w-full">
 					<section className="relative flex h-[40rem] flex-col justify-center sm:h-[52rem] ">
-						<div className="z-10 flex items-center justify-between w-full max-w-3xl mx-auto lg:max-w-7xl">
+						<div className="hidden z-10 pt-20 lg:flex absolute right-0 gap-8 flex-col">
+							<CategoryCard
+								src={PVC_CATEGORY}
+								alt="PVC window"
+								href={`${lang}/pvc`}
+							>
+								<h1 className="text-xl font-semibold text-left">
+									{t("catalogue.pvc.title")}
+								</h1>
+								<p className="pb-2 text-left">
+									{t("catalogue.pvc.description")}
+								</p>
+							</CategoryCard>
+							<CategoryCard
+								src={ALUMINIUM_CATEGORY}
+								alt="Aluminium window"
+								href={`${lang}/aluminium`}
+							>
+								<h1 className="text-xl font-semibold text-left">
+									{t("catalogue.aluminium.title")}
+								</h1>
+								<p className="pb-2 text-left">
+									{t("catalogue.aluminium.description")}
+								</p>
+							</CategoryCard>
+						</div>
+						<div className="z-0 flex items-center justify-between w-full max-w-3xl mx-auto lg:max-w-7xl">
 							<h1 className="mx-8 text-4xl font-semibold leading-normal text-white sm:text-5xl sm:leading-relaxed ">
 								{t("header.part1")} <br />
 								{t("header.part2")}{" "}
@@ -130,10 +182,10 @@ export default async function Page({ params: { lang } }: PageProps) {
 							</figure>
 						</div>
 					</section>
-					<div className="w-full px-4 pt-8 mx-auto -mt-20 2 sm:px-8 lg:max-w-5xl lg:px-0 xl:max-w-7xl">
-						<section className="pb-8">
+					<div className="w-full px-4 pt-8 mx-auto  sm:px-8 lg:max-w-5xl lg:px-0 xl:max-w-7xl">
+						<section className="pb-8 block -mt-20 lg:hidden ">
 							<div className="flex flex-wrap justify-center gap-8 md:flex-nowrap">
-								<CategoryCard
+								<CategoryCardMobile
 									src={PVC_CATEGORY}
 									alt="PVC window"
 									href={`${lang}/pvc`}
@@ -144,8 +196,8 @@ export default async function Page({ params: { lang } }: PageProps) {
 									<p className="pb-2 text-left">
 										{t("catalogue.pvc.description")}
 									</p>
-								</CategoryCard>
-								<CategoryCard
+								</CategoryCardMobile>
+								<CategoryCardMobile
 									src={ALUMINIUM_CATEGORY}
 									alt="Aluminium window"
 									href={`${lang}/aluminium`}
@@ -156,10 +208,13 @@ export default async function Page({ params: { lang } }: PageProps) {
 									<p className="pb-2 text-left">
 										{t("catalogue.aluminium.description")}
 									</p>
-								</CategoryCard>
+								</CategoryCardMobile>
 							</div>
 						</section>
-						<section className="pb-8 sm:block">
+						{/* <section className="pb-8 sm:block">
+							<h1 className="font-semibold text-3xl pb-8 text-center">
+								Mūsų Lokacijos
+							</h1>
 							<Separator />
 							<Suspense fallback={<Skeleton className="w-full h-full" />}>
 								<div className="flex max-h-[32rem] justify-center">
@@ -190,7 +245,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 									})}
 								</ul>
 							</div>
-						</section>
+						</section> */}
 					</div>
 					<Footer lang={lang} />
 				</div>

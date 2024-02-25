@@ -23,8 +23,8 @@ function Navbar({ lang, isMainPage = false }: Navbar) {
 	useEffect(() => {
 		const handleScroll = () => {
 			const offset = window.scrollY;
-			sethasBackround(offset > 10 && offset < 596 && isMainPage);
-			setIsNavbarTransparent(!(offset > 596) && isMainPage);
+			sethasBackround(offset > 10 && offset < 144 && isMainPage);
+			setIsNavbarTransparent(!(offset > 144) && isMainPage);
 		};
 
 		// Add the event listener
