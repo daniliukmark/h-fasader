@@ -15,18 +15,18 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 import ALUMINIUM_CATEGORY from "public/windows/aluminium-window.webp";
 import PVC_CATEGORY from "public/windows/pvc-window.webp";
-import PARTNER_IMG1 from "public/assets/company-logos/logo1.png";
-import PARTNER_IMG2 from "public/assets/company-logos/logo2.png";
-import PARTNER_IMG3 from "public/assets/company-logos/logo3.png";
-import PARTNER_IMG4 from "public/assets/company-logos/logo4.png";
-import PARTNER_IMG5 from "public/assets/company-logos/logo5.png";
-import PARTNER_IMG6 from "public/assets/company-logos/logo6.png";
-import PARTNER_IMG7 from "public/assets/company-logos/logo7.png";
-import PARTNER_IMG8 from "public/assets/company-logos/logo8.png";
-import PARTNER_IMG9 from "public/assets/company-logos/logo9.png";
-import PARTNER_IMG10 from "public/assets/company-logos/logo10.png";
-import PARTNER_IMG11 from "public/assets/company-logos/logo11.png";
-import PARTNER_IMG12 from "public/assets/company-logos/logo12.png";
+// import PARTNER_IMG1 from "public/assets/company-logos/logo1.png";
+// import PARTNER_IMG2 from "public/assets/company-logos/logo2.png";
+// import PARTNER_IMG3 from "public/assets/company-logos/logo3.png";
+// import PARTNER_IMG4 from "public/assets/company-logos/logo4.png";
+// import PARTNER_IMG5 from "public/assets/company-logos/logo5.png";
+// import PARTNER_IMG6 from "public/assets/company-logos/logo6.png";
+// import PARTNER_IMG7 from "public/assets/company-logos/logo7.png";
+// import PARTNER_IMG8 from "public/assets/company-logos/logo8.png";
+// import PARTNER_IMG9 from "public/assets/company-logos/logo9.png";
+// import PARTNER_IMG10 from "public/assets/company-logos/logo10.png";
+// import PARTNER_IMG11 from "public/assets/company-logos/logo11.png";
+// import PARTNER_IMG12 from "public/assets/company-logos/logo12.png";
 import Video from "~/app/_components/feature/video";
 
 // const partnerLogos = [
@@ -103,7 +103,7 @@ function CategoryCard({ href, alt, src, children }: CategoryCard) {
 			</Link>
 			<article className="p-4 w-96 h-72">
 				{children}
-				<Link href={href} className="">
+				<Link href={href}>
 					<Button variant={"link"} className="p-0 text-gray-100 ">
 						View more
 					</Button>
@@ -185,9 +185,11 @@ export default async function Page({ params: { lang } }: PageProps) {
 									alt="PVC window"
 									href={`${lang}/pvc`}
 								>
-									<h1 className="text-2xl font-semibold text-left">
-										{t("catalogue.pvc.title")}
-									</h1>
+									<Link href={`${lang}/aluminium`}>
+										<h1 className="text-2xl font-semibold text-left">
+											{t("catalogue.pvc.title")}
+										</h1>
+									</Link>
 									<p className="pb-2 text-left">
 										{t("catalogue.pvc.description")}
 									</p>
@@ -197,9 +199,11 @@ export default async function Page({ params: { lang } }: PageProps) {
 									alt="Aluminium window"
 									href={`${lang}/aluminium`}
 								>
-									<h1 className="text-2xl font-semibold text-left">
-										{t("catalogue.aluminium.title")}
-									</h1>
+									<Link href={`${lang}/aluminium`}>
+										<h1 className="text-2xl font-semibold text-left">
+											{t("catalogue.aluminium.title")}
+										</h1>
+									</Link>
 									<p className="pb-2 text-left">
 										{t("catalogue.aluminium.description")}
 									</p>
