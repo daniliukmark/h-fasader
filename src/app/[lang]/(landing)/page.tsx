@@ -177,6 +177,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 										placeholder="public/assets/mountains-placeholder.jpeg"
 									>
 										<source type="video/mp4" src="/assets/main-video-bg.webm" />
+										<source type="video/mp4" src="/assets/main-video-bg.mp4" />
 									</video>
 								</Suspense>
 							</figure>
