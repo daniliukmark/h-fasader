@@ -28,6 +28,7 @@ import PARTNER_IMG9 from "public/assets/company-logos/logo9.png";
 import PARTNER_IMG10 from "public/assets/company-logos/logo10.png";
 import PARTNER_IMG11 from "public/assets/company-logos/logo11.png";
 import PARTNER_IMG12 from "public/assets/company-logos/logo12.png";
+import Video from "~/app/_components/feature/video";
 
 const partnerLogos = [
 	PARTNER_IMG1,
@@ -120,6 +121,7 @@ interface PageProps {
 }
 export default async function Page({ params: { lang } }: PageProps) {
 	const { t } = await useTranslation(lang, "home-page", {});
+
 	return (
 		<>
 			<Navbar lang={lang} isMainPage={true} />
@@ -167,18 +169,11 @@ export default async function Page({ params: { lang } }: PageProps) {
 						<div className="absolute inset-0 -z-10  bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0]">
 							<figure className="w-full h-full">
 								<Suspense fallback={<Skeleton className="w-full h-full" />}>
-									<video
-										className="relative object-cover w-full h-full bg-slate-100"
-										controls={false}
-										preload=""
-										loop
-										autoPlay
-										muted
-										placeholder="public/assets/mountains-placeholder.jpeg"
-									>
-										<source type="video/mp4" src="/assets/main-video-bg.webm" />
-										<source type="video/mp4" src="/assets/main-video-bg.mp4" />
-									</video>
+									<Video
+										className="relative object-cover w-full h-full bg-slate-400"
+										hrefMp4="/assets/main-video-bg.mp4"
+										hrefWebm="/assets/main-video-bg.webm"
+									/>
 								</Suspense>
 							</figure>
 						</div>
