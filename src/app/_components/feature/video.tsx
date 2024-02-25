@@ -25,7 +25,6 @@ export default function Video({ hrefMp4, hrefWebm, className }: VideoProps) {
 				preload="auto"
 				playsInline
 				loop
-				autoPlay
 				muted
 				placeholder="public/assets/mountains-placeholder.jpeg"
 			>
