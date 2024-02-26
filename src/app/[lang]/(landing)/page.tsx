@@ -125,92 +125,87 @@ export default async function Page({ params: { lang } }: PageProps) {
 		<>
 			<Navbar lang={lang} isMainPage={true} />
 			<div className="flex flex-col justify-between w-full min-h-screen">
-				<div className="w-full">
-					<section className="relative flex h-[40rem] flex-col justify-center sm:h-[52rem] ">
-						<div className="hidden z-10 pt-20 lg:flex absolute right-0 gap-8 flex-col">
-							<CategoryCard
+				<section className="relative flex h-[40rem] flex-col justify-center sm:h-[52rem] ">
+					<div className="hidden z-10 pt-20 lg:flex absolute right-0 gap-8 flex-col">
+						<CategoryCard
+							src={PVC_CATEGORY}
+							alt="PVC window"
+							href={`${lang}/pvc`}
+						>
+							<h1 className="text-xl font-semibold text-left">
+								{t("catalogue.pvc.title")}
+							</h1>
+							<p className="pb-2 text-left">{t("catalogue.pvc.description")}</p>
+						</CategoryCard>
+						<CategoryCard
+							src={ALUMINIUM_CATEGORY}
+							alt="Aluminium window"
+							href={`${lang}/aluminium`}
+						>
+							<h1 className="text-xl font-semibold text-left">
+								{t("catalogue.aluminium.title")}
+							</h1>
+							<p className="pb-2 text-left">
+								{t("catalogue.aluminium.description")}
+							</p>
+						</CategoryCard>
+					</div>
+					<div className="z-0 flex items-center justify-between w-full max-w-3xl mx-auto lg:max-w-7xl">
+						<h1 className="mx-8 text-4xl font-semibold leading-normal text-white sm:text-5xl sm:leading-relaxed ">
+							{t("header.part1")} <br />
+							{t("header.part2")}{" "}
+							<span className={cn("text-5xl sm:text-6xl", pacifico.className)}>
+								{t("header.part3")} <br />
+							</span>
+							{t("header.part4")}
+						</h1>
+					</div>
+					<div className="absolute inset-0 -z-10  bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0]">
+						<figure className="w-full h-full">
+							<Suspense fallback={<Skeleton className="w-full h-full" />}>
+								<Video
+									className="relative object-cover w-full h-full bg-slate-400"
+									hrefMp4="/assets/main-video-bg.mp4"
+									hrefWebm="/assets/main-video-bg.webm"
+								/>
+							</Suspense>
+						</figure>
+					</div>
+				</section>
+				<div className="w-full px-4 pt-8 mx-auto  sm:px-8 lg:max-w-5xl lg:px-0 xl:max-w-7xl">
+					<section className="pb-8 block -mt-20 lg:hidden ">
+						<div className="flex flex-wrap justify-center gap-8 md:flex-nowrap">
+							<CategoryCardMobile
 								src={PVC_CATEGORY}
 								alt="PVC window"
 								href={`${lang}/pvc`}
 							>
-								<h1 className="text-xl font-semibold text-left">
-									{t("catalogue.pvc.title")}
-								</h1>
+								<Link href={`${lang}/aluminium`}>
+									<h1 className="text-2xl font-semibold text-left">
+										{t("catalogue.pvc.title")}
+									</h1>
+								</Link>
 								<p className="pb-2 text-left">
 									{t("catalogue.pvc.description")}
 								</p>
-							</CategoryCard>
-							<CategoryCard
+							</CategoryCardMobile>
+							<CategoryCardMobile
 								src={ALUMINIUM_CATEGORY}
 								alt="Aluminium window"
 								href={`${lang}/aluminium`}
 							>
-								<h1 className="text-xl font-semibold text-left">
-									{t("catalogue.aluminium.title")}
-								</h1>
+								<Link href={`${lang}/aluminium`}>
+									<h1 className="text-2xl font-semibold text-left">
+										{t("catalogue.aluminium.title")}
+									</h1>
+								</Link>
 								<p className="pb-2 text-left">
 									{t("catalogue.aluminium.description")}
 								</p>
-							</CategoryCard>
-						</div>
-						<div className="z-0 flex items-center justify-between w-full max-w-3xl mx-auto lg:max-w-7xl">
-							<h1 className="mx-8 text-4xl font-semibold leading-normal text-white sm:text-5xl sm:leading-relaxed ">
-								{t("header.part1")} <br />
-								{t("header.part2")}{" "}
-								<span
-									className={cn("text-5xl sm:text-6xl", pacifico.className)}
-								>
-									{t("header.part3")} <br />
-								</span>
-								{t("header.part4")}
-							</h1>
-						</div>
-						<div className="absolute inset-0 -z-10  bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0]">
-							<figure className="w-full h-full">
-								<Suspense fallback={<Skeleton className="w-full h-full" />}>
-									<Video
-										className="relative object-cover w-full h-full bg-slate-400"
-										hrefMp4="/assets/main-video-bg.mp4"
-										hrefWebm="/assets/main-video-bg.webm"
-									/>
-								</Suspense>
-							</figure>
+							</CategoryCardMobile>
 						</div>
 					</section>
-					<div className="w-full px-4 pt-8 mx-auto  sm:px-8 lg:max-w-5xl lg:px-0 xl:max-w-7xl">
-						<section className="pb-8 block -mt-20 lg:hidden ">
-							<div className="flex flex-wrap justify-center gap-8 md:flex-nowrap">
-								<CategoryCardMobile
-									src={PVC_CATEGORY}
-									alt="PVC window"
-									href={`${lang}/pvc`}
-								>
-									<Link href={`${lang}/aluminium`}>
-										<h1 className="text-2xl font-semibold text-left">
-											{t("catalogue.pvc.title")}
-										</h1>
-									</Link>
-									<p className="pb-2 text-left">
-										{t("catalogue.pvc.description")}
-									</p>
-								</CategoryCardMobile>
-								<CategoryCardMobile
-									src={ALUMINIUM_CATEGORY}
-									alt="Aluminium window"
-									href={`${lang}/aluminium`}
-								>
-									<Link href={`${lang}/aluminium`}>
-										<h1 className="text-2xl font-semibold text-left">
-											{t("catalogue.aluminium.title")}
-										</h1>
-									</Link>
-									<p className="pb-2 text-left">
-										{t("catalogue.aluminium.description")}
-									</p>
-								</CategoryCardMobile>
-							</div>
-						</section>
-						{/* <section className="pb-8 sm:block">
+					{/* <section className="pb-8 sm:block">
 							<h1 className="font-semibold text-3xl pb-8 text-center">
 								Mūsų Lokacijos
 							</h1>
@@ -245,9 +240,8 @@ export default async function Page({ params: { lang } }: PageProps) {
 								</ul>
 							</div>
 						</section> */}
-					</div>
-					<Footer lang={lang} />
 				</div>
+				<Footer lang={lang} />
 			</div>
 		</>
 	);
