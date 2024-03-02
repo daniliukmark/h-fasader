@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[124],{9124:function(e){e.exports=JSON.parse('{"directories":{"home":"Home","pvc":"PVC","aluminium":"Aluminium","news":"News","contacts":"Contacts","about-us":"About H-Fasader"},"footer":{"copyright":"\xa9 2023 H-Fasader™. All Rights Reserved."}}')}}]);

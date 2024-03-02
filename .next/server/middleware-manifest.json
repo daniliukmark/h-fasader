@@ -1,0 +1,26 @@
+{
+  "sortedMiddleware": [
+    "/"
+  ],
+  "middleware": {
+    "/": {
+      "files": [
+        "prerender-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/src/middleware.js"
+      ],
+      "name": "src/middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/((?!api\\/trpc\\/|_next\\/static|_next\\/image|assets|windows|favicon.ico|sw.js).*))(.json)?[\\/#\\?]?$",
+          "originalSource": "/((?!api/trpc/|_next/static|_next/image|assets|windows|favicon.ico|sw.js).*)"
+        }
+      ],
+      "wasm": [],
+      "assets": []
+    }
+  },
+  "functions": {},
+  "version": 2
+}

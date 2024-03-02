@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import { api } from "~/trpc/server";
 
 interface PageProps {

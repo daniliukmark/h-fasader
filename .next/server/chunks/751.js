@@ -1,0 +1,1 @@
+"use strict";exports.id=751,exports.ids=[751],exports.modules={4751:s=>{s.exports=JSON.parse('{"directories":{"home":"Pagrindinis","pvc":"PVC","aluminium":"Aliuminis","news":"Naujienos","contacts":"Kontaktai","about-us":"Apie H-Fasader"},"footer":{"copyright":"\xa9 2023 H-Fasader™. Visos teisės saugomos."}}')}};

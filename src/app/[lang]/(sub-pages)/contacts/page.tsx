@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 interface PageProps {
 	params: {
 		lang: string;

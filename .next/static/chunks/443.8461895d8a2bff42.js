@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[443],{2443:function(e){e.exports=JSON.parse('{"directories":{"home":"Hovedside","pvc":"PVC","aluminium":"Aluminium","news":"Aktuelt","contacts":"Kontakter","about-us":"Om H-Fasader"},"footer":{"copyright":"\xa9 2023 H-Fasader™. Alle rettigheter reservert."}}')}}]);
