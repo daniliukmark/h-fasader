@@ -71,11 +71,18 @@ module.exports = {
 					from: { transform: "translateX(0)" },
 					to: { transform: "translateX(-50%)" },
 				},
+				"infinite-fade": {
+					"0%": { opacity: "1" },
+					"49%": { opacity: "1" },
+					"51%": { opacity: "0" },
+					"100%": { opacity: "0" },
+				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
 				"infinite-scroll": "infinite-scroll 25s linear infinite",
+				"infinite-fade": "infinite-fade 8s infinite  alternate",
 			},
 		},
 	},

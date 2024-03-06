@@ -2,7 +2,6 @@ export const dynamic = "force-static";
 import Image from "next/image";
 import Footer from "~/app/_components/layout/footer";
 import Navbar from "~/app/_components/layout/navbar";
-// import Separator from "~/app/_components/ui/separator";
 import { cn } from "~/utils/utils";
 import Link from "next/link";
 import { Button } from "~/app/_components/ui/button";
@@ -15,35 +14,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 import ALUMINIUM_CATEGORY from "public/windows/aluminium-window.webp";
 import PVC_CATEGORY from "public/windows/pvc-window.webp";
-// import PARTNER_IMG1 from "public/assets/company-logos/logo1.png";
-// import PARTNER_IMG2 from "public/assets/company-logos/logo2.png";
-// import PARTNER_IMG3 from "public/assets/company-logos/logo3.png";
-// import PARTNER_IMG4 from "public/assets/company-logos/logo4.png";
-// import PARTNER_IMG5 from "public/assets/company-logos/logo5.png";
-// import PARTNER_IMG6 from "public/assets/company-logos/logo6.png";
-// import PARTNER_IMG7 from "public/assets/company-logos/logo7.png";
-// import PARTNER_IMG8 from "public/assets/company-logos/logo8.png";
-// import PARTNER_IMG9 from "public/assets/company-logos/logo9.png";
-// import PARTNER_IMG10 from "public/assets/company-logos/logo10.png";
-// import PARTNER_IMG11 from "public/assets/company-logos/logo11.png";
-// import PARTNER_IMG12 from "public/assets/company-logos/logo12.png";
 import Video from "~/app/_components/feature/video";
-
-// const partnerLogos = [
-// 	PARTNER_IMG1,
-// 	PARTNER_IMG2,
-// 	PARTNER_IMG3,
-// 	PARTNER_IMG4,
-// 	PARTNER_IMG5,
-// 	PARTNER_IMG6,
-// 	PARTNER_IMG7,
-// 	PARTNER_IMG8,
-// 	PARTNER_IMG9,
-// 	PARTNER_IMG10,
-// 	PARTNER_IMG11,
-// 	PARTNER_IMG12,
-// ];
-// const duplicatedPartnerLogos = [...partnerLogos, ...partnerLogos];
 
 const pacifico = Pacifico({
 	weight: ["400"],
@@ -150,15 +121,15 @@ export default async function Page({ params: { lang } }: PageProps) {
 							</p>
 						</CategoryCard>
 					</div>
-					<div className="z-0 flex items-center justify-between w-full max-w-3xl mx-auto lg:max-w-7xl">
-						<h1 className="mx-8 text-4xl font-semibold leading-normal text-white sm:text-5xl sm:leading-relaxed ">
-							{t("header.part1")} <br />
-							{t("header.part2")}{" "}
-							<span className={cn("text-5xl sm:text-6xl", pacifico.className)}>
-								{t("header.part3")} <br />
+					<div className="w-full mx-auto max-w-7xl">
+						<div className="z-0 flex items-center mx-8 justify-between w-full max-w-3xl text-4xl font-semibold leading-normal text-white sm:text-5xl sm:leading-relaxed  lg:max-w-7xl">
+							<span className="absolute animate-infinite-fade">
+								Extraordinary PVC <br /> Windows For Extreme <br /> Climate
 							</span>
-							{t("header.part4")}
-						</h1>
+							<span className="absolute animate-infinite-fade [animation-delay:-8s]">
+								Excellent Wind <br /> And Rain Resistance
+							</span>
+						</div>
 					</div>
 					<div className="absolute inset-0 -z-10  bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0]">
 						<figure className="w-full h-full">
@@ -205,41 +176,6 @@ export default async function Page({ params: { lang } }: PageProps) {
 							</CategoryCardMobile>
 						</div>
 					</section>
-					{/* <section className="pb-8 sm:block">
-							<h1 className="font-semibold text-3xl pb-8 text-center">
-								Mūsų Lokacijos
-							</h1>
-							<Separator />
-							<Suspense fallback={<Skeleton className="w-full h-full" />}>
-								<div className="flex max-h-[32rem] justify-center">
-									<Image
-										src={MAP_IMAGE}
-										alt="window image"
-										sizes="vw-100"
-										className="object-contain"
-									/>
-								</div>
-							</Suspense>
-							<Separator />
-						</section>
-						<section className="pb-8 overflow-hidden">
-							<div className="relative inline-flex w-full flex-nowrap">
-								<ul className="flex animate-infinite-scroll  items-center justify-center opacity-70 md:justify-start [&_img]:max-w-none [&_li]:mx-8">
-									{duplicatedPartnerLogos.map((logo, index) => {
-										return (
-											<li key={`${logo.src}${index}`}>
-												<Image
-													src={logo}
-													alt="image"
-													placeholder="blur"
-													className="relative object-contain w-20 h-20"
-												/>
-											</li>
-										);
-									})}
-								</ul>
-							</div>
-						</section> */}
 				</div>
 				<Footer lang={lang} />
 			</div>

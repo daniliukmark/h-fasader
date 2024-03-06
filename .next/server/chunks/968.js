@@ -1,1 +1,0 @@
-"use strict";exports.id=968,exports.ids=[968],exports.modules={7968:e=>{e.exports=JSON.parse('{"directories":{"home":"Hovedside","pvc":"PVC","aluminium":"Aluminium","news":"Aktuelt","contacts":"Kontakter","about-us":"Om H-Fasader"},"footer":{"copyright":"\xa9 2023 H-Fasader™. Alle rettigheter reservert."}}')}};

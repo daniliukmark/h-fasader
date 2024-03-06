@@ -1,11 +1,4 @@
 {
-  "/_not-found": "app/_not-found.js",
-  "/api/trpc/[trpc]/route": "app/api/trpc/[trpc]/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/[lang]/(landing)/page": "app/[lang]/(landing)/page.js",
-  "/[lang]/(sub-pages)/about-us/page": "app/[lang]/(sub-pages)/about-us/page.js",
-  "/[lang]/(sub-pages)/contacts/page": "app/[lang]/(sub-pages)/contacts/page.js",
-  "/[lang]/(sub-pages)/pvc/page": "app/[lang]/(sub-pages)/pvc/page.js",
-  "/[lang]/(sub-pages)/aluminium/page": "app/[lang]/(sub-pages)/aluminium/page.js",
-  "/[lang]/(sub-pages)/pvc/[windowId]/page": "app/[lang]/(sub-pages)/pvc/[windowId]/page.js"
+  "/[lang]/(sub-pages)/pvc/page": "app/[lang]/(sub-pages)/pvc/page.js"
 }
