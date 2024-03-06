@@ -5,6 +5,7 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { cn } from "~/utils/utils";
 import Link from "next/link";
 import { Button } from "~/app/_components/ui/button";
+import { useTranslation } from "~/app/i18n/client";
 
 interface Categories {
 	lang: string;
@@ -15,35 +16,36 @@ const Categories = ({ lang, currentCategory }: Categories) => {
 	const router = useRouter();
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
+	const { t } = useTranslation(lang, "components", {});
 
 	const categories = useMemo(() => {
 		return [
 			{
 				category: "specifications",
-				name: "Specifikacija",
+				name: t("product-details.specs"),
 			},
 			{
 				category: "colors",
-				name: "Spalvos",
+				name: t("product-details.colors"),
 			},
 			{
 				category: "decorations",
-				name: "Dekoratyvus skirtukai",
+				name: t("product-details.decor"),
 			},
 			{
 				category: "glass",
-				name: "Stiklas",
+				name: t("product-details.glass"),
 			},
 			{
 				category: "accessories",
-				name: "Aksesuarai",
+				name: t("product-details.accs"),
 			},
 			{
 				category: "drawings",
-				name: "Brėžiniai",
+				name: t("product-details.blueprints"),
 			},
 		];
-	}, [lang]);
+	}, [t]);
 
 	const createQueryString = useCallback(
 		(name: string, value: string) => {

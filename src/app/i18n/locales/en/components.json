@@ -4,9 +4,16 @@
 		"pvc": "PVC",
 		"aluminium": "Aluminium",
 		"news": "News",
-
 		"contacts": "Contacts",
 		"about-us": "About H-Fasader"
+	},
+	"product-details": {
+		"specs": "Specification",
+		"colors": "Colors",
+		"decor": "Decorative Bars",
+		"glass": "Glass",
+		"accs": "Accessories",
+		"blueprints": "Blueprints"
 	},
 	"footer": {
 		"copyright": "© 2023 H-Fasader™. All Rights Reserved."

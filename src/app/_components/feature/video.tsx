@@ -26,7 +26,10 @@ export default function Video({ hrefMp4, hrefWebm, className }: VideoProps) {
 		<>
 			<video
 				id="video-bg"
-				className={cn(className, "pointer-events-none")}
+				className={cn(
+					"pointer-events-none mix-blend-darken absolute left-0",
+					className,
+				)}
 				controls={false}
 				preload="auto"
 				playsInline

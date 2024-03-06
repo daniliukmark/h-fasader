@@ -7,6 +7,14 @@
 		"contacts": "Kontaktai",
 		"about-us": "Apie H-Fasader"
 	},
+	"product-details": {
+		"specs": "Specifikacija",
+		"colors": "Spalvos",
+		"decor": "Dekoratyvus skirtukai",
+		"glass": "Stiklas",
+		"accs": "Aksesuarai",
+		"blueprints": "Brėžiniai"
+	},
 	"footer": {
 		"copyright": "© 2023 H-Fasader™. Visos teisės saugomos."
 	}

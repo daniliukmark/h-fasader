@@ -7,6 +7,14 @@
 		"contacts": "Kontakter",
 		"about-us": "Om H-Fasader"
 	},
+	"product-details": {
+		"specs": "Spesifikasjon",
+		"colors": "Farger",
+		"decor": "Dekorative lister",
+		"glass": "Glass",
+		"accs": "Tilbehør",
+		"blueprints": "Tegninger"
+	},
 	"footer": {
 		"copyright": "© 2023 H-Fasader™. Alle rettigheter reservert."
 	}

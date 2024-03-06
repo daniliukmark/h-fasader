@@ -124,10 +124,10 @@ export default async function Page({ params: { lang } }: PageProps) {
 					<div className="w-full mx-auto max-w-7xl">
 						<div className="z-0 flex items-center mx-8 justify-between w-full max-w-3xl text-4xl font-semibold leading-normal text-white sm:text-5xl sm:leading-relaxed  lg:max-w-7xl">
 							<span className="absolute animate-infinite-fade">
-								Extraordinary PVC <br /> Windows For Extreme <br /> Climate
+								Extraordinary PVC <br /> windows for extreme <br /> climate
 							</span>
 							<span className="absolute animate-infinite-fade [animation-delay:-8s]">
-								Excellent Wind <br /> And Rain Resistance
+								Excellent wind <br /> and rain resistance
 							</span>
 						</div>
 					</div>
