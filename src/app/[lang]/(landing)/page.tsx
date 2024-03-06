@@ -62,7 +62,7 @@ function CategoryCard({ href, alt, src, children }: CategoryCard) {
 	return (
 		<div className="relative flex-auto flex flex-row rounded-lg text-gray-100 bg-gray-600 hover:bg-gray-500 duration-200 hover:bg-opacity-40  bg-opacity-50 backdrop-blur-md  border-neutral-100 ">
 			<Link href={href}>
-				<figure className="relative h-full w-72 overflow-hidden rounded-md  bg-opacity-10 bg-gray-50">
+				<figure className="relative h-full w-52 xl:w-72 overflow-hidden rounded-md  bg-opacity-10 bg-gray-50">
 					<Image
 						src={src}
 						alt={alt}
@@ -72,7 +72,7 @@ function CategoryCard({ href, alt, src, children }: CategoryCard) {
 					/>
 				</figure>
 			</Link>
-			<article className="p-4 w-96 h-72">
+			<article className="p-4 w-96 xl:h-72">
 				{children}
 				<Link href={href}>
 					<Button variant={"link"} className="p-0 text-gray-100 ">

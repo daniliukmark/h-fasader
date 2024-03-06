@@ -1,4 +1,5 @@
 {
   "/[lang]/(landing)/page": "app/[lang]/(landing)/page.js",
-  "/[lang]/(sub-pages)/pvc/page": "app/[lang]/(sub-pages)/pvc/page.js"
+  "/[lang]/(sub-pages)/pvc/page": "app/[lang]/(sub-pages)/pvc/page.js",
+  "/[lang]/(sub-pages)/pvc/[windowId]/page": "app/[lang]/(sub-pages)/pvc/[windowId]/page.js"
 }

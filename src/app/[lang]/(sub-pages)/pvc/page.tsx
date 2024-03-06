@@ -5,6 +5,7 @@ import BreadCrumbs from "../../../_components/ui/breadcrumbs";
 import Separator from "~/app/_components/ui/separator";
 import { api } from "~/trpc/server";
 import { useTranslation } from "~/app/i18n";
+import { useMemo } from "react";
 
 interface PageProps {
 	params: {
@@ -14,6 +15,16 @@ interface PageProps {
 
 export default async function Page({ params: { lang } }: PageProps) {
 	const { t } = await useTranslation(lang, "pvc-catalogue-page", {});
+	const windowOrder = [
+		"h90_top-swing-two-handled-window",
+		"h90_top-swing-window-one-handled",
+		"softline-82_tilt-first-window-(vipp-drei)",
+		"trend-85_tilt-first-window-(vipp-drei)_hidden-hinges",
+		"h90_outward-opening-door",
+		"softline-82_innward-openning-window",
+		"hs_sliding-door_gealan",
+		"hs-sliding-door_trend",
+	];
 	const windows = await api.window.getAll.query(
 		{
 			limit: 100,
@@ -22,6 +33,12 @@ export default async function Page({ params: { lang } }: PageProps) {
 		},
 		{},
 	);
+
+	const sortedWindows = windows.sort((a, b) => {
+		const indexA = windowOrder.indexOf(a.id);
+		const indexB = windowOrder.indexOf(b.id);
+		return indexA - indexB;
+	});
 	return (
 		<>
 			<article>
@@ -44,6 +61,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 			<section>
 				<div className="grid grid-cols-1 gap-4 px-2 py-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{windows.map((window) => {
+						console.log(window);
 						return (
 							<ProductCard
 								key={`${window.id}`}
