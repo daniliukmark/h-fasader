@@ -6,7 +6,7 @@ import { cn } from "~/utils/utils";
 import Link from "next/link";
 import { Button } from "~/app/_components/ui/button";
 import { useTranslation } from "~/app/i18n/client";
-
+import COLORS from "public/assets/data/colors";
 interface Categories {
 	lang: string;
 	currentCategory: string | null;
@@ -133,6 +133,24 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 									https://www.hfasader.no/byggevarer/fargevalg/fargevalg-pvc/
 								</Button>
 							</Link>
+							<section className="grid grid-cols-4 gap-4">
+								<div className="bg-black">
+									<div className="h-40"></div>
+								</div>
+
+								<div className="bg-black">
+									<div className="h-40"></div>
+								</div>
+								<div className="bg-black">
+									<div className="h-40"></div>
+								</div>
+								<div className="bg-black">
+									<div className="h-40"></div>
+								</div>
+								<div className="bg-black">
+									<div className="h-40"></div>
+								</div>
+							</section>
 						</p>
 					</>
 				)}
