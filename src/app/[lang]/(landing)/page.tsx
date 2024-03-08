@@ -2,7 +2,6 @@ export const dynamic = "force-static";
 import Image from "next/image";
 import Footer from "~/app/_components/layout/footer";
 import Navbar from "~/app/_components/layout/navbar";
-import { cn } from "~/utils/utils";
 import Link from "next/link";
 import { Button } from "~/app/_components/ui/button";
 import { Pacifico } from "next/font/google";

@@ -14,7 +14,7 @@ async function Footer({ lang }: Footer) {
 	const { t } = await useTranslation(lang, "components", {});
 
 	return (
-		<div className="mx-auto mt-8 flex h-28 w-full flex-col px-4 pb-4 text-xs  sm:max-w-4xl sm:px-8 lg:max-w-5xl lg:px-0 xl:max-w-7xl">
+		<div className="mx-auto mt-8 flex h-28 w-full flex-col px-4 pb-4 text-xs font-thin sm:max-w-4xl sm:px-8 lg:max-w-5xl lg:px-0 xl:max-w-7xl">
 			<div className="flex flex-row flex-wrap-reverse justify-center gap-4 text-neutral-500 sm:justify-between">
 				<figure>
 					<Image

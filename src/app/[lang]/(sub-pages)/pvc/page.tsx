@@ -5,7 +5,6 @@ import BreadCrumbs from "../../../_components/ui/breadcrumbs";
 import Separator from "~/app/_components/ui/separator";
 import { api } from "~/trpc/server";
 import { useTranslation } from "~/app/i18n";
-import { useMemo } from "react";
 
 interface PageProps {
 	params: {

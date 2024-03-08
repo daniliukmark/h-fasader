@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Button } from "~/app/_components/ui/button";
 import { useTranslation } from "~/app/i18n/client";
 import COLORS from "public/assets/data/colors";
+import Image from "next/image";
 interface Categories {
 	lang: string;
 	currentCategory: string | null;
@@ -126,32 +127,23 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 				)}
 				{currentCategory === "colors" && (
 					<>
-						<p>
-							See our websites for more information and available colors: <br />
-							<Link href="https://www.hfasader.no/byggevarer/fargevalg/fargevalg-pvc/">
-								<Button className="p-0" variant={"link"}>
-									https://www.hfasader.no/byggevarer/fargevalg/fargevalg-pvc/
-								</Button>
-							</Link>
-							<section className="grid grid-cols-4 gap-4">
-								<div className="bg-black">
-									<div className="h-40"></div>
-								</div>
-
-								<div className="bg-black">
-									<div className="h-40"></div>
-								</div>
-								<div className="bg-black">
-									<div className="h-40"></div>
-								</div>
-								<div className="bg-black">
-									<div className="h-40"></div>
-								</div>
-								<div className="bg-black">
-									<div className="h-40"></div>
-								</div>
-							</section>
-						</p>
+						<section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+							{COLORS.map((color) => {
+								return (
+									<div key={color.colorId + color.imageUrl}>
+										<div className="w-full h-fit relative overflow-hidden rounded-lg">
+											<img
+												src={color.imageUrl}
+												alt={`color ${color.colorId}`}
+											/>
+										</div>
+										<p className="text-lg">{color.text}</p>
+										<p className="text-sm">{color.colorId}</p>
+										<p className="text-sm">{color.subText}</p>
+									</div>
+								);
+							})}
+						</section>
 					</>
 				)}
 			</section>
