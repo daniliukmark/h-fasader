@@ -13,8 +13,8 @@ export default async function Page({ params: { lang } }: PageProps) {
 	const { t } = await useTranslation(lang, "about-us-page", {});
 	return (
 		<>
-			<section className="md:min-h-[36rem] w-full block md:flex mx-auto max-w-7xl gap-8">
-				<article className="basis-1/2">
+			<section className="md:min-h-[36rem] w-full block md:flex mx-auto max-w-7xl">
+				<article className="basis-1/2 pr-8">
 					<BreadCrumbs>
 						<BreadCrumbs.Item href={`/${lang}/`}>
 							<h1>{t("breadcrumbs.home")}</h1>
