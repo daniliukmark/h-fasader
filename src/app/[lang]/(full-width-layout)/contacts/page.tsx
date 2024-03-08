@@ -2,7 +2,7 @@ export const dynamic = "force-static";
 
 import { Mail, Phone, Smartphone } from "lucide-react";
 import Image from "next/image";
-import CITY_IMG from "public/assets/city-skyline-background.jpeg";
+import CITY_IMG from "public/assets/city-skyline-background.webp";
 import BreadCrumbs from "~/app/_components/ui/breadcrumbs";
 import Separator from "~/app/_components/ui/separator";
 import { useTranslation } from "~/app/i18n";
@@ -86,7 +86,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 						<figure className="relative md:hidden flex-1 h-64 overflow-hidden rounded-lg basis-1/2  ">
 							<Image
 								src={CITY_IMG}
-								alt="An image of a H-fasader factory"
+								alt="An image of a city"
 								className="object-cover"
 								fill
 							/>
@@ -99,7 +99,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 				<figure className="relative flex-1 h-[36rem] basis-1/2  overflow-hidden rounded-lg  ">
 					<Image
 						src={CITY_IMG}
-						alt="An image of a H-fasader factory"
+						alt="An image of a city"
 						className="object-cover"
 						fill
 					/>

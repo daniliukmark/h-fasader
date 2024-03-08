@@ -1,7 +1,7 @@
 export const dynamic = "force-static";
 
 import Image from "next/image";
-import FACTORY_IMG from "public/assets/h-fasader-factory.png";
+import FACTORY_IMG from "public/assets/h-fasader-factory.webp";
 import BreadCrumbs from "~/app/_components/ui/breadcrumbs";
 import { useTranslation } from "~/app/i18n";
 interface PageProps {
