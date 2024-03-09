@@ -134,7 +134,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 						<figure className="w-full h-full">
 							<Suspense fallback={<Skeleton className="w-full h-full" />}>
 								<Video
-									className="relative object-cover w-full h-full bg-slate-400"
+									className="relative object-cover object-left w-full h-full bg-slate-400"
 									hrefMp4="/assets/main-video-bg.mp4"
 									hrefWebm="/assets/main-video-bg.webm"
 								/>
