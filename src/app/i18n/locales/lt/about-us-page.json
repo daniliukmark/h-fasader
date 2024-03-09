@@ -1,10 +1,12 @@
 {
 	"breadcrumbs": {
-		"home": "Home",
-		"about-us": "About us"
+		"home": "Pagrindinis",
+		"about-us": "H-fasader Baltic UAB / Lietuva"
 	},
 	"header": {
-		"title": "About us",
-		"description": "Established in 2010, H-fasader Baltic UAB is a subsidiary of the Norwegian company H-fasader AS, a leading manufacturer specializing in the production of aluminium facades and PVC windows and doors in Norway. Our commitment to growth materialized with the construction of a new factory in 2020, strategically located in Siauliai FEZ (Free Economical Zone). This expansion not only increased the production of PVC products but also marked the commencement of manufacturing Sapa aluminum products, including facades, windows, doors, and fire-resistant products. We deliver high-quality PVC windows with excellent wind and rain resistance. A standout among our PVC products is the outward opening top swing windows with Spilka hinges designed for extreme climate. PVC products certified for both Norwegian (NDVK) and EU markets. Our aluminium fire-resistant products hold certification recognition from RISE/Sweden"
+		"title": "H-fasader Baltic UAB / Lietuva",
+		"desc1": "Įkurtas 2010 m., „H-fasader Baltic UAB“ yra Norvegijos bendrovės „H-fasader AS“ dukterinė įmonė, pirmaujanti gamintoja, specializuojanti gaminti aliuminio fasadus ir PVC langus bei duris Norvegijoje.",
+		"desc2": "Mūsų įsipareigojimas augimui materializavosi, statant naują gamyklą 2020 m., strategiškai įsikūrusią Šiaulių LRFZ (Laisvosios ekonominės zonos). Ši plėtra ne tik padidino PVC produktų gamybą, bet ir pažymėjo pradžią gaminti Sapa aliuminio produktus, įskaitant fasadus, langus, duris ir atsparius ugniai produktus. Mes teikiame aukštos kokybės PVC langus su puikiu vėjo ir lietaus atsparumu.",
+		"desc3": "Išsiskiriantis tarp mūsų PVC produktų yra išoriniai viršaus pasukimo langai su Spilka sąvaržomis, skirti ekstremaliems klimatams. PVC produktai sertifikuoti tiek Norvegijos (NDVK), tiek ES rinkoms. Mūsų aliuminio atsparūs ugniui produktai turi sertifikavimo pripažinimą iš RISE/Švedijos."
 	}
 }

@@ -13,7 +13,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 	const { t } = await useTranslation(lang, "about-us-page", {});
 	return (
 		<>
-			<section className="md:min-h-[36rem] w-full block md:flex mx-auto max-w-7xl">
+			<section className="md:min-h-[36rem] w-full block md:flex mx-auto  max-w-7xl">
 				<article className="basis-1/2 pr-8">
 					<BreadCrumbs>
 						<BreadCrumbs.Item href={`/${lang}/`}>
@@ -26,7 +26,13 @@ export default async function Page({ params: { lang } }: PageProps) {
 					<section>
 						<h1 className="mb-2 text-3xl font-semibold">{t("header.title")}</h1>
 						<p className="mb-4 max-w-4xl text-sm text-neutral-600">
-							{t("header.description")}
+							{t("header.desc1")}
+						</p>
+						<p className="mb-4 max-w-4xl text-sm text-neutral-600">
+							{t("header.desc2")}
+						</p>
+						<p className="mb-4 max-w-4xl text-sm text-neutral-600">
+							{t("header.desc3")}
 						</p>
 					</section>
 				</article>
@@ -42,7 +48,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 
 			<div className="absolute hidden md:flex left-0 w-full top-24 gap-8 pointer-events-none">
 				<div className="basis-1/2" />
-				<figure className="relative flex-1 h-[36rem] basis-1/2  overflow-hidden rounded-lg ">
+				<figure className="relative flex-1 h-[40rem] basis-1/2 overflow-hidden rounded-lg ">
 					<Image
 						src={FACTORY_IMG}
 						alt="An image of a H-fasader factory"

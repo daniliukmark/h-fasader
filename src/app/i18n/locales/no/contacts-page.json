@@ -1,0 +1,13 @@
+{
+	"breadcrumbs": {
+		"home": "Hovedside",
+		"contacts": "Kontakter"
+	},
+	"contacts": {
+		"header": "Kontakter",
+		"address": "Adresse",
+		"company-code": "Organisasjonsnummer",
+		"bank": "Bank",
+		"iban": "IBAN"
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"breadcrumbs": {
+		"home": "Pagrindinis",
+		"contacts": "Kontaktai"
+	},
+	"contacts": {
+		"header": "Kontaktai",
+		"address": "Adresas",
+		"company-code": "Įmonės kodas",
+		"bank": "Bankas",
+		"iban": "A.s."
+	}
+}

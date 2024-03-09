@@ -12,7 +12,7 @@ interface PageProps {
 	};
 }
 export default async function Page({ params: { lang } }: PageProps) {
-	const { t } = await useTranslation(lang, "about-us-page", {});
+	const { t } = await useTranslation(lang, "contacts-page", {});
 	return (
 		<>
 			<section className="md:min-h-[36rem] w-full block md:flex mx-auto max-w-7xl gap-8 z-10">
@@ -22,38 +22,40 @@ export default async function Page({ params: { lang } }: PageProps) {
 							<h1>{t("breadcrumbs.home")}</h1>
 						</BreadCrumbs.Item>
 						<BreadCrumbs.Item href={`/${lang}/pvc`}>
-							<h1>{t("breadcrumbs.about-us")}</h1>
+							<h1>{t("breadcrumbs.contacts")}</h1>
 						</BreadCrumbs.Item>
 					</BreadCrumbs>
 					<section>
-						<h1 className="mb-2 text-3xl font-semibold">Contacts</h1>
+						<h1 className="mb-2 text-3xl font-semibold">
+							{t("contacts.header")}
+						</h1>
 						<h2 className="mb-2 text-3xl ">UAB "H-fasader Baltic"</h2>
 						<article className="flex flex-col gap-2 sm:gap-4 sm:flex-row pb-4 ">
 							<div>
 								<p className="pb-2">
 									<span className="text-gray-500">
-										Adresas <br />
+										{t("contacts.address")} <br />
 									</span>
 									Aviacijos g. 26, LT-77103 <br />
 									Šiauliai. Lietuva
 								</p>
 								<p className="pb-2">
 									<span className="text-gray-500">
-										Įmonės kodas
+										{t("contacts.company-code")}
 										<br />
 									</span>
 									302480330
 								</p>
 								<p className="pb-2">
 									<span className="text-gray-500">
-										Bankas
+										{t("contacts.bank")}
 										<br />
 									</span>
 									Swedbank AB
 								</p>
 								<p className="pb-2">
 									<span className="text-gray-500">
-										A.s.
+										{t("contacts.iban")}
 										<br />
 									</span>
 									LT97 7300 0101 5889 4301

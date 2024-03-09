@@ -1,0 +1,13 @@
+{
+	"breadcrumbs": {
+		"home": "Home",
+		"contacts": "Contacts"
+	},
+	"contacts": {
+		"header": "Contacts",
+		"address": "Address",
+		"company-code": "Company code",
+		"bank": "Bank",
+		"iban": "IBAN"
+	}
+}
