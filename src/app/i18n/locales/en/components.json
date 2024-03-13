@@ -1,4 +1,10 @@
 {
+	"language-menu": {
+		"languages": "Languages"
+	},
+	"mobile-menu": {
+		"menu": "Menu"
+	},
 	"directories": {
 		"home": "Home",
 		"pvc": "PVC",

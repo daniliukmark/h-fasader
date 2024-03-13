@@ -4,7 +4,6 @@ import Footer from "~/app/_components/layout/footer";
 import Navbar from "~/app/_components/layout/navbar";
 import Link from "next/link";
 import { Button } from "~/app/_components/ui/button";
-import { Pacifico } from "next/font/google";
 import { type StaticImport } from "next/dist/shared/lib/get-img-props";
 import { useTranslation } from "~/app/i18n";
 import { Suspense } from "react";
@@ -14,12 +13,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 import ALUMINIUM_CATEGORY from "public/windows/aluminium-window.webp";
 import PVC_CATEGORY from "public/windows/pvc-window.webp";
 import Video from "~/app/_components/feature/video";
-
-const pacifico = Pacifico({
-	weight: ["400"],
-	style: "normal",
-	subsets: ["latin"],
-});
 
 interface CategoryCard {
 	href: string;

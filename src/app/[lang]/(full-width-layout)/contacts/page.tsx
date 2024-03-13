@@ -98,7 +98,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 			</section>
 			<div className="absolute hidden md:flex left-0 w-full top-24 gap-8 pointer-events-none">
 				<div className="basis-1/2" />
-				<figure className="relative flex-1 h-[36rem] basis-1/2  overflow-hidden rounded-lg  ">
+				<figure className="relative flex-1 h-[40rem] basis-1/2  overflow-hidden rounded-lg  ">
 					<Image
 						src={CITY_IMG}
 						alt="An image of a city"

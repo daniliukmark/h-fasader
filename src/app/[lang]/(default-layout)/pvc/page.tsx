@@ -59,7 +59,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 			<Separator />
 			<section>
 				<div className="grid grid-cols-1 gap-4 px-2 py-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-					{windows.map((window) => {
+					{sortedWindows.map((window) => {
 						console.log(window);
 						return (
 							<ProductCard

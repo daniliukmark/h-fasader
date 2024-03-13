@@ -3,11 +3,8 @@ import { Fragment, useCallback, useMemo } from "react";
 import Separator from "../ui/separator";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { cn } from "~/utils/utils";
-import Link from "next/link";
-import { Button } from "~/app/_components/ui/button";
 import { useTranslation } from "~/app/i18n/client";
 import COLORS from "public/assets/data/colors";
-import Image from "next/image";
 interface Categories {
 	lang: string;
 	currentCategory: string | null;

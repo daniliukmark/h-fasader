@@ -16,6 +16,7 @@ import { useRouter } from "next/navigation";
 import NORWAY_FLAG from "/public/assets/norway-flag.png";
 import BRITAIN_FLAG from "/public/assets/britain-flag.png";
 import LITHIANIA_FLAG from "public/assets/lithuania-flag.png";
+import { useTranslation } from "~/app/i18n/client";
 
 interface LanguageSelectorProps {
 	lang: string;
@@ -35,6 +36,7 @@ export default function LanguageSelector({
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const pathname = usePathname();
+	const { t } = useTranslation(lang, "components", {});
 
 	const handleTransition = async (lang: string, pathname: string) => {
 		const newPathname = pathname.substring(1).split("/").slice(1).join("/");
@@ -67,8 +69,8 @@ export default function LanguageSelector({
 					/>
 				</DropdownMenuTrigger>
 				<DropdownMenuContent className="mt-2 rounded-md border-neutral-100 ">
-					<DropdownMenuLabel className="px-6 text-neutral-900">
-						Languages
+					<DropdownMenuLabel className="px-6 text-neutral-900 text-center">
+						{t("language-menu.languages")}
 					</DropdownMenuLabel>
 					<DropdownMenuSeparator />
 

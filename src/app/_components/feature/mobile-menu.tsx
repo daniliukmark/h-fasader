@@ -33,7 +33,9 @@ export default function MobileMenu({
 			<Sheet onOpenChange={setIsOpen} open={isOpen}>
 				<SheetContent className="border-2  p-0">
 					<SheetHeader className="pl-4 pt-10">
-						<SheetTitle className="text-left text-xl">Menu</SheetTitle>
+						<SheetTitle className="text-left text-xl">
+							{t("mobile-menu.menu")}
+						</SheetTitle>
 					</SheetHeader>
 					<nav className="relative h-full flex-col">
 						<ul className="flex flex-col gap-2 pl-4 pt-2 sm:pt-4 ">

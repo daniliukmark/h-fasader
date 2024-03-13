@@ -1,4 +1,10 @@
 {
+	"language-menu": {
+		"languages": "Kalbos"
+	},
+	"mobile-menu": {
+		"menu": "Meniu"
+	},
 	"directories": {
 		"home": "Pagrindinis",
 		"pvc": "PVC",

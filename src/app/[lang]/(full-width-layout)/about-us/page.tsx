@@ -14,7 +14,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 	return (
 		<>
 			<section className="md:min-h-[36rem] w-full block md:flex mx-auto  max-w-7xl">
-				<article className="basis-1/2 pr-8">
+				<article className="basis-1/2 pr-4">
 					<BreadCrumbs>
 						<BreadCrumbs.Item href={`/${lang}/`}>
 							<h1>{t("breadcrumbs.home")}</h1>
