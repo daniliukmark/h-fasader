@@ -30,7 +30,7 @@ export const EmailServiceRouter = createTRPCRouter({
 			const { name, email, message } = input;
 			try {
 				const data = await resend.emails.send({
-					from: "H-Fasader Website <daniliukmark@gmail.com>",
+					from: "H-Fasader Website <mark@danili.uk>",
 					to: ["paula.saden@gmail.com", "daniliukmark@gmail.com"],
 					subject: "Request From H-Fasader Baltic Website",
 					react: EmailAluminiumPage({
