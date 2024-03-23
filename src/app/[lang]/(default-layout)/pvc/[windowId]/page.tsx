@@ -1,4 +1,3 @@
-export const dynamic = "force-static";
 import BreadCrumbs from "~/app/_components/ui/breadcrumbs";
 import { Button } from "~/app/_components/ui/button";
 import Link from "next/link";
