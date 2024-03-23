@@ -11,12 +11,13 @@ export const config = {
 	],
 };
 
-export function middleware(req: NextRequest) {
-	let lang;
+export async function middleware(req: NextRequest) {
+	let lang: string | null = null;
 	if (req.cookies.has(cookieName)) {
 		const langCookie = req.cookies.get(cookieName);
 		lang = acceptLanguage.get(langCookie?.value);
 	}
+
 	if (!lang) lang = acceptLanguage.get(req.headers.get("Accept-Language"));
 	if (!lang) lang = fallbackLang;
 
