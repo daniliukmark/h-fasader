@@ -43,7 +43,7 @@ const Categories = ({ lang, currentCategory }: Categories) => {
 				name: t("product-details.blueprints"),
 			},
 		];
-	}, [t]);
+	}, [t, lang]);
 
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
