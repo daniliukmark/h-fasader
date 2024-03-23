@@ -5,45 +5,44 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { cn } from "~/utils/utils";
 import { useTranslation } from "~/app/i18n/client";
 import COLORS from "public/assets/data/colors";
+import { TFunction } from "i18next";
 interface Categories {
 	lang: string;
 	currentCategory: string | null;
+	t: TFunction;
 }
 
-const Categories = ({ lang, currentCategory }: Categories) => {
+const Categories = ({ lang, currentCategory, t }: Categories) => {
 	const router = useRouter();
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
-	const { t } = useTranslation(lang, "components", {});
 
-	const categories = useMemo(() => {
-		return [
-			{
-				category: "specifications",
-				name: t("product-details.specs"),
-			},
-			{
-				category: "colors",
-				name: t("product-details.colors"),
-			},
-			{
-				category: "decorations",
-				name: t("product-details.decor"),
-			},
-			{
-				category: "glass",
-				name: t("product-details.glass"),
-			},
-			{
-				category: "accessories",
-				name: t("product-details.accs"),
-			},
-			{
-				category: "drawings",
-				name: t("product-details.blueprints"),
-			},
-		];
-	}, [t, lang]);
+	const categories = [
+		{
+			category: "specifications",
+			name: t("product-details.specs"),
+		},
+		{
+			category: "colors",
+			name: t("product-details.colors"),
+		},
+		{
+			category: "decorations",
+			name: t("product-details.decor"),
+		},
+		{
+			category: "glass",
+			name: t("product-details.glass"),
+		},
+		{
+			category: "accessories",
+			name: t("product-details.accs"),
+		},
+		{
+			category: "drawings",
+			name: t("product-details.blueprints"),
+		},
+	];
 
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
@@ -94,7 +93,7 @@ interface ProductDetails {
 
 const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 	const searchParams = useSearchParams();
-
+	const { t } = useTranslation(lang, "components", {});
 	const currentCategory = useMemo(() => {
 		let currentCategory = searchParams.get("category");
 		currentCategory = currentCategory ?? "specifications";
@@ -106,7 +105,7 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 			<nav id="details">
 				<Separator className="mt-8 sm:mt-4" />
 				<ul className="flex flex-row flex-wrap items-center gap-x-2 text-sm text-neutral-500">
-					{<Categories lang={lang} currentCategory={currentCategory} />}
+					{<Categories t={t} lang={lang} currentCategory={currentCategory} />}
 				</ul>
 			</nav>
 			<section className="mb-6  w-full gap-4 px-4">
