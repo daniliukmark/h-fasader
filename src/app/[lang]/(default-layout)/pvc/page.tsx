@@ -51,7 +51,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 				</BreadCrumbs>
 				<section>
 					<h1 className="mb-2 text-3xl font-semibold">{t("header.title")}</h1>
-					<p className="mb-4 max-w-4xl text-sm text-neutral-600">
+					<p className="mb-4 max-w-4xl text-sm text-neutral-700">
 						{t("header.description")}
 					</p>
 				</section>

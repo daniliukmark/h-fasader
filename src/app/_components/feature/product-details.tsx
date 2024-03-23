@@ -112,12 +112,14 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 				{currentCategory === "specifications" && (
 					<div
 						className="lg:basis-1/2"
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{ __html: specs }}
 					/>
 				)}
 				{currentCategory === "accessories" && (
 					<div
 						className="lg:basis-1/2"
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{ __html: accs }}
 					/>
 				)}

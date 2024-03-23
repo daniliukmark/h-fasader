@@ -52,7 +52,9 @@ export default async function Page({ params: { lang, windowId } }: PageProps) {
 						<h1 className="pt-2 text-3xl font-semibold">
 							{mainWindow?.translation[0]?.title}
 						</h1>
-						<p className="py-2">{mainWindow?.translation[0]?.desc}</p>
+						<p className="py-2 text-neutral-700">
+							{mainWindow?.translation[0]?.desc}
+						</p>
 						<Link href="#details">
 							<Button
 								className="mt-2 rounded-3xl"

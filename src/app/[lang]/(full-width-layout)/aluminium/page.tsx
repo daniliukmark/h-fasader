@@ -18,28 +18,30 @@ interface PageProps {
 export default async function Page({ params: { lang } }: PageProps) {
 	return (
 		<>
-			<section className="md:min-h-[36rem] w-full block md:flex mx-auto max-w-7xl">
-				<article className="basis-1/2 flex justify-center h-full flex-col pb-4 sm:pr-4 ">
-					<BreadCrumbs>
-						<BreadCrumbs.Item href={`/${lang}/`}>
-							<h1>Home</h1>
-						</BreadCrumbs.Item>
-						<BreadCrumbs.Item href={`/${lang}/pvc`}>
-							<h1>Aluminium</h1>
-						</BreadCrumbs.Item>
-					</BreadCrumbs>
-					<h1 className="mb-2 text-3xl font-semibold">Aluminium</h1>
-					<p className="mb-6 max-w-4xl text-sm text-neutral-600">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-						corrupti sit eaque quae sapiente, laborum fugit aut delectus odio
-						similique, non animi accusamus velit vitae nesciunt sint consequatur
-						accusantium maxime. <br />
-						<Link href="https://www.sapabuildingsystem.com/en/baltics/products/">
-							<Button className="p-0 underline h-fit" variant={"link"}>
-								See more on Sapa website.
-							</Button>
-						</Link>
-					</p>
+			<section className="md:min-h-[40rem] w-full block md:flex mx-auto items-center max-w-7xl">
+				<article className="basis-1/2 flex justify-items-center  h-full flex-col pb-4 sm:pr-4 ">
+					<div className="">
+						<BreadCrumbs>
+							<BreadCrumbs.Item href={`/${lang}/`}>
+								<h1>Home</h1>
+							</BreadCrumbs.Item>
+							<BreadCrumbs.Item href={`/${lang}/pvc`}>
+								<h1>Aluminium</h1>
+							</BreadCrumbs.Item>
+						</BreadCrumbs>
+						<h1 className="mb-2 text-3xl font-semibold">Aluminium</h1>
+						<p className="mb-6 max-w-4xl text-sm text-neutral-600">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+							corrupti sit eaque quae sapiente, laborum fugit aut delectus odio
+							similique, non animi accusamus velit vitae nesciunt sint
+							consequatur accusantium maxime. <br />
+							<Link href="https://www.sapabuildingsystem.com/en/baltics/products/">
+								<Button className="p-0 underline h-fit" variant={"link"}>
+									See more on Sapa website.
+								</Button>
+							</Link>
+						</p>
+					</div>
 					<WindowMessageForm lang={lang} emailReceiver="" />
 				</article>
 				<figure className="relative md:hidden flex-1 h-64 overflow-hidden rounded-lg basis-1/2  ">

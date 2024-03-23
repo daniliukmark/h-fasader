@@ -2,7 +2,7 @@ export const dynamic = "force-static";
 
 import { Mail, Phone, Smartphone } from "lucide-react";
 import Image from "next/image";
-import CITY_IMG from "public/assets/city-skyline-background.webp";
+import WORKPLACE_IMG from "public/assets/oslo-hq.jpeg";
 import BreadCrumbs from "~/app/_components/ui/breadcrumbs";
 import Separator from "~/app/_components/ui/separator";
 import { useTranslation } from "~/app/i18n";
@@ -29,8 +29,8 @@ export default async function Page({ params: { lang } }: PageProps) {
 						<h1 className="mb-2 text-3xl font-semibold">
 							{t("contacts.header")}
 						</h1>
-						<h2 className="mb-2 text-3xl ">UAB "H-fasader Baltic"</h2>
-						<article className="flex flex-col gap-2 sm:gap-4 sm:flex-row pb-4 ">
+						<h2 className="mb-2 text-3xl ">H-fasader Baltic UAB</h2>
+						<article className="flex flex-col text-sm gap-2 sm:gap-4 sm:flex-row pb-4 ">
 							<div>
 								<p className="pb-2">
 									<span className="text-gray-500">
@@ -77,7 +77,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 								</p>
 								<p className="pb-2 flex items-center gap-2">
 									<Mail className="w-6 h-6 inline " />
-									<span> info@pluswindows.eu</span>
+									<span>info@pluswindows.eu</span>
 								</p>
 								<p className="pb-2 flex items-center gap-2">
 									<Mail className="w-6 h-6 inline " />
@@ -87,7 +87,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 						</article>
 						<figure className="relative md:hidden flex-1 h-64 overflow-hidden rounded-lg basis-1/2  ">
 							<Image
-								src={CITY_IMG}
+								src={WORKPLACE_IMG}
 								alt="An image of a city"
 								className="object-cover"
 								fill
@@ -100,9 +100,9 @@ export default async function Page({ params: { lang } }: PageProps) {
 				<div className="basis-1/2" />
 				<figure className="relative flex-1 h-[40rem] basis-1/2  overflow-hidden rounded-lg  ">
 					<Image
-						src={CITY_IMG}
+						src={WORKPLACE_IMG}
 						alt="An image of a city"
-						className="object-cover"
+						className="object-cover filter"
 						fill
 					/>
 				</figure>
