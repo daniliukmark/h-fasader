@@ -2,15 +2,17 @@ export const dynamic = "force-static";
 
 import { Mail, Phone, Smartphone } from "lucide-react";
 import Image from "next/image";
-import WORKPLACE_IMG from "public/assets/oslo-hq.jpeg";
+import OSLO_HQ from "public/assets/oslo-hq.webp";
 import BreadCrumbs from "~/app/_components/ui/breadcrumbs";
 import Separator from "~/app/_components/ui/separator";
 import { useTranslation } from "~/app/i18n";
+
 interface PageProps {
 	params: {
 		lang: string;
 	};
 }
+
 export default async function Page({ params: { lang } }: PageProps) {
 	const { t } = await useTranslation(lang, "contacts-page", {});
 	return (
@@ -87,7 +89,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 						</article>
 						<figure className="relative md:hidden flex-1 h-64 overflow-hidden rounded-lg basis-1/2  ">
 							<Image
-								src={WORKPLACE_IMG}
+								src={OSLO_HQ}
 								alt="An image of a city"
 								className="object-cover"
 								fill
@@ -100,7 +102,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 				<div className="basis-1/2" />
 				<figure className="relative flex-1 h-[40rem] basis-1/2  overflow-hidden rounded-lg  ">
 					<Image
-						src={WORKPLACE_IMG}
+						src={OSLO_HQ}
 						alt="An image of a city"
 						className="object-cover filter"
 						fill
