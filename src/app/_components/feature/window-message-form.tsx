@@ -16,7 +16,6 @@ import { Input } from "~/app/_components/ui/input";
 import { Textarea } from "../ui/textarea";
 import { useState } from "react";
 import { api } from "~/trpc/react";
-import Link from "next/link";
 import { cn } from "~/utils/utils";
 
 const formSchema = z.object({
@@ -40,10 +39,7 @@ interface WindowMessageFormProps {
 	lang: string;
 	emailReceiver: string;
 }
-export default function WindowMessageForm({
-	lang,
-	emailReceiver,
-}: WindowMessageFormProps) {
+export default function WindowMessageForm({ lang }: WindowMessageFormProps) {
 	const [isSubmitted, setIsSubmitted] = useState(false);
 	const emailSend = api.email.emailSupport.useMutation();
 
@@ -58,7 +54,7 @@ export default function WindowMessageForm({
 
 	async function onSubmit(values: z.infer<typeof formSchema>) {
 		setIsSubmitted(true);
-		await emailSend.mutate({
+		emailSend.mutate({
 			name: values.name,
 			message: values.message,
 			email: values.email,

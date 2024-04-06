@@ -17,7 +17,7 @@ interface Categories {
 	t: TFunction;
 }
 
-const Categories = ({ lang, currentCategory, t }: Categories) => {
+const Categories = ({ currentCategory, t }: Categories) => {
 	const router = useRouter();
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
