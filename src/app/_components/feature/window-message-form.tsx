@@ -17,6 +17,7 @@ import { Textarea } from "../ui/textarea";
 import { useState } from "react";
 import { api } from "~/trpc/react";
 import Link from "next/link";
+import { cn } from "~/utils/utils";
 
 const formSchema = z.object({
 	name: z
@@ -55,9 +56,9 @@ export default function WindowMessageForm({
 		},
 	});
 
-	function onSubmit(values: z.infer<typeof formSchema>) {
+	async function onSubmit(values: z.infer<typeof formSchema>) {
 		setIsSubmitted(true);
-		emailSend.mutate({
+		await emailSend.mutate({
 			name: values.name,
 			message: values.message,
 			email: values.email,
@@ -65,7 +66,6 @@ export default function WindowMessageForm({
 		form.reset();
 		setIsSubmitted(false);
 	}
-
 	return (
 		<Form {...form}>
 			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
@@ -113,20 +113,35 @@ export default function WindowMessageForm({
 							<FormControl>
 								<Textarea
 									placeholder="Enter Message"
-									className="max-h-40 "
+									className="max-h-40"
 									{...field}
 									disabled={isSubmitted}
 								/>
 							</FormControl>
 							<FormMessage />
-							<p className="text-sm text-muted-foreground">
+
+							<p className="text-muted-foreground text-sm">
 								Your message will be sent to our support team.
 							</p>
+							{emailSend.isSuccess && (
+								<>
+									<p className="border-green-300 bg-green-200 py-2 p-4 border rounded-full w-fit text-sm">
+										Your message has been successfully delivered.
+									</p>
+								</>
+							)}
+							{emailSend.isError && (
+								<>
+									<p className="bg-red-200 py-2 p-4 border border-red-300 rounded-full w-fit text-sm">
+										Error occured while proccessing your request. Please contact
+										us.
+									</p>
+								</>
+							)}
 						</FormItem>
 					)}
 				/>
-
-				<Button className="rounded-full" size={"lg"} type="submit">
+				<Button className={cn("rounded-full")} size={"lg"} type="submit">
 					Submit
 				</Button>
 			</form>

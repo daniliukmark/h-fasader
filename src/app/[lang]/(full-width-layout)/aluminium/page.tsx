@@ -19,8 +19,8 @@ interface PageProps {
 export default function Page({ params: { lang } }: PageProps) {
 	return (
 		<>
-			<section className="md:min-h-[40rem] w-full block md:flex mx-auto items-center max-w-7xl">
-				<article className="basis-1/2 flex justify-items-center  h-full flex-col pb-4 sm:pr-4 ">
+			<section className="block md:flex items-center mx-auto w-full max-w-7xl md:min-h-[40rem]">
+				<article className="flex flex-col justify-items-center sm:pr-4 pb-4 h-full basis-1/2">
 					<div className="">
 						<BreadCrumbs>
 							<BreadCrumbs.Item href={`/${lang}/`}>
@@ -30,12 +30,12 @@ export default function Page({ params: { lang } }: PageProps) {
 								<h1>Aluminium</h1>
 							</BreadCrumbs.Item>
 						</BreadCrumbs>
-						<h1 className="mb-2 text-3xl font-semibold">Aluminium</h1>
+						<h1 className="mb-2 pb-2 font-semibold text-3xl">Aluminium</h1>
 						<article>
 							<p className="text-sm">
 								Certified approved SAPA / HYDRO fire resistance products:
 							</p>
-							<ul className="pl-4 list-disc text-sm">
+							<ul className="pl-4 text-sm list-disc">
 								<li>1199/94 class E30, A30, EI15, EI30</li>
 								<li>SC0836-14 class EI30 / EI60 (Sa/S200)</li>
 								<li>SC1457-16 class EI30 / EI60 (Sa/S200)</li>
@@ -44,7 +44,7 @@ export default function Page({ params: { lang } }: PageProps) {
 								</li>
 							</ul>
 							<p className="text-sm">Aluminium products:</p>
-							<ul className="pl-4 list-disc text-sm">
+							<ul className="pl-4 text-sm list-disc">
 								<li>Certified approved SAPA fire resistant doors</li>
 								<li>E30, A30, EI15, EI30, EI60 (Sa/S200/C)</li>
 								<li>Facades</li>
@@ -56,7 +56,7 @@ export default function Page({ params: { lang } }: PageProps) {
 							</ul>
 						</article>
 						<Link href="https://www.sapabuildingsystem.com/en/baltics/products/">
-							<Button className="px-0 py-2 underline h-fit" variant={"link"}>
+							<Button className="px-0 py-2 h-fit underline" variant={"link"}>
 								See more on Sapa website.
 							</Button>
 						</Link>
@@ -64,40 +64,40 @@ export default function Page({ params: { lang } }: PageProps) {
 					<Separator className="my-2" />
 					<WindowMessageForm lang={lang} emailReceiver="" />
 				</article>
-				<figure className="relative md:hidden flex-1 h-64 overflow-hidden rounded-lg basis-1/2  ">
+				<figure className="relative flex-1 md:hidden rounded-lg h-64 overflow-hidden basis-1/2">
 					<Image
 						src={SAPA_BG}
 						fill
-						className="object-cover pointer-events-none"
+						className="pointer-events-none object-cover"
 						alt="An image of Sapa designed Interior"
 					/>
-					<div className="absolute bottom-2 right-2">
+					<div className="right-2 bottom-2 absolute">
 						<figure className="relative w-16 aspect-square">
 							<Image
 								src={SAPA_LOGO}
 								fill
-								className="object-cover pointer-events-none"
+								className="pointer-events-none object-cover"
 								alt="An image of Sapa designed Interior"
 							/>
 						</figure>
 					</div>
 				</figure>
 			</section>
-			<div className="absolute hidden md:flex left-0 top-24 w-full gap-8 pointer-events-none">
+			<div className="top-24 left-0 absolute md:flex gap-8 hidden w-full pointer-events-none">
 				<div className="basis-1/2" />
-				<figure className="relative flex-1 basis-1/2 h-[48rem] overflow-hidden rounded-lg ">
+				<figure className="relative flex-1 rounded-lg h-[48rem] overflow-hidden basis-1/2">
 					<Image
 						src={SAPA_BG}
 						fill
-						className="object-cover pointer-events-none"
+						className="pointer-events-none object-cover"
 						alt="An image of Sapa designed Interior"
 					/>
-					<div className="absolute bottom-8 right-8">
-						<figure className="relative w-32 aspect-square ">
+					<div className="right-8 bottom-8 absolute">
+						<figure className="relative w-32 aspect-square">
 							<Image
 								src={SAPA_LOGO}
 								fill
-								className="object-cover pointer-events-none"
+								className="pointer-events-none object-cover"
 								alt="An image of Sapa designed Interior"
 							/>
 						</figure>

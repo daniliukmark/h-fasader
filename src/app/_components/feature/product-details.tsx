@@ -44,8 +44,8 @@ const Categories = ({ lang, currentCategory, t }: Categories) => {
 			name: t("product-details.accs"),
 		},
 		{
-			category: "blueprints",
-			name: t("product-details.blueprints"),
+			category: "documentation",
+			name: t("product-details.documentation"),
 		},
 	];
 
@@ -83,7 +83,7 @@ const Categories = ({ lang, currentCategory, t }: Categories) => {
 				>
 					{item.name}
 				</li>
-				<Separator variant="vertical" className="h-16 basis-0.5 " />
+				<Separator variant="vertical" className="h-16 basis-0.5" />
 			</Fragment>
 		);
 	});
@@ -109,11 +109,11 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 		<>
 			<nav id="details">
 				<Separator className="mt-8 sm:mt-4" />
-				<ul className="flex flex-row flex-wrap items-center gap-x-2 text-sm text-neutral-500">
+				<ul className="flex flex-row flex-wrap items-center gap-x-2 text-neutral-500 text-sm">
 					{<Categories t={t} lang={lang} currentCategory={currentCategory} />}
 				</ul>
 			</nav>
-			<section className="mb-6  w-full gap-4 px-4">
+			<section className="gap-4 mb-6 px-4 w-full">
 				{currentCategory === "specifications" && (
 					<div
 						className="lg:basis-1/2"
@@ -123,11 +123,11 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 				)}
 				{currentCategory === "colors" && (
 					<>
-						<section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+						<section className="gap-4 grid grid-cols-2 lg:grid-cols-4">
 							{COLORS.map((color) => {
 								return (
 									<div key={color.colorId + color.imageUrl}>
-										<div className="w-full h-fit relative overflow-hidden rounded-lg">
+										<div className="relative rounded-lg w-full h-fit overflow-hidden">
 											<img
 												src={color.imageUrl}
 												alt={`color ${color.colorId}`}
@@ -144,50 +144,68 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 				)}
 				{currentCategory === "decorations" && (
 					<>
-						<h1 className="text-lg font-semibold pb-2">Decorations</h1>
-						<ul className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+						<h1 className="pb-4 font-semibold text-lg">Decorations</h1>
+						<ul className="gap-16 grid grid-cols-2 lg:grid-cols-4">
 							{DECOR_IMGS.map((image) => (
 								<li>
 									<figure>
 										<Image
-											src={image}
-											className="object-cover object-center h-64 w-full rounded-lg"
+											src={image.img}
+											className="rounded-lg w-full h-64 object-center object-cover"
 											alt="Possible decoration of the window"
 										/>
 									</figure>
+									<div className="w-full whitespace-pre-wrap">
+										<h1 className="font-semibold">{image.title}</h1>
+										<p>{image.text}</p>
+									</div>
 								</li>
 							))}
 						</ul>
 					</>
 				)}
 				{currentCategory === "accessories" && (
-					<>
-						<div
-							className="lg:basis-1/2"
-							// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-							dangerouslySetInnerHTML={{ __html: accs }}
-						/>
-					</>
+					<div
+						className="lg:basis-1/2"
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+						dangerouslySetInnerHTML={{ __html: accs }}
+					/>
 				)}
 				{currentCategory === "glass" && (
 					<>
-						<h1 className="text-lg font-semibold">Glass</h1>
-						<p className="pb-2 pr-1">
-							Glass.LT website has information about the glass we offer: <br />
+						<h1 className="pb-2 font-semibold text-lg">Glass</h1>
+						<h1 className="font-semibold text-base">Feautures</h1>
+
+						<ul className="pb-4 pl-2">
+							<li>
+								<b>+</b> Standard insulated glass unit (48mm)
+							</li>
+							<li>
+								<b>+</b> 3-layers with low-E selective coating
+							</li>
+							<li>
+								<b>+</b> Argon gas
+							</li>
+							<li>
+								<b>+</b> Grey Swiss pacer
+							</li>
+						</ul>
+						<p className="pr-1 pb-2 font-semibold">
+							For special glass information see link:
 						</p>
 						<Button variant={"outline"} className="rounded-full text-base">
 							<Link href={"https://glasslt.com/en/products/"}>
-								Go to Glass.lt
+								Choose glass
 							</Link>
 						</Button>
 					</>
 				)}
-				{currentCategory === "blueprints" && (
+				{currentCategory === "documentation" && (
 					<>
-						<h1 className="text-lg font-semibold">Blueprints</h1>
-						<p className="pb-2 pr-1">
+						<h1 className="font-semibold text-lg">Documentation</h1>
+						<p className="pr-1 pb-2">
 							Website is still being filled with content, for more information
-							regarding blueprints:
+							regarding documentation:
 						</p>
 						<Button variant={"outline"} className="rounded-full text-base">
 							<Link href={`/${lang}/contacts`}>Contact us</Link>

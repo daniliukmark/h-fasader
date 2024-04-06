@@ -23,9 +23,9 @@ interface CategoryCard {
 
 function CategoryCardMobile({ href, alt, src, children }: CategoryCard) {
 	return (
-		<div className="relative h-fit flex-auto basis-[36rem] rounded-lg border-2 bg-white   border-neutral-100 ">
+		<div className="relative flex-auto border-2 border-neutral-100 bg-white rounded-lg h-fit basis-[36rem]">
 			<Link href={href}>
-				<figure className="relative h-80 duration-200 sm:h-96 lg:h-[32rem] w-full overflow-hidden rounded-md bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0] hover:opacity-60">
+				<figure className="relative bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0] hover:opacity-60 rounded-md w-full h-80 sm:h-96 lg:h-[32rem] duration-200 overflow-hidden">
 					<Suspense fallback={<Skeleton className="w-full h-full" />}>
 						<Image
 							src={src}
@@ -38,7 +38,7 @@ function CategoryCardMobile({ href, alt, src, children }: CategoryCard) {
 					</Suspense>
 				</figure>
 			</Link>
-			<article className="w-full p-4 h-fit">
+			<article className="p-4 w-full h-fit">
 				{children}
 				<Link href={href}>
 					<Button variant={"link"} className="p-0">
@@ -52,9 +52,9 @@ function CategoryCardMobile({ href, alt, src, children }: CategoryCard) {
 
 function CategoryCard({ href, alt, src, children }: CategoryCard) {
 	return (
-		<div className="relative flex-auto flex flex-row rounded-lg text-gray-100 bg-gray-600 hover:bg-gray-500 duration-200 hover:bg-opacity-40  bg-opacity-50 backdrop-blur-md  border-neutral-100 ">
+		<div className="relative flex flex-row flex-auto border-neutral-100 bg-gray-600 hover:bg-gray-500 bg-opacity-50 hover:bg-opacity-40 backdrop-blur-md rounded-lg text-gray-100 duration-200">
 			<Link href={href}>
-				<figure className="relative h-full w-52 xl:w-72 overflow-hidden rounded-md  bg-opacity-10 bg-gray-50">
+				<figure className="relative bg-gray-50 bg-opacity-10 rounded-md w-52 xl:w-72 h-full overflow-hidden">
 					<Image
 						src={src}
 						alt={alt}
@@ -64,10 +64,10 @@ function CategoryCard({ href, alt, src, children }: CategoryCard) {
 					/>
 				</figure>
 			</Link>
-			<article className="p-4 w-96 xl:h-72">
+			<article className="p-4 w-96 xl:h-72 text-justify">
 				{children}
 				<Link href={href}>
-					<Button variant={"link"} className="p-0 text-gray-100 ">
+					<Button variant={"link"} className="p-0 text-gray-100">
 						View more
 					</Button>
 				</Link>
@@ -88,33 +88,43 @@ export default async function Page({ params: { lang } }: PageProps) {
 		<>
 			<Navbar lang={lang} isMainPage={true} />
 			<div className="flex flex-col justify-between w-full min-h-screen">
-				<section className="relative flex h-[40rem] flex-col justify-center sm:h-[52rem] ">
-					<div className="hidden z-10 pt-20 lg:flex absolute right-0 gap-8 flex-col">
+				<section className="relative flex flex-col justify-center h-[40rem] sm:h-[52rem]">
+					<div className="right-0 z-10 absolute lg:flex flex-col gap-8 hidden pt-20">
 						<CategoryCard
 							src={PVC_CATEGORY}
 							alt="PVC window"
 							href={`${lang}/pvc`}
 						>
-							<h1 className="text-xl font-semibold text-left">
+							<h1 className="font-semibold text-left text-xl">
 								{t("catalogue.pvc.title")}
 							</h1>
-							<p className="pb-2 text-left">{t("catalogue.pvc.description")}</p>
+							<p
+								className="pb-2 text-justify"
+								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+								dangerouslySetInnerHTML={{
+									__html: t("catalogue.pvc.description"),
+								}}
+							/>
 						</CategoryCard>
 						<CategoryCard
 							src={ALUMINIUM_CATEGORY}
 							alt="Aluminium window"
 							href={`${lang}/aluminium`}
 						>
-							<h1 className="text-xl font-semibold text-left">
+							<h1 className="font-semibold text-left text-xl">
 								{t("catalogue.aluminium.title")}
 							</h1>
-							<p className="pb-2 text-left">
-								{t("catalogue.aluminium.description")}
-							</p>
+							<p
+								className="pb-2 text-justify"
+								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+								dangerouslySetInnerHTML={{
+									__html: t("catalogue.aluminium.description"),
+								}}
+							/>
 						</CategoryCard>
 					</div>
-					<div className="w-full mx-auto max-w-7xl">
-						<div className="z-0 flex items-center mx-8 justify-between w-full max-w-3xl text-4xl font-semibold leading-normal text-white sm:text-5xl sm:leading-relaxed  lg:max-w-7xl">
+					<div className="mx-auto w-full max-w-7xl">
+						<div className="z-0 flex justify-between items-center mx-8 w-full max-w-3xl lg:max-w-7xl font-semibold text-4xl text-white sm:text-5xl leading-normal sm:leading-relaxed">
 							<span className="absolute animate-infinite-fade">
 								Extraordinary PVC <br /> windows for extreme <br /> climate
 							</span>
@@ -123,11 +133,11 @@ export default async function Page({ params: { lang } }: PageProps) {
 							</span>
 						</div>
 					</div>
-					<div className="absolute inset-0 -z-10  bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0]">
+					<div className="-z-10 absolute inset-0 bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0]">
 						<figure className="w-full h-full">
 							<Suspense fallback={<Skeleton className="w-full h-full" />}>
 								<Video
-									className="relative object-cover object-left w-full h-full bg-slate-400"
+									className="relative object-left bg-slate-400 w-full h-full object-cover"
 									hrefMp4="/assets/main-video-bg.mp4"
 									hrefWebm="/assets/main-video-bg.webm"
 								/>
@@ -135,22 +145,26 @@ export default async function Page({ params: { lang } }: PageProps) {
 						</figure>
 					</div>
 				</section>
-				<div className="w-full px-4 pt-8 mx-auto  sm:px-8 lg:max-w-5xl lg:px-0 xl:max-w-7xl">
-					<section className="pb-8 block -mt-20 lg:hidden ">
-						<div className="flex flex-wrap justify-center gap-8 md:flex-nowrap">
+				<div className="mx-auto px-4 sm:px-8 lg:px-0 pt-8 w-full lg:max-w-5xl xl:max-w-7xl">
+					<section className="block lg:hidden -mt-20 pb-8">
+						<div className="flex flex-wrap md:flex-nowrap justify-center gap-8">
 							<CategoryCardMobile
 								src={PVC_CATEGORY}
 								alt="PVC window"
 								href={`${lang}/pvc`}
 							>
 								<Link href={`${lang}/aluminium`}>
-									<h1 className="text-2xl font-semibold text-left">
+									<h1 className="font-semibold text-2xl text-justify">
 										{t("catalogue.pvc.title")}
 									</h1>
 								</Link>
-								<p className="pb-2 text-left">
-									{t("catalogue.pvc.description")}
-								</p>
+								<p
+									className="pb-2 text-justify"
+									// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+									dangerouslySetInnerHTML={{
+										__html: t("catalogue.pvc.description"),
+									}}
+								/>
 							</CategoryCardMobile>
 							<CategoryCardMobile
 								src={ALUMINIUM_CATEGORY}
@@ -158,13 +172,17 @@ export default async function Page({ params: { lang } }: PageProps) {
 								href={`${lang}/aluminium`}
 							>
 								<Link href={`${lang}/aluminium`}>
-									<h1 className="text-2xl font-semibold text-left">
+									<h1 className="font-semibold text-2xl text-justify">
 										{t("catalogue.aluminium.title")}
 									</h1>
 								</Link>
-								<p className="pb-2 text-left">
-									{t("catalogue.aluminium.description")}
-								</p>
+								<p
+									className="pb-2 text-justify"
+									// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+									dangerouslySetInnerHTML={{
+										__html: t("catalogue.aluminium.description"),
+									}}
+								/>
 							</CategoryCardMobile>
 						</div>
 					</section>

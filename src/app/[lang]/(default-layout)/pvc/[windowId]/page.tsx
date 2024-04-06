@@ -32,7 +32,7 @@ export default async function Page({ params: { lang, windowId } }: PageProps) {
 	const mainImage = mainWindow?.mainImage.url ? mainWindow.mainImage.url : "";
 	return (
 		<>
-			<main className="flex w-full flex-col scroll-smooth md:flex-row">
+			<main className="flex md:flex-row flex-col w-full scroll-smooth">
 				<div className="h-96 md:basis-1/2 my-auto">
 					<ProductShowcase images={imagesList} defaultImage={mainImage} />
 				</div>
@@ -46,13 +46,27 @@ export default async function Page({ params: { lang, windowId } }: PageProps) {
 								<h1>PVC</h1>
 							</BreadCrumbs.Item>
 							<BreadCrumbs.Item href={`/${lang}/pvc/${windowId}`}>
-								<h1>{mainWindow?.translation[0]?.title}</h1>
+								<h1
+									// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+									dangerouslySetInnerHTML={{
+										__html: mainWindow?.translation[0]?.title
+											? mainWindow?.translation[0]?.title
+											: "",
+									}}
+								/>
 							</BreadCrumbs.Item>
 						</BreadCrumbs>
-						<h1 className="pt-2 text-3xl font-semibold">
-							{mainWindow?.translation[0]?.title}
-						</h1>
-						<p className="py-2 text-neutral-700">
+						<h1
+							className="pt-2 font-semibold text-3xl"
+							// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+							dangerouslySetInnerHTML={{
+								__html: mainWindow?.translation[0]?.title
+									? mainWindow?.translation[0]?.title
+									: "",
+							}}
+						/>
+
+						<p className="py-2 text-justify">
 							{mainWindow?.translation[0]?.desc}
 						</p>
 						<Link href="#details">
@@ -73,13 +87,13 @@ export default async function Page({ params: { lang, windowId } }: PageProps) {
 				accs={`${mainWindow?.translation[0]?.accs}`}
 			/>
 			<section>
-				<h2 className="text-2xl font-semibold">Kiti Produktai</h2>
-				<div className="grid grid-cols-1 gap-4 px-2 py-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+				<h2 className="font-semibold text-2xl">Kiti Produktai</h2>
+				<div className="gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-2 py-4">
 					{recomendedWindows.map((window) => {
 						return (
 							<ProductCard
 								key={`${window.id}`}
-								className="h-96 w-full"
+								className="w-full h-96"
 								title={`${window.translation[0]?.title}`}
 								src={`${window.mainImage.url}`}
 								desc={`${window.translation[0]?.desc}`}

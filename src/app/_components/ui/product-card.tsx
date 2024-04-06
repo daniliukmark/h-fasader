@@ -41,14 +41,18 @@ export default function ProductCard({
 			</Link>
 			<section>
 				<Link href={`${href}`}>
-					<h1 className="text-sm font-semibold truncate">{title}</h1>
+					<h1
+						className="font-semibold text-sm"
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+						dangerouslySetInnerHTML={{ __html: title }}
+					/>
 				</Link>
-				<p className="pt-1 pr-4 text-xs line-clamp-2 max-h-32 text-neutral-600">
+				<p className="line-clamp-2 pt-1 pr-4 max-h-32 text-neutral-600 text-xs">
 					{desc}
 				</p>
 			</section>
 			<Link href={`${href}`}>
-				<ArrowRight className="absolute bottom-0 right-0 m-4" />
+				<ArrowRight className="right-0 bottom-0 absolute m-4" />
 			</Link>
 		</div>
 	);

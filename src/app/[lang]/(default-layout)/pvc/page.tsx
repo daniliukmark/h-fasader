@@ -50,21 +50,22 @@ export default async function Page({ params: { lang } }: PageProps) {
 					</BreadCrumbs.Item>
 				</BreadCrumbs>
 				<section>
-					<h1 className="mb-2 text-3xl font-semibold">{t("header.title")}</h1>
-					<p className="mb-4 max-w-4xl text-sm text-neutral-700">
+					<h1 className="mb-2 pb-2 font-semibold text-3xl">
+						{t("header.title")}
+					</h1>
+					<p className="mb-4 max-w-4xl text-justify text-neutral-700 text-sm">
 						{t("header.description")}
 					</p>
 				</section>
 			</article>
 			<Separator />
 			<section>
-				<div className="grid grid-cols-1 gap-4 px-2 py-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+				<div className="gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-2 py-4">
 					{sortedWindows.map((window) => {
-						console.log(window);
 						return (
 							<ProductCard
 								key={`${window.id}`}
-								className="h-96 w-full"
+								className="w-full h-96"
 								title={`${window.translation[0]?.title}`}
 								src={`${window.mainImage.url}`}
 								desc={`${window.translation[0]?.desc}`}

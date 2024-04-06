@@ -10,8 +10,8 @@ export default function HomePage({ children, params: { lang } }: LayoutProps) {
 	return (
 		<>
 			<Navbar lang={lang} />
-			<div className=" flex min-h-screen w-full flex-col justify-between scroll-smooth bg-white">
-				<div className=" px-4 pt-24 sm:px-8">{children}</div>
+			<div className="flex flex-col justify-between bg-white w-full min-h-screen scroll-smooth">
+				<div className="px-4 sm:px-8 pt-24 h-full">{children}</div>
 				<Footer lang={lang} />
 			</div>
 		</>
