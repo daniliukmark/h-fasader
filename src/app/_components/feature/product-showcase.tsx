@@ -35,13 +35,13 @@ function ProductShowcaseItem({
 		>
 			<Button
 				variant={"outline"}
-				className="relative w-12 h-12 overflow-hidden border-0"
+				className="relative border-0 w-12 h-12 overflow-hidden"
 			>
 				<Image
 					src={src}
 					alt="window image"
 					sizes="vw-100"
-					className="object-contain mix-blend-normal hover:mix-blend-darken"
+					className="mix-blend-normal object-contain hover:mix-blend-darken"
 					fill
 				/>
 			</Button>
@@ -62,16 +62,16 @@ function ProductShowcase({ images, defaultImage }: ProductShowcase) {
 	const [peekImage, setPeekImage] = useState<string | null>(null);
 
 	return (
-		<figure className="relative w-full h-full flex-basis ">
+		<figure className="relative flex-basis w-full h-full">
 			<Image
 				src={peekImage ? peekImage : focusImage ? focusImage : ""}
 				alt="window image"
 				sizes="vw-100"
 				fill
-				className="object-contain px-8 max-h-96"
+				className="backdrop-blur-xl px-8 max-h-96 object-contain"
 			/>
-			<div className="absolute left-0 flex items-center h-full">
-				<ul className="flex flex-col items-center justify-center gap-2 overflow-y-scroll max-h-72">
+			<div className="left-0 absolute flex items-center h-full">
+				<ul className="flex flex-col justify-center items-center gap-2 max-h-72 overflow-y-scroll">
 					{images.slice(0, 4).map((image) => {
 						return (
 							<ProductShowcaseItem
@@ -96,7 +96,7 @@ function ProductShowcase({ images, defaultImage }: ProductShowcase) {
 			<Button
 				variant={"ghost"}
 				size={"icon"}
-				className="absolute bottom-0 right-0 my-4 sm:mx-4"
+				className="right-0 bottom-0 absolute sm:mx-4 my-4"
 				onClick={() => {
 					setIsModalOpen(true);
 				}}
