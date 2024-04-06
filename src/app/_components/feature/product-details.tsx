@@ -112,6 +112,7 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 				<ul className="flex flex-row flex-wrap items-center gap-x-2 text-neutral-500 text-sm">
 					{<Categories t={t} lang={lang} currentCategory={currentCategory} />}
 				</ul>
+				<div className="backdrop-blur-xl" />
 			</nav>
 			<section className="gap-4 mb-6 px-4 w-full">
 				{currentCategory === "specifications" && (
@@ -175,7 +176,6 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 					<>
 						<h1 className="pb-2 font-semibold text-lg">Glass</h1>
 						<h1 className="font-semibold text-base">Feautures</h1>
-
 						<ul className="pb-4 pl-2">
 							<li>
 								<b>+</b> Standard insulated glass unit (48mm)
