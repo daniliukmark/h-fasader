@@ -10,7 +10,7 @@ import { Suspense } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-import ALUMINIUM_CATEGORY from "public/windows/aluminium-window.webp";
+import ALUMINIUM_CATEGORY from "public/windows/aluminium.webp";
 import PVC_CATEGORY from "public/windows/pvc-window.webp";
 import Video from "~/app/_components/feature/video";
 
