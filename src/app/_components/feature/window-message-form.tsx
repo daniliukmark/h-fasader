@@ -17,6 +17,7 @@ import { Textarea } from "../ui/textarea";
 import { useState } from "react";
 import { api } from "~/trpc/react";
 import { cn } from "~/utils/utils";
+import { useTranslation } from "~/app/i18n/client";
 
 const formSchema = z.object({
 	name: z
@@ -41,6 +42,7 @@ interface WindowMessageFormProps {
 }
 export default function WindowMessageForm({ lang }: WindowMessageFormProps) {
 	const [isSubmitted, setIsSubmitted] = useState(false);
+	const { t } = useTranslation(lang, "components", {});
 	const emailSend = api.email.emailSupport.useMutation();
 
 	const form = useForm<z.infer<typeof formSchema>>({
@@ -70,10 +72,10 @@ export default function WindowMessageForm({ lang }: WindowMessageFormProps) {
 					name="name"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Your Name</FormLabel>
+							<FormLabel>{t("window-message-form.name-field-label")}</FormLabel>
 							<FormControl>
 								<Input
-									placeholder="Enter Name"
+									placeholder={t("window-message-form.name-field-placeholder")}
 									disabled={isSubmitted}
 									{...field}
 								/>
@@ -82,16 +84,17 @@ export default function WindowMessageForm({ lang }: WindowMessageFormProps) {
 						</FormItem>
 					)}
 				/>
-
 				<FormField
 					control={form.control}
 					name="email"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Your Email</FormLabel>
+							<FormLabel>
+								{t("window-message-form.email-field-label")}
+							</FormLabel>
 							<FormControl>
 								<Input
-									placeholder="Enter Email"
+									placeholder={t("window-message-form.name-field-placeholder")}
 									disabled={isSubmitted}
 									{...field}
 								/>
@@ -105,10 +108,14 @@ export default function WindowMessageForm({ lang }: WindowMessageFormProps) {
 					name="message"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Your Message</FormLabel>
+							<FormLabel>
+								{t("window-message-form.message-field-label")}
+							</FormLabel>
 							<FormControl>
 								<Textarea
-									placeholder="Enter Message"
+									placeholder={t(
+										"window-message-form.message-field-placeholder",
+									)}
 									className="max-h-40"
 									{...field}
 									disabled={isSubmitted}
@@ -117,20 +124,19 @@ export default function WindowMessageForm({ lang }: WindowMessageFormProps) {
 							<FormMessage />
 
 							<p className="text-muted-foreground text-sm">
-								Your message will be sent to our support team.
+								{t("window-message-form.form-additional-info")}
 							</p>
 							{emailSend.isSuccess && (
 								<>
 									<p className="border-green-300 bg-green-200 py-2 p-4 border rounded-full w-fit text-sm">
-										Your message has been successfully delivered.
+										{t("window-message-form.form-success")}
 									</p>
 								</>
 							)}
 							{emailSend.isError && (
 								<>
 									<p className="bg-red-200 py-2 p-4 border border-red-300 rounded-full w-fit text-sm">
-										Error occured while proccessing your request. Please contact
-										us.
+										{t("window-message-form.form-error")}
 									</p>
 								</>
 							)}
@@ -138,7 +144,7 @@ export default function WindowMessageForm({ lang }: WindowMessageFormProps) {
 					)}
 				/>
 				<Button className={cn("rounded-full")} size={"lg"} type="submit">
-					Submit
+					{t("window-message-form.button-submit")}
 				</Button>
 			</form>
 		</Form>

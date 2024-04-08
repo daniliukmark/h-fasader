@@ -5,6 +5,18 @@
 	"mobile-menu": {
 		"menu": "Menu"
 	},
+	"window-message-form": {
+		"name-field-label": "Your Name",
+		"name-field-placeholder": "Enter name",
+		"email-field-label": "Your Email",
+		"email-field-placeholder": "Enter email",
+		"message-field-label": "Your Message",
+		"message-field-placeholder": "Enter message",
+		"form-additional-info": "Your message will be sent to our support team.",
+		"form-success": "Your message has been successfully delivered",
+		"form-error": "Error occured while proccessing your request. Please contact us.",
+		"button-submit": "Submit"
+	},
 	"directories": {
 		"home": "Home",
 		"pvc": "PVC",

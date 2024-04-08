@@ -1,14 +1,13 @@
 {
+	"view-more-button": "Se mer",
 	"header": {
-		"part1": "Norges port",
-		"part2": "til",
-		"part3": "Komfort",
-		"part4": "Med H-Fasader."
+		"paragraph1": "Ekstraordinære PVC <br /> vinduer for ekstreme <br /> klimaforhold",
+		"paragraph2": "Utmerket vind- <br /> og regnmotstand"
 	},
 	"catalogue": {
 		"pvc": {
 			"title": "PVC",
-			"description": "Premium utvalg av PVC-vinduer og -dører, laget for motstandsdyktighet og miljøbevisst livsstil. Designet for lang levetid, disse vedlikeholdsfrie løsningene tåler det krevende nordiske været samtidig som de reduserer miljøpåvirkningen."
+			"description": "Oppdag våre ekstraordinære PVC-vinduer og dører designet for å tåle ekstreme værforhold. <br/> Våre PVC-produkter tilbyr utmerket vind- og regnmotstand."
 		},
 		"aluminium": {
 			"title": "Aluminium",

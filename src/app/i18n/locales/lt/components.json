@@ -5,6 +5,18 @@
 	"mobile-menu": {
 		"menu": "Meniu"
 	},
+	"window-message-form": {
+		"name-field-label": "Jūsų Vardas",
+		"name-field-placeholder": "Įveskite vardą",
+		"email-field-label": "Jūsų El. Paštas",
+		"email-field-placeholder": "Įveskite el. paštą",
+		"message-field-label": "Jūsų Žinutė",
+		"message-field-placeholder": "Įveskite žinutę",
+		"form-additional-info": "Jūsų žinutė bus išsiųsta mūsų palaikymo komandai.",
+		"form-success": "Jūsų žinutė sėkmingai išsiųsta",
+		"form-error": "Įvyko klaida apdorojant jūsų užklausą. Prašome susisiekti su mumis.",
+		"button-submit": "Išsiųsti"
+	},
 	"directories": {
 		"home": "Pagrindinis",
 		"pvc": "PVC",

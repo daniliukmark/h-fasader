@@ -5,6 +5,18 @@
 	"mobile-menu": {
 		"menu": "Meny"
 	},
+	"window-message-form": {
+		"name-field-label": "Ditt Navn",
+		"name-field-placeholder": "Skriv inn navn",
+		"email-field-label": "Din E-post",
+		"email-field-placeholder": "Skriv inn e-post",
+		"message-field-label": "Din Melding",
+		"message-field-placeholder": "Skriv inn melding",
+		"form-additional-info": "Din melding vil bli sendt til vårt supportteam.",
+		"form-success": "Din melding har blitt sendt",
+		"form-error": "Feil oppstod under behandlingen av forespørselen din. Vennligst kontakt oss.",
+		"button-submit": "Send inn"
+	},
 	"directories": {
 		"home": "Hovedside",
 		"pvc": "PVC",

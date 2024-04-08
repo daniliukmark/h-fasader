@@ -18,10 +18,19 @@ interface CategoryCard {
 	href: string;
 	src: StaticImport;
 	alt: string;
+	lang: string;
 	children: React.ReactNode;
 }
 
-function CategoryCardMobile({ href, alt, src, children }: CategoryCard) {
+async function CategoryCardMobile({
+	href,
+	alt,
+	src,
+	children,
+	lang,
+}: CategoryCard) {
+	const { t } = await useTranslation(lang, "home-page", {});
+
 	return (
 		<div className="relative flex-auto border-2 border-neutral-100 bg-white rounded-lg h-fit basis-[36rem]">
 			<Link href={href}>
@@ -42,7 +51,7 @@ function CategoryCardMobile({ href, alt, src, children }: CategoryCard) {
 				{children}
 				<Link href={href}>
 					<Button variant={"link"} className="p-0">
-						View more
+						{t("view-more-button")}
 					</Button>
 				</Link>
 			</article>
@@ -50,7 +59,9 @@ function CategoryCardMobile({ href, alt, src, children }: CategoryCard) {
 	);
 }
 
-function CategoryCard({ href, alt, src, children }: CategoryCard) {
+async function CategoryCard({ href, alt, src, children, lang }: CategoryCard) {
+	const { t } = await useTranslation(lang, "home-page", {});
+
 	return (
 		<div className="relative flex flex-row flex-auto border-neutral-100 bg-gray-600 hover:bg-gray-500 bg-opacity-50 hover:bg-opacity-40 backdrop-blur-md rounded-lg text-gray-100 duration-200">
 			<Link href={href}>
@@ -68,7 +79,7 @@ function CategoryCard({ href, alt, src, children }: CategoryCard) {
 				{children}
 				<Link href={href}>
 					<Button variant={"link"} className="p-0 text-gray-100">
-						View more
+						{t("view-more-button")}
 					</Button>
 				</Link>
 			</article>
@@ -93,6 +104,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 						<CategoryCard
 							src={PVC_CATEGORY}
 							alt="PVC window"
+							lang={lang}
 							href={`${lang}/pvc`}
 						>
 							<h1 className="font-semibold text-left text-xl">
@@ -109,6 +121,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 						<CategoryCard
 							src={ALUMINIUM_CATEGORY}
 							alt="Aluminium window"
+							lang={lang}
 							href={`${lang}/aluminium`}
 						>
 							<h1 className="font-semibold text-left text-xl">
@@ -125,12 +138,16 @@ export default async function Page({ params: { lang } }: PageProps) {
 					</div>
 					<div className="mx-auto w-full max-w-7xl">
 						<div className="z-0 flex justify-between items-center mx-8 w-full max-w-3xl lg:max-w-7xl font-semibold text-4xl text-white sm:text-5xl leading-normal sm:leading-relaxed">
-							<span className="absolute animate-infinite-fade">
-								Extraordinary PVC <br /> windows for extreme <br /> climate
-							</span>
-							<span className="absolute animate-infinite-fade [animation-delay:-8s]">
-								Excellent wind <br /> and rain resistance
-							</span>
+							<span
+								className="absolute animate-infinite-fade"
+								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+								dangerouslySetInnerHTML={{ __html: t("header.paragraph1") }}
+							/>
+							<span
+								className="absolute animate-infinite-fade [animation-delay:-8s]"
+								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+								dangerouslySetInnerHTML={{ __html: t("header.paragraph2") }}
+							/>
 						</div>
 					</div>
 					<div className="-z-10 absolute inset-0 bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0]">
@@ -151,6 +168,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 							<CategoryCardMobile
 								src={PVC_CATEGORY}
 								alt="PVC window"
+								lang={lang}
 								href={`${lang}/pvc`}
 							>
 								<Link href={`${lang}/aluminium`}>
@@ -169,6 +187,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 							<CategoryCardMobile
 								src={ALUMINIUM_CATEGORY}
 								alt="Aluminium window"
+								lang={lang}
 								href={`${lang}/aluminium`}
 							>
 								<Link href={`${lang}/aluminium`}>

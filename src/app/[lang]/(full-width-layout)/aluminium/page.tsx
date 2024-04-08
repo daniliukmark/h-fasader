@@ -9,6 +9,7 @@ import SAPA_LOGO from "public/assets/sapa/sapa-logo.webp";
 import BreadCrumbs from "~/app/_components/ui/breadcrumbs";
 import { Button } from "~/app/_components/ui/button";
 import Separator from "~/app/_components/ui/separator";
+import { useTranslation } from "~/app/i18n";
 
 interface PageProps {
 	params: {
@@ -16,7 +17,8 @@ interface PageProps {
 	};
 }
 
-export default function Page({ params: { lang } }: PageProps) {
+export default async function Page({ params: { lang } }: PageProps) {
+	const { t } = await useTranslation(lang, "aluminium-page", {});
 	return (
 		<>
 			<section className="block md:flex items-center mx-auto w-full max-w-7xl md:min-h-[40rem]">
@@ -24,40 +26,38 @@ export default function Page({ params: { lang } }: PageProps) {
 					<div className="">
 						<BreadCrumbs>
 							<BreadCrumbs.Item href={`/${lang}/`}>
-								<h1>Home</h1>
+								<h1>{t("home")}</h1>
 							</BreadCrumbs.Item>
 							<BreadCrumbs.Item href={`/${lang}/pvc`}>
-								<h1>Aluminium</h1>
+								<h1>{t("aluminium")}</h1>
 							</BreadCrumbs.Item>
 						</BreadCrumbs>
-						<h1 className="mb-2 pb-2 font-semibold text-3xl">Aluminium</h1>
+						<h1 className="mb-2 pb-2 font-semibold text-3xl">
+							{t("aluminium")}
+						</h1>
 						<article>
-							<p className="text-sm">
-								Certified approved SAPA / HYDRO fire resistance products:
-							</p>
+							<p className="text-sm">{t("paragraph1")}</p>
 							<ul className="pl-4 text-sm list-disc">
-								<li>1199/94 class E30, A30, EI15, EI30</li>
-								<li>SC0836-14 class EI30 / EI60 (Sa/S200)</li>
-								<li>SC1457-16 class EI30 / EI60 (Sa/S200)</li>
-								<li>
-									CE-marking EN 16034-2014, class EI230 / EI260 (Sa/S200/C)
-								</li>
+								<li>{t("list1-item1")}</li>
+								<li>{t("list1-item2")}</li>
+								<li>{t("list1-item3")}</li>
+								<li>{t("list1-item4")}</li>
 							</ul>
-							<p className="text-sm">Aluminium products:</p>
+							<p className="text-sm">{t("paragraph2")}</p>
 							<ul className="pl-4 text-sm list-disc">
-								<li>Certified approved SAPA fire resistant doors</li>
-								<li>E30, A30, EI15, EI30, EI60 (Sa/S200/C)</li>
-								<li>Facades</li>
-								<li>Glazed roof constructions</li>
-								<li>Sliding / patio doors</li>
-								<li>Folding doors</li>
-								<li>Windows</li>
-								<li>CNC cutting and milling service</li>
+								<li>{t("list2-item1")}</li>
+								<li>{t("list2-item2")}</li>
+								<li>{t("list2-item3")}</li>
+								<li>{t("list2-item4")}</li>
+								<li>{t("list2-item5")}</li>
+								<li>{t("list2-item6")}</li>
+								<li>{t("list2-item7")}</li>
+								<li>{t("list2-item8")}</li>
 							</ul>
 						</article>
 						<Link href="https://www.sapabuildingsystem.com/en/baltics/products/">
 							<Button className="px-0 py-2 h-fit underline" variant={"link"}>
-								See more on Sapa website.
+								{t("button")}
 							</Button>
 						</Link>
 					</div>

@@ -1,14 +1,13 @@
 {
+	"view-more-button": "Peržiūrėti daugiau",
 	"header": {
-		"part1": "Norvegijos Vartai",
-		"part2": "į",
-		"part3": "Komfortą",
-		"part4": "Su H-Fasader."
+		"paragraph1": "Išskirtiniai PVC <br /> langai ekstremalioms <br /> klimato sąlygoms",
+		"paragraph2": "Puikus vėjo <br /> ir lietaus atsparumas"
 	},
 	"catalogue": {
 		"pvc": {
 			"title": "PVC",
-			"description": "Pritraukiantis PVC langų ir durų asortimentas, sukurtas atsparumui ir ekologiškam gyvenimui. Inžinieriškai pritaikyti ilgaamžiškumui, šie priežiūrą nereikalaujantys sprendimai atlaiko reikalaujantį Šiaurės klimatą, mažindami aplinkos poveikį."
+			"description": "Atraskite mūsų išskirtinius PVC langus ir duris, skirtus atlaikyti ekstremalias oro sąlygas. <br/> Mūsų PVC produktai siūlo puikų vėjo ir lietaus atsparumą."
 		},
 		"aluminium": {
 			"title": "Aliuminis",

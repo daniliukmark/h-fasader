@@ -146,7 +146,7 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 				{currentCategory === "decorations" && (
 					<>
 						<h1 className="pb-4 font-semibold text-lg">Decorations</h1>
-						<ul className="gap-16 grid grid-cols-2 lg:grid-cols-4">
+						<ul className="gap-4 sm:gap-16 grid grid-cols-2 lg:grid-cols-4">
 							{DECOR_IMGS.map((image) => (
 								<li>
 									<figure>
