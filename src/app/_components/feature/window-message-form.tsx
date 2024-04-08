@@ -94,7 +94,7 @@ export default function WindowMessageForm({ lang }: WindowMessageFormProps) {
 							</FormLabel>
 							<FormControl>
 								<Input
-									placeholder={t("window-message-form.name-field-placeholder")}
+									placeholder={t("window-message-form.email-field-placeholder")}
 									disabled={isSubmitted}
 									{...field}
 								/>
