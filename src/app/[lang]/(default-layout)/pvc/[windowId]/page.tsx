@@ -6,7 +6,10 @@ import ProductCard from "~/app/_components/ui/product-card";
 import ProductDetails from "~/app/_components/feature/product-details";
 import ProductShowcase from "~/app/_components/feature/product-showcase";
 
+import H_VINDUET from "public/windows/h-vinduet.jpg";
+
 import { api } from "~/trpc/server";
+import Image from "next/image";
 
 interface PageProps {
 	params: {
@@ -56,16 +59,22 @@ export default async function Page({ params: { lang, windowId } }: PageProps) {
 								/>
 							</BreadCrumbs.Item>
 						</BreadCrumbs>
-						<h1
-							className="pt-2 font-semibold text-3xl"
-							// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-							dangerouslySetInnerHTML={{
-								__html: mainWindow?.translation[0]?.title
-									? mainWindow?.translation[0]?.title
-									: "",
-							}}
-						/>
-
+						<div className="flex flex-wrap items-center gap-x-8 gap-y-2 pb-4">
+							<h1
+								className="pt-2 font-semibold text-3xl"
+								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+								dangerouslySetInnerHTML={{
+									__html: mainWindow?.translation[0]?.title
+										? mainWindow?.translation[0]?.title
+										: "",
+								}}
+							/>
+							{mainWindow?.id.includes("handled") && (
+								<figure className="inline-block w-40">
+									<Image src={H_VINDUET} alt="H-Vinduet Logo" />
+								</figure>
+							)}
+						</div>
 						<p className="py-2 text-justify">
 							{mainWindow?.translation[0]?.desc}
 						</p>
@@ -82,6 +91,7 @@ export default async function Page({ params: { lang, windowId } }: PageProps) {
 				</section>
 			</main>
 			<ProductDetails
+				documentation={`${mainWindow?.blueprints}`}
 				lang={lang}
 				specs={`${mainWindow?.translation[0]?.specs}`}
 				accs={`${mainWindow?.translation[0]?.accs}`}

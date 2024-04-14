@@ -1,19 +1,24 @@
 export const dynamic = "force-static";
 
 import Image from "next/image";
-import FACTORY_IMG from "public/assets/h-fasader-factory.webp";
+import FACTORY_IMG from "public/assets/h-fasader-factory copy.webp";
 import BreadCrumbs from "~/app/_components/ui/breadcrumbs";
 import { useTranslation } from "~/app/i18n";
+
+import CERTIFICATES from "public/assets/certificates";
+
 interface PageProps {
 	params: {
 		lang: string;
 	};
 }
+
 export default async function Page({ params: { lang } }: PageProps) {
 	const { t } = await useTranslation(lang, "about-us-page", {});
+
 	return (
 		<>
-			<section className="block mx-auto w-full max-w-7xl md:min-h-[36rem]">
+			<section className="block z-10 sm:flex gap-8 mx-auto w-full max-w-7xl h-full md:min-h-[36rem]">
 				<article className="pr-4">
 					<BreadCrumbs>
 						<BreadCrumbs.Item href={`/${lang}/`}>
@@ -33,20 +38,34 @@ export default async function Page({ params: { lang } }: PageProps) {
 						<p className="mb-4 max-w-xl text-justify text-sm">
 							{t("header.desc2")}
 						</p>
-						<p className="mb-4 max-w-xl text-justify text-sm">
+						<p className="mb-8 max-w-xl text-justify text-sm">
 							{t("header.desc3")}
 						</p>
-						<figure className="relative mb-4 rounded-lg w-full min-w-full h-[24rem] overflow-hidden basis-1/2">
-							<Image
-								src={FACTORY_IMG}
-								alt="An image of a H-fasader factory"
-								className="object-bottom object-cover"
-								fill
-							/>
-						</figure>
+						<ul className="flex flex-wrap gap-x-4 gap-y-2 pb-8">
+							{CERTIFICATES.map((certificate) => (
+								<li className="inline-block border-2 border-gray-50 rounded-lg h-64 overflow-hidden">
+									<Image
+										src={certificate}
+										className="w-auto h-full object-contain"
+										alt="certificate, H-Fasader Baltic UAB"
+									/>
+								</li>
+							))}
+						</ul>
 					</section>
 				</article>
 			</section>
+			<div className="top-24 left-0 absolute md:flex gap-8 hidden w-full pointer-events-none">
+				<div className="basis-1/2" />
+				<figure className="relative flex-1 rounded-lg h-[40rem] overflow-hidden basis-1/2">
+					<Image
+						src={FACTORY_IMG}
+						alt="An image of a city"
+						className="object-left-bottom filter object-cover"
+						fill
+					/>
+				</figure>
+			</div>
 		</>
 	);
 }

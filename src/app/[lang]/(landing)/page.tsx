@@ -63,7 +63,7 @@ async function CategoryCard({ href, alt, src, children, lang }: CategoryCard) {
 	const { t } = await useTranslation(lang, "home-page", {});
 
 	return (
-		<div className="relative flex flex-row flex-auto border-neutral-100 bg-gray-600 hover:bg-gray-500 bg-opacity-50 hover:bg-opacity-40 backdrop-blur-md rounded-lg text-gray-100 duration-200">
+		<div className="relative flex flex-row flex-auto border-neutral-100 bg-gray-600 hover:bg-gray-500 bg-opacity-50 hover:bg-opacity-40 backdrop-blur-md rounded-lg h-72 text-gray-100 duration-200">
 			<Link href={href}>
 				<figure className="relative bg-gray-50 bg-opacity-10 rounded-md w-52 xl:w-72 h-full overflow-hidden">
 					<Image
@@ -128,7 +128,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 								{t("catalogue.aluminium.title")}
 							</h1>
 							<p
-								className="pb-2 text-justify"
+								className="my-auto pb-2 text-justify"
 								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 								dangerouslySetInnerHTML={{
 									__html: t("catalogue.aluminium.description"),

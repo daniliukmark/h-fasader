@@ -7,7 +7,7 @@ acceptLanguage.languages(languages);
 export const config = {
 	// matcher: '/:lang*'
 	matcher: [
-		"/((?!api/trpc/|_next/static|_next/image|assets|windows|favicon.ico|sw.js).*)",
+		"/((?!api/trpc/|_next/static|_next/image|assets|windows|favicon.ico|sw.js|pdfs).*)",
 	],
 };
 

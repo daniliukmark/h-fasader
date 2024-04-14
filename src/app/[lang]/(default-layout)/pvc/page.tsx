@@ -5,6 +5,9 @@ import BreadCrumbs from "../../../_components/ui/breadcrumbs";
 import Separator from "~/app/_components/ui/separator";
 import { api } from "~/trpc/server";
 import { useTranslation } from "~/app/i18n";
+import Image from "next/image";
+
+import H_VINDUET from "public/windows/h-vinduet.jpg";
 
 interface PageProps {
 	params: {
@@ -50,9 +53,12 @@ export default async function Page({ params: { lang } }: PageProps) {
 					</BreadCrumbs.Item>
 				</BreadCrumbs>
 				<section>
-					<h1 className="mb-2 pb-2 font-semibold text-3xl">
-						{t("header.title")}
-					</h1>
+					<div className="flex flex-wrap items-center gap-x-8 gap-y-2 pb-4">
+						<h1 className="font-semibold text-3xl">{t("header.title")}</h1>
+						<figure className="inline-block w-40">
+							<Image src={H_VINDUET} alt="H-Vinduet Logo" />
+						</figure>
+					</div>
 					<p className="mb-4 max-w-4xl text-justify text-neutral-700 text-sm">
 						{t("header.description")}
 					</p>

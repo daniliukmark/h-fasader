@@ -94,9 +94,15 @@ interface ProductDetails {
 	lang: string;
 	specs: string;
 	accs: string;
+	documentation: string;
 }
 
-const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
+const ProductDetails = ({
+	documentation,
+	specs,
+	accs,
+	lang,
+}: ProductDetails) => {
 	const searchParams = useSearchParams();
 	const { t } = useTranslation(lang, "components", {});
 	const currentCategory = useMemo(() => {
@@ -202,14 +208,25 @@ const ProductDetails = ({ specs, accs, lang }: ProductDetails) => {
 				)}
 				{currentCategory === "documentation" && (
 					<>
-						<h1 className="font-semibold text-lg">Documentation</h1>
-						<p className="pr-1 pb-2">
-							Website is still being filled with content, for more information
-							regarding documentation:
-						</p>
-						<Button variant={"outline"} className="rounded-full text-base">
-							<Link href={`/${lang}/contacts`}>Contact us</Link>
-						</Button>
+						{documentation ? (
+							<div
+								className="lg:basis-1/2"
+								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+								dangerouslySetInnerHTML={{ __html: documentation }}
+							/>
+						) : (
+							<>
+								<h1 className="font-semibold text-lg">Documentation</h1>
+								<p className="pr-1 pb-2">
+									Website is still being filled with content, for more
+									information regarding documentation:
+								</p>
+
+								<Button variant={"outline"} className="rounded-full text-base">
+									<Link href={`/${lang}/contacts`}>Contact us</Link>
+								</Button>
+							</>
+						)}
 					</>
 				)}
 			</section>
