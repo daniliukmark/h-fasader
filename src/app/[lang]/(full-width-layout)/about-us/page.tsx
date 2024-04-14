@@ -1,7 +1,7 @@
 export const dynamic = "force-static";
 
 import Image from "next/image";
-import FACTORY_IMG from "public/assets/h-fasader-factory copy.webp";
+import FACTORY_IMG from "public/assets/h-fasader-factory copy 2.webp";
 import BreadCrumbs from "~/app/_components/ui/breadcrumbs";
 import { useTranslation } from "~/app/i18n";
 
@@ -19,7 +19,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 	return (
 		<>
 			<section className="block z-10 sm:flex gap-8 mx-auto w-full max-w-7xl h-full md:min-h-[36rem]">
-				<article className="pr-4">
+				<article className="pr-4 basis-1/2">
 					<BreadCrumbs>
 						<BreadCrumbs.Item href={`/${lang}/`}>
 							<h1>{t("breadcrumbs.home")}</h1>
@@ -55,9 +55,9 @@ export default async function Page({ params: { lang } }: PageProps) {
 					</section>
 				</article>
 			</section>
-			<div className="top-24 left-0 absolute md:flex gap-8 hidden w-full pointer-events-none">
+			<div className="top-24 left-0 absolute md:flex gap-8 hidden w-full h-[40rem] pointer-events-none">
 				<div className="basis-1/2" />
-				<figure className="relative flex-1 rounded-lg h-[40rem] overflow-hidden basis-1/2">
+				<figure className="relative flex-1 my-auto rounded-lg h-[28rem] overflow-hidden basis-1/2">
 					<Image
 						src={FACTORY_IMG}
 						alt="An image of a city"
