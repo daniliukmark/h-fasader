@@ -107,9 +107,11 @@ export default async function Page({ params: { lang } }: PageProps) {
 							lang={lang}
 							href={`${lang}/pvc`}
 						>
-							<h1 className="font-semibold text-left text-xl">
-								{t("catalogue.pvc.title")}
-							</h1>
+							<Link href={`${lang}/pvc`}>
+								<h1 className="pb-2 font-semibold text-left text-xl">
+									{t("catalogue.pvc.title")}
+								</h1>
+							</Link>
 							<p
 								className="pb-2 text-justify"
 								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
@@ -124,9 +126,11 @@ export default async function Page({ params: { lang } }: PageProps) {
 							lang={lang}
 							href={`${lang}/aluminium`}
 						>
-							<h1 className="font-semibold text-left text-xl">
-								{t("catalogue.aluminium.title")}
-							</h1>
+							<Link href={`${lang}/aluminium`}>
+								<h1 className="pb-2 font-semibold text-left text-xl">
+									{t("catalogue.aluminium.title")}
+								</h1>
+							</Link>
 							<p
 								className="my-auto pb-2 text-justify"
 								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
