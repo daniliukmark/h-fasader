@@ -59,7 +59,7 @@ export default async function Page({ params: { lang, windowId } }: PageProps) {
 								/>
 							</BreadCrumbs.Item>
 						</BreadCrumbs>
-						<div className="flex flex-wrap items-center gap-x-8 gap-y-2 pb-4">
+						<div className="flex flex-wrap gap-x-8 gap-y-2 pb-4">
 							<h1
 								className="pt-2 font-semibold text-3xl"
 								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
@@ -70,8 +70,12 @@ export default async function Page({ params: { lang, windowId } }: PageProps) {
 								}}
 							/>
 							{mainWindow?.id.includes("handled") && (
-								<figure className="inline-block w-40">
-									<Image src={H_VINDUET} alt="H-Vinduet Logo" />
+								<figure className="pt-2">
+									<Image
+										src={H_VINDUET}
+										alt="H-Vinduet Logo"
+										className="w-auto max-h-7 xl:max-h-9"
+									/>
 								</figure>
 							)}
 						</div>

@@ -18,8 +18,8 @@ export default async function Page({ params: { lang } }: PageProps) {
 
 	return (
 		<>
-			<section className="block z-10 sm:flex gap-8 mx-auto w-full max-w-7xl h-full md:min-h-[36rem]">
-				<article className="pr-4 basis-1/2">
+			<section className="block z-10 sm:flex gap-4 mx-auto w-full max-w-7xl h-full md:min-h-[36rem]">
+				<article className="pr-4 md:basis-1/2">
 					<BreadCrumbs>
 						<BreadCrumbs.Item href={`/${lang}/`}>
 							<h1>{t("breadcrumbs.home")}</h1>
@@ -55,7 +55,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 					</section>
 				</article>
 			</section>
-			<div className="top-24 left-0 absolute md:flex gap-8 hidden w-full h-[40rem] pointer-events-none">
+			<div className="top-24 left-0 absolute md:flex gap-4 hidden pt-[4.5rem] w-full pointer-events-none">
 				<div className="basis-1/2" />
 				<figure className="relative flex-1 my-auto rounded-lg h-[28rem] overflow-hidden basis-1/2">
 					<Image

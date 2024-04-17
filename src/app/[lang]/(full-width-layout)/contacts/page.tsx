@@ -3,6 +3,7 @@ export const dynamic = "force-static";
 import { Mail, Phone, Smartphone } from "lucide-react";
 import Image from "next/image";
 import MAP from "public/assets/map.webp";
+import LOGO from "public/assets/h-fasader-logo.svg";
 import BreadCrumbs from "~/app/_components/ui/breadcrumbs";
 import Separator from "~/app/_components/ui/separator";
 import { useTranslation } from "~/app/i18n";
@@ -18,7 +19,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 	return (
 		<>
 			<section className="block z-10 md:flex gap-8 mx-auto w-full max-w-7xl h-full md:min-h-[36rem]">
-				<article>
+				<article className="md:basis-1/2">
 					<BreadCrumbs>
 						<BreadCrumbs.Item href={`/${lang}/`}>
 							<h1>{t("breadcrumbs.home")}</h1>
@@ -47,6 +48,13 @@ export default async function Page({ params: { lang } }: PageProps) {
 										<br />
 									</span>
 									302480330
+								</p>
+								<p className="pb-2">
+									<span className="text-gray-500">
+										VAT no.
+										<br />
+									</span>
+									LT100005176118
 								</p>
 								<p className="pb-2">
 									<span className="text-gray-500">
@@ -87,7 +95,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 								</p>
 							</div>
 						</article>
-						<figure className="relative flex-1 md:hidden rounded-lg h-64 overflow-hidden basis-1/2">
+						<figure className="relative flex-1 md:hidden rounded-lg h-96 overflow-hidden basis-1/2">
 							<Image
 								src={MAP}
 								alt="An image of a city"
@@ -106,6 +114,11 @@ export default async function Page({ params: { lang } }: PageProps) {
 						alt="An image of a city"
 						className="filter object-cover"
 						fill
+					/>
+					<Image
+						src={LOGO}
+						alt="H-Fasader logo"
+						className="top-8 left-8 absolute w-auto max-h-6 filter object-contain"
 					/>
 				</figure>
 			</div>

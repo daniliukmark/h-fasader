@@ -6,12 +6,12 @@ const DECOR_IMGS = [
 	{
 		img: DECOR_IMG1,
 		title: "PVC bars glued on both sides of glass",
-		text: "Available width: \n27/45/74",
+		text: "Available width: \n27 / 47 / 77 x 8\n27 / 45 / 65 x 9",
 	},
 	{
 		img: DECOR_IMG3,
 		title: "PVC bars glued on both sides of glass",
-		text: "Available width: \n27/45/77 \n+Duplex",
+		text: "Available width: \n27 / 47 / 77 x 8\n27 / 45 / 65 x 9\n+Duplex",
 	},
 	{
 		img: DECOR_IMG2,

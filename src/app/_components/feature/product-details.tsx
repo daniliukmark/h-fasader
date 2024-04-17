@@ -163,8 +163,8 @@ const ProductDetails = ({
 										/>
 									</figure>
 									<div className="w-full whitespace-pre-wrap">
-										<h1 className="font-semibold">{image.title}</h1>
-										<p>{image.text}</p>
+										<h1 className="pb-2 font-semibold">{image.title}</h1>
+										<p className="text-sm">{image.text}</p>
 									</div>
 								</li>
 							))}
@@ -193,7 +193,7 @@ const ProductDetails = ({
 								<b>+</b> Argon gas
 							</li>
 							<li>
-								<b>+</b> Grey Swiss pacer
+								<b>+</b> Grey Swisspacer
 							</li>
 						</ul>
 						<p className="pr-1 pb-2 font-semibold">
