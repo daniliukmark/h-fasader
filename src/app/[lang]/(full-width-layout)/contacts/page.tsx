@@ -116,7 +116,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 						fill
 					/>
 					<Image
-						src={LOGO}
+						src={LOGO as string}
 						alt="H-Fasader logo"
 						className="top-8 left-8 absolute w-auto max-h-6 filter object-contain"
 					/>
