@@ -51,7 +51,7 @@ export default function LanguageSelector({
 	return (
 		<>
 			<DropdownMenu>
-				<DropdownMenuTrigger className="my-2 flex flex-row items-center gap-4 ">
+				<DropdownMenuTrigger className="flex flex-row items-center gap-4 my-2">
 					<span
 						className={cn(
 							"text-sm duration-100",
@@ -65,18 +65,18 @@ export default function LanguageSelector({
 						alt="H-fasader Logo"
 						height={20}
 						width={20}
-						className="h-5 w-5 cursor-pointer opacity-100 duration-100 hover:opacity-75"
+						className="opacity-100 hover:opacity-75 w-5 h-5 duration-100 cursor-pointer"
 					/>
 				</DropdownMenuTrigger>
-				<DropdownMenuContent className="mt-2 rounded-md border-neutral-100 ">
-					<DropdownMenuLabel className="px-6 text-neutral-900 text-center">
+				<DropdownMenuContent className="border-neutral-100 mt-2 rounded-md">
+					<DropdownMenuLabel className="px-6 text-center text-neutral-900">
 						{t("language-menu.languages")}
 					</DropdownMenuLabel>
 					<DropdownMenuSeparator />
 
 					<DropdownMenuItem
 						onClick={() => handleTransition("en", pathname)}
-						className="flex w-full cursor-pointer justify-between rounded-none px-7"
+						className="flex justify-between px-7 rounded-none w-full cursor-pointer"
 					>
 						<span className={lang === "en" ? "font-bold" : ""}>EN</span>
 						<Image
@@ -84,12 +84,12 @@ export default function LanguageSelector({
 							alt="the flag of the Great Britain"
 							height={20}
 							width={20}
-							className="relative h-5 w-5"
+							className="relative w-5 h-5"
 						/>
 					</DropdownMenuItem>
-					<DropdownMenuItem
+					{/* <DropdownMenuItem
 						onClick={() => handleTransition("no", pathname)}
-						className="flex w-full cursor-pointer justify-between rounded-none px-7"
+						className="flex justify-between px-7 rounded-none w-full cursor-pointer"
 					>
 						<span className={lang === "no" ? "font-bold" : ""}>NO</span>
 						<Image
@@ -97,12 +97,12 @@ export default function LanguageSelector({
 							alt="the flag of the Norway"
 							height={20}
 							width={20}
-							className="relative h-5 w-5"
+							className="relative w-5 h-5"
 						/>
 					</DropdownMenuItem>
 					<DropdownMenuItem
 						onClick={() => handleTransition("lt", pathname)}
-						className="flex w-full cursor-pointer justify-between rounded-none px-7"
+						className="flex justify-between px-7 rounded-none w-full cursor-pointer"
 					>
 						<span className={lang === "lt" ? "font-bold" : ""}>LT</span>
 						<Image
@@ -110,9 +110,9 @@ export default function LanguageSelector({
 							alt="the flag of the Lithuania"
 							height={20}
 							width={20}
-							className="relative h-5 w-5"
+							className="relative w-5 h-5"
 						/>
-					</DropdownMenuItem>
+					</DropdownMenuItem> */}
 				</DropdownMenuContent>
 			</DropdownMenu>
 		</>

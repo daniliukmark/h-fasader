@@ -16,7 +16,7 @@ import { languages } from "./i18n/settings";
 
 export const metadata = {
 	title: "H-Fasader",
-	description: "H-Fasader nice windows",
+	description: "Scandinavian windows and doors",
 	icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
