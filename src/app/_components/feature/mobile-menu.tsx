@@ -31,14 +31,14 @@ export default function MobileMenu({
 				)}
 			/>
 			<Sheet onOpenChange={setIsOpen} open={isOpen}>
-				<SheetContent className="border-2  p-0">
-					<SheetHeader className="pl-4 pt-10">
+				<SheetContent className="border-2 p-0">
+					<SheetHeader className="pt-10 pl-4">
 						<SheetTitle className="text-left text-xl">
 							{t("mobile-menu.menu")}
 						</SheetTitle>
 					</SheetHeader>
-					<nav className="relative h-full flex-col">
-						<ul className="flex flex-col gap-2 pl-4 pt-2 sm:pt-4 ">
+					<nav className="relative flex-col h-full">
+						<ul className="flex flex-col gap-2 pt-2 sm:pt-4 pl-4">
 							<li>
 								<Link
 									onClick={() => setIsOpen(false)}
@@ -100,6 +100,15 @@ export default function MobileMenu({
 									href={`/${lang}/about-us`}
 								>
 									{t("directories.about-us")}
+								</Link>
+							</li>
+							<li>
+								<Link
+									className="text-neutral-800"
+									onClick={() => setIsOpen(false)}
+									href="https://www.hfasader.no/aktuelt/"
+								>
+									{t("directories.news")}
 								</Link>
 							</li>
 						</ul>
