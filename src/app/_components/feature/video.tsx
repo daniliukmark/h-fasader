@@ -44,10 +44,7 @@ export default function Video({ src, poster, className }: VideoProps) {
 			)}
 			<video
 				id="video-bg"
-				className={cn(
-					"pointer-events-none mix-blend-darken absolute left-0",
-					className,
-				)}
+				className={cn("pointer-events-none absolute left-0", className)}
 				controls={false}
 				preload="auto"
 				playsInline
