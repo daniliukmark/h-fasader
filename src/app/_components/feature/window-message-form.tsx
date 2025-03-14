@@ -44,7 +44,6 @@ export default function WindowMessageForm({
 	lang,
 	emailReceiver,
 }: WindowMessageFormProps) {
-	const [isSubmitted, setIsSubmitted] = useState(false);
 	const { t } = useTranslation(lang, "components", {});
 
 	const form = useForm<z.infer<typeof formSchema>>({
@@ -70,9 +69,7 @@ export default function WindowMessageForm({
 		// Open the user's email client with the prefilled information
 		window.location.href = mailtoUrl;
 
-		setIsSubmitted(true);
 		form.reset();
-		setTimeout(() => setIsSubmitted(false), 3000);
 	}
 
 	return (
@@ -87,7 +84,6 @@ export default function WindowMessageForm({
 							<FormControl>
 								<Input
 									placeholder={t("window-message-form.name-field-placeholder")}
-									disabled={isSubmitted}
 									{...field}
 								/>
 							</FormControl>
@@ -106,7 +102,6 @@ export default function WindowMessageForm({
 							<FormControl>
 								<Input
 									placeholder={t("window-message-form.email-field-placeholder")}
-									disabled={isSubmitted}
 									{...field}
 								/>
 							</FormControl>
@@ -129,7 +124,6 @@ export default function WindowMessageForm({
 									)}
 									className="max-h-40"
 									{...field}
-									disabled={isSubmitted}
 								/>
 							</FormControl>
 							<FormMessage />
@@ -137,11 +131,6 @@ export default function WindowMessageForm({
 							<p className="text-muted-foreground text-sm">
 								{t("window-message-form.form-additional-info")}
 							</p>
-							{isSubmitted && (
-								<p className="bg-green-200 p-4 py-2 border border-green-300 rounded-full w-fit text-sm">
-									{t("window-message-form.form-success")}
-								</p>
-							)}
 						</FormItem>
 					)}
 				/>

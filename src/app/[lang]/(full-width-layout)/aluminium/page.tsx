@@ -62,13 +62,13 @@ export default async function Page({ params: { lang } }: PageProps) {
 						</Link>
 					</div>
 					<Separator className="my-2" />
-					<WindowMessageForm lang={lang} emailReceiver="" />
+					<WindowMessageForm lang={lang} emailReceiver="info@pluswindows.eu" />
 				</article>
-				<figure className="relative flex-1 md:hidden rounded-lg h-64 overflow-hidden basis-1/2">
+				<figure className="md:hidden relative flex-1 rounded-lg h-64 overflow-hidden basis-1/2">
 					<Image
 						src={SAPA_BG}
 						fill
-						className="pointer-events-none object-cover"
+						className="object-cover pointer-events-none"
 						alt="An image of Sapa designed Interior"
 					/>
 					<div className="right-2 bottom-2 absolute">
@@ -76,20 +76,20 @@ export default async function Page({ params: { lang } }: PageProps) {
 							<Image
 								src={SAPA_LOGO}
 								fill
-								className="pointer-events-none object-cover"
+								className="object-cover pointer-events-none"
 								alt="An image of Sapa designed Interior"
 							/>
 						</figure>
 					</div>
 				</figure>
 			</section>
-			<div className="top-24 left-0 absolute md:flex gap-8 hidden w-full pointer-events-none">
+			<div className="hidden top-24 left-0 absolute md:flex gap-8 w-full pointer-events-none">
 				<div className="basis-1/2" />
 				<figure className="relative flex-1 rounded-lg h-[48rem] overflow-hidden basis-1/2">
 					<Image
 						src={SAPA_BG}
 						fill
-						className="pointer-events-none object-cover"
+						className="object-cover pointer-events-none"
 						alt="An image of Sapa designed Interior"
 					/>
 					<div className="right-8 bottom-8 absolute">
@@ -97,7 +97,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 							<Image
 								src={SAPA_LOGO}
 								fill
-								className="pointer-events-none object-cover"
+								className="object-cover pointer-events-none"
 								alt="An image of Sapa designed Interior"
 							/>
 						</figure>
