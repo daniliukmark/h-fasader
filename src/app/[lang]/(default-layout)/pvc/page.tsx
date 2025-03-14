@@ -20,6 +20,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 	const windowOrder = [
 		"h90_top-swing-two-handled-window",
 		"h90_top-swing-window-one-handled",
+		"h90_outward-opening-window",
 		"softline-82_tilt-first-window-(vipp-drei)",
 		"trend-85_tilt-first-window-(vipp-drei)_hidden-hinges",
 		"h90_outward-opening-door",
