@@ -36,7 +36,7 @@ export default async function Page({ params: { lang, windowId } }: PageProps) {
 	return (
 		<>
 			<main className="flex md:flex-row flex-col w-full scroll-smooth">
-				<div className="h-96 md:basis-1/2 my-auto">
+				<div className="my-auto h-96 md:basis-1/2">
 					<ProductShowcase images={imagesList} defaultImage={mainImage} />
 				</div>
 				<section className="my-auto basis-1/2">
@@ -74,6 +74,7 @@ export default async function Page({ params: { lang, windowId } }: PageProps) {
 									<Image
 										src={H_VINDUET}
 										alt="H-Vinduet Logo"
+										unoptimized
 										className="w-auto max-h-7 xl:max-h-9"
 									/>
 								</figure>

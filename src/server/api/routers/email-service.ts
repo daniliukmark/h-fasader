@@ -1,11 +1,6 @@
 import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
-import { Resend } from "resend";
-import EmailAluminiumPage from "~/app/_components/email/email-aluminium-page";
-import { TRPCError } from "@trpc/server";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const EmailServiceRouter = createTRPCRouter({
 	emailSupport: publicProcedure
@@ -28,21 +23,21 @@ export const EmailServiceRouter = createTRPCRouter({
 			}),
 		)
 		.mutation(async ({ input }) => {
-			const { name, email, message } = input;
-			const data = await resend.emails.send({
-				from: "H-Fasader Website <onboarding@resend.dev>",
-				to: "hfasader991@gmail.com",
-				subject: "Request From H-Fasader Baltic Website",
-				react: EmailAluminiumPage({
-					name: name,
-					email: email,
-					message: message,
-				}),
-			});
-			if (data.error) {
-				console.log(data.error);
-				throw TRPCError;
-			}
-			return Response.json(data);
+			// const { name, email, message } = input;
+			// const data = await resend.emails.send({
+			// 	from: "H-Fasader Website <onboarding@resend.dev>",
+			// 	to: "hfasader991@gmail.com",
+			// 	subject: "Request From H-Fasader Baltic Website",
+			// 	react: EmailAluminiumPage({
+			// 		name: name,
+			// 		email: email,
+			// 		message: message,
+			// 	}),
+			// });
+			// if (data.error) {
+			// 	console.log(data.error);
+			// 	throw TRPCError;
+			// }
+			// return Response.json(data);
 		}),
 });

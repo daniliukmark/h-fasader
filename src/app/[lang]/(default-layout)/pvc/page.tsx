@@ -59,7 +59,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 							<Image src={H_VINDUET} alt="H-Vinduet Logo" />
 						</figure>
 					</div>
-					<p className="mb-4 max-w-4xl text-justify text-neutral-700 text-sm">
+					<p className="mb-4 max-w-4xl text-neutral-700 text-sm text-justify">
 						{t("header.description")}
 					</p>
 				</section>

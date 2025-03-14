@@ -23,9 +23,10 @@ export const Thumb: React.FC<PropType> = (props) => {
 				type="button"
 			>
 				<Image
-					className="block object-contain bg-white"
+					className="block bg-white object-contain"
 					src={src}
 					fill
+					unoptimized
 					sizes="10w"
 					alt={`slide ${index}`}
 				/>

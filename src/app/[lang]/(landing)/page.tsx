@@ -32,9 +32,9 @@ async function CategoryCardMobile({
 	const { t } = await useTranslation(lang, "home-page", {});
 
 	return (
-		<div className="relative flex-auto border-2 border-neutral-100 bg-white rounded-lg h-fit basis-[36rem]">
+		<div className="relative flex-auto bg-white border-2 border-neutral-100 rounded-lg h-fit basis-[36rem]">
 			<Link href={href}>
-				<figure className="relative bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0] hover:opacity-60 rounded-md w-full h-80 sm:h-96 lg:h-[32rem] duration-200 overflow-hidden">
+				<figure className="relative bg-gradient-to-b from-[#F1F2F6] via-[#E3E7EA] to-[#D5D7E0] hover:opacity-60 rounded-md w-full h-80 sm:h-96 lg:h-[32rem] overflow-hidden duration-200">
 					<Suspense fallback={<Skeleton className="w-full h-full" />}>
 						<Image
 							src={src}
@@ -63,7 +63,7 @@ async function CategoryCard({ href, alt, src, children, lang }: CategoryCard) {
 	const { t } = await useTranslation(lang, "home-page", {});
 
 	return (
-		<div className="relative flex flex-row flex-auto border-neutral-100 bg-gray-600 hover:bg-gray-500 bg-opacity-50 hover:bg-opacity-40 backdrop-blur-md rounded-lg h-72 text-gray-100 duration-200">
+		<div className="relative flex flex-row flex-auto bg-gray-600 hover:bg-gray-500 bg-opacity-50 hover:bg-opacity-40 backdrop-blur-md border-neutral-100 rounded-lg h-72 text-gray-100 duration-200">
 			<Link href={href}>
 				<figure className="relative bg-gray-50 bg-opacity-10 rounded-md w-52 xl:w-72 h-full overflow-hidden">
 					<Image
@@ -100,7 +100,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 			<Navbar lang={lang} isMainPage={true} />
 			<div className="flex flex-col justify-between w-full min-h-screen">
 				<section className="relative flex flex-col justify-center h-[40rem] sm:h-[52rem]">
-					<div className="right-0 z-10 absolute lg:flex flex-col gap-8 hidden pt-20">
+					<div className="hidden right-0 z-10 absolute lg:flex flex-col gap-8 pt-20">
 						<CategoryCard
 							src={PVC_CATEGORY}
 							alt="PVC window"
@@ -108,7 +108,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 							href={`${lang}/pvc`}
 						>
 							<Link href={`${lang}/pvc`}>
-								<h1 className="pb-2 font-semibold text-left text-xl">
+								<h1 className="pb-2 font-semibold text-xl text-left">
 									{t("catalogue.pvc.title")}
 								</h1>
 							</Link>
@@ -127,7 +127,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 							href={`${lang}/aluminium`}
 						>
 							<Link href={`${lang}/aluminium`}>
-								<h1 className="pb-2 font-semibold text-left text-xl">
+								<h1 className="pb-2 font-semibold text-xl text-left">
 									{t("catalogue.aluminium.title")}
 								</h1>
 							</Link>
@@ -141,7 +141,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 						</CategoryCard>
 					</div>
 					<div className="mx-auto w-full max-w-7xl">
-						<div className="z-0 flex justify-between items-center mx-8 w-full max-w-3xl lg:max-w-7xl font-semibold text-4xl text-white sm:text-5xl leading-normal sm:leading-relaxed">
+						<div className="z-0 flex justify-between items-center mx-8 w-full max-w-3xl lg:max-w-7xl font-semibold text-white text-4xl sm:text-5xl leading-normal sm:leading-relaxed">
 							<span
 								className="absolute animate-infinite-fade"
 								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
@@ -158,16 +158,16 @@ export default async function Page({ params: { lang } }: PageProps) {
 						<figure className="w-full h-full">
 							<Suspense fallback={<Skeleton className="w-full h-full" />}>
 								<Video
-									className="relative object-left bg-slate-400 w-full h-full object-cover"
-									hrefMp4="/assets/main-video-bg.mp4"
-									hrefWebm="/assets/main-video-bg.webm"
+									className="relative bg-slate-400 w-full h-full object-cover object-left"
+									src="https://cdn.sanity.io/files/zkqihy5d/production/37008853aa8ae3962ce58b5ecd28e0ac031bb6ca.mp4"
+									poster="/assets/mountains-placeholder.jpeg"
 								/>
 							</Suspense>
 						</figure>
 					</div>
 				</section>
 				<div className="mx-auto px-4 sm:px-8 lg:px-0 pt-8 w-full lg:max-w-5xl xl:max-w-7xl">
-					<section className="block lg:hidden -mt-20 pb-8">
+					<section className="lg:hidden block -mt-20 pb-8">
 						<div className="flex flex-wrap md:flex-nowrap justify-center gap-8">
 							<CategoryCardMobile
 								src={PVC_CATEGORY}

@@ -40,18 +40,19 @@ const EmblaCarousel = ({ images, options }: EmblaCarousel) => {
 	}, [emblaMainApi, onSelect]);
 
 	return (
-		<section className="w-full px-4 overflow-hidden">
-			<div className="relative w-full mx-auto sm:w-fit" ref={emblaMainRef}>
-				<div className="w-full mx-auto sm:max-w-sm lg:max-w-[36rem] flex touch-pan-y gap-4">
+		<section className="px-4 w-full overflow-hidden">
+			<div className="relative mx-auto w-full sm:w-fit" ref={emblaMainRef}>
+				<div className="flex gap-4 mx-auto w-full lg:max-w-[36rem] sm:max-w-sm touch-pan-y">
 					{images.map((image, index) => (
 						<div
-							className="relative overflow-hidden rounded-lg sm:h-96 h-80 lg:h-[36rem] w-full sm:aspect-square flex-none"
+							className="relative flex-none rounded-lg w-full h-80 sm:h-96 lg:h-[36rem] sm:aspect-square overflow-hidden"
 							key={image}
 						>
 							<Image
-								className="object-contain bg-white"
+								className="bg-white object-contain"
 								src={image}
 								alt={image}
+								unoptimized
 								sizes="10w 100vw"
 								fill
 							/>
@@ -64,13 +65,14 @@ const EmblaCarousel = ({ images, options }: EmblaCarousel) => {
 						</div>
 					))}
 				</div>
-				<div className="hidden sm:max-w-sm lg:max-w-[36rem] mx-auto  justify-between lg:flex absolute inset-0 w-full h-full">
+				<div className="hidden absolute inset-0 lg:flex justify-between mx-auto w-full lg:max-w-[36rem] sm:max-w-sm h-full">
 					<Image
 						src={LONG_CHEVRON as string}
 						alt="Arrow left"
 						onClick={() => {
 							if (selectedIndex > 0) onThumbClick(selectedIndex - 1);
 						}}
+						unoptimized
 						className={cn(
 							"select-none opacity-70 hover:opacity-100 duration-300 -ml-16 cursor-pointer",
 							selectedIndex === 0 &&
@@ -84,6 +86,7 @@ const EmblaCarousel = ({ images, options }: EmblaCarousel) => {
 							if (selectedIndex + 1 < images.length)
 								onThumbClick(selectedIndex + 1);
 						}}
+						unoptimized
 						className={cn(
 							"select-none opacity-70 hover:opacity-100 duration-300 -mr-16 rotate-180 cursor-pointer",
 							selectedIndex + 1 === images.length &&
@@ -93,7 +96,7 @@ const EmblaCarousel = ({ images, options }: EmblaCarousel) => {
 				</div>
 			</div>
 			<div
-				className="w-full max-w-5xl mx-auto mt-4 touch-pan-y"
+				className="mx-auto mt-4 w-full max-w-5xl touch-pan-y"
 				ref={emblaThumbsRef}
 			>
 				<div className="flex flex-row gap-2">

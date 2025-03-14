@@ -41,7 +41,8 @@ function ProductShowcaseItem({
 					src={src}
 					alt="window image"
 					sizes="vw-100"
-					className="mix-blend-normal object-contain hover:mix-blend-darken"
+					unoptimized
+					className="object-contain mix-blend-normal hover:mix-blend-darken"
 					fill
 				/>
 			</Button>
@@ -68,6 +69,7 @@ function ProductShowcase({ images, defaultImage }: ProductShowcase) {
 				alt="window image"
 				sizes="vw-100"
 				fill
+				unoptimized
 				className="backdrop-blur-xl px-8 max-h-96 object-contain"
 			/>
 			<div className="left-0 absolute flex items-center h-full">

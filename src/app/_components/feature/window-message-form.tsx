@@ -2,6 +2,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useState } from "react";
+import { useTranslation } from "~/app/i18n/client";
+import { cn } from "~/utils/utils";
 
 import { Button } from "~/app/_components/ui/button";
 import {
@@ -14,17 +17,13 @@ import {
 } from "~/app/_components/ui/form";
 import { Input } from "~/app/_components/ui/input";
 import { Textarea } from "../ui/textarea";
-import { useState } from "react";
-import { api } from "~/trpc/react";
-import { cn } from "~/utils/utils";
-import { useTranslation } from "~/app/i18n/client";
 
 const formSchema = z.object({
 	name: z
 		.string()
 		.min(2, { message: "This field has to be filled." })
 		.max(100, {
-			message: "This field has to be no more than 100 charcters long.",
+			message: "This field has to be no more than 100 characters long.",
 		}),
 	email: z
 		.string()
@@ -40,10 +39,13 @@ interface WindowMessageFormProps {
 	lang: string;
 	emailReceiver: string;
 }
-export default function WindowMessageForm({ lang }: WindowMessageFormProps) {
+
+export default function WindowMessageForm({
+	lang,
+	emailReceiver,
+}: WindowMessageFormProps) {
 	const [isSubmitted, setIsSubmitted] = useState(false);
 	const { t } = useTranslation(lang, "components", {});
-	const emailSend = api.email.emailSupport.useMutation();
 
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -54,16 +56,25 @@ export default function WindowMessageForm({ lang }: WindowMessageFormProps) {
 		},
 	});
 
-	async function onSubmit(values: z.infer<typeof formSchema>) {
+	function onSubmit(values: z.infer<typeof formSchema>) {
+		const subject = `Message from ${values.name}`;
+		const body = `Name: ${values.name}\nEmail: ${values.email}\n\n${values.message}`;
+
+		// Encode the components for the mailto URL
+		const encodedSubject = encodeURIComponent(subject);
+		const encodedBody = encodeURIComponent(body);
+
+		// Create the mailto URL
+		const mailtoUrl = `mailto:${emailReceiver}?subject=${encodedSubject}&body=${encodedBody}`;
+
+		// Open the user's email client with the prefilled information
+		window.location.href = mailtoUrl;
+
 		setIsSubmitted(true);
-		emailSend.mutate({
-			name: values.name,
-			message: values.message,
-			email: values.email,
-		});
 		form.reset();
-		setIsSubmitted(false);
+		setTimeout(() => setIsSubmitted(false), 3000);
 	}
+
 	return (
 		<Form {...form}>
 			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
@@ -126,19 +137,10 @@ export default function WindowMessageForm({ lang }: WindowMessageFormProps) {
 							<p className="text-muted-foreground text-sm">
 								{t("window-message-form.form-additional-info")}
 							</p>
-							{emailSend.isSuccess && (
-								<>
-									<p className="border-green-300 bg-green-200 py-2 p-4 border rounded-full w-fit text-sm">
-										{t("window-message-form.form-success")}
-									</p>
-								</>
-							)}
-							{emailSend.isError && (
-								<>
-									<p className="bg-red-200 py-2 p-4 border border-red-300 rounded-full w-fit text-sm">
-										{t("window-message-form.form-error")}
-									</p>
-								</>
+							{isSubmitted && (
+								<p className="bg-green-200 p-4 py-2 border border-green-300 rounded-full w-fit text-sm">
+									{t("window-message-form.form-success")}
+								</p>
 							)}
 						</FormItem>
 					)}

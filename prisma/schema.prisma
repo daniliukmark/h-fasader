@@ -45,7 +45,7 @@ model Image {
   id  String @id @default(uuid())
   url String @unique
 
-  windowId    String
-  window      Window  @relation("OtherImages", fields: [windowId], references: [id])
-  main_window Window?
+  windowId String
+  window   Window  @relation("OtherImages", fields: [windowId], references: [id])
+  Window   Window?
 }

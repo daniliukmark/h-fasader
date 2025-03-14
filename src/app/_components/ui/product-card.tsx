@@ -29,12 +29,13 @@ export default function ProductCard({
 			)}
 		>
 			<Link href={`${href}`}>
-				<div className="relative w-full h-64 overflow-hidden aspect-square">
+				<div className="relative w-full h-64 aspect-square overflow-hidden">
 					<Image
 						src={src}
 						alt={alt}
 						className="object-contain"
 						fill
+						unoptimized
 						sizes="(max-width: 768px) 99vw, (max-width: 1200px) 50vw, 33vw"
 					/>
 				</div>
@@ -47,7 +48,7 @@ export default function ProductCard({
 						dangerouslySetInnerHTML={{ __html: title }}
 					/>
 				</Link>
-				<p className="line-clamp-2 pt-1 pr-4 max-h-32 text-neutral-600 text-xs">
+				<p className="pt-1 pr-4 max-h-32 text-neutral-600 text-xs line-clamp-2">
 					{desc}
 				</p>
 			</section>
