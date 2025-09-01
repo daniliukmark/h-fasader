@@ -175,7 +175,7 @@ export default async function Page({ params: { lang } }: PageProps) {
 								lang={lang}
 								href={`${lang}/pvc`}
 							>
-								<Link href={`${lang}/aluminium`}>
+								<Link href={`${lang}/pvc`}>
 									<h1 className="font-semibold text-2xl text-justify">
 										{t("catalogue.pvc.title")}
 									</h1>
